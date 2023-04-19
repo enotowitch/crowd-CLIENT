@@ -1,7 +1,8 @@
 import axios from "axios"
+import { baseURL } from "./consts"
 
 const instance = axios.create({
-	baseURL: "http://localhost:5000"
+	baseURL: baseURL
 })
 
 export const addArticle = async (value) => {

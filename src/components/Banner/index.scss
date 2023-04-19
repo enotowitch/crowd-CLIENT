@@ -1,0 +1,10 @@
+@import "../../vars.scss";
+
+.banner{
+	width: 100%;
+	// !!
+	img{
+		border-radius: $borderRadiusBig;
+		width: 100%;
+	}
+}

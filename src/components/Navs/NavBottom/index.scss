@@ -1,0 +1,22 @@
+@import "../../../vars.scss";
+
+// !!
+nav{
+	display: flex;
+	flex-direction: column;
+	width: $widthSmall;
+	padding: 25px;
+	background: $light;
+	font-size: 22px;
+	border-radius: $borderRadiusBig;
+	// !!
+	a{
+		margin-bottom: 30px;
+		width: $widthSmall;
+	}
+}
+
+.iconText{
+	display: flex;
+	align-items: center;
+}

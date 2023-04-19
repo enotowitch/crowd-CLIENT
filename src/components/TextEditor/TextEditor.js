@@ -6,7 +6,7 @@ import * as api from "../../api"
 
 export default function TextEditor() {
 
-	const [value, setValue] = useState("Initial value");
+	const [value, setValue] = useState("")
 
 	const onChange = useCallback((value) => {
 		setValue(value);
@@ -18,9 +18,9 @@ export default function TextEditor() {
 	}
 
 	return (
-		<>
+		<div className="w100">
 			<SimpleMDE value={value} onChange={onChange} />
-			<Button text="Add Article" onClick={addArticle} />
-		</>
+			<Button text="Add Article" onClick={addArticle} className="c" />
+		</div>
 	)
 }

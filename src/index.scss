@@ -1,0 +1,124 @@
+@import "vars.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Manrope;
+}
+
+// !! GLOBAL
+a{
+	text-decoration: none;
+	color: $white;
+	&:active{
+		color: $white;
+	}
+}
+
+button{
+	height: 56px;
+	background: $brand;
+	border-radius: $borderRadiusSmall;
+	color: $white;
+	padding: 17px 46px;
+	border: none;
+}
+.btn{
+	// outlined
+	&_out{
+		background: transparent;
+		border: 2px solid $brand;
+	}
+	// secondary
+	&_sec{
+		background: $light;
+	}
+}
+// ?? GLOBAL
+
+.app{
+	display: flex;
+	flex-wrap: wrap;
+	background: $dark;
+	gap: 15px;
+	padding: 30px 40px;
+	
+	&__mid{
+		display: flex;
+		gap: 15px;
+		width: 100%;
+	}
+}
+
+// !! SHORTCUTS
+// ! margin
+.m{
+	margin: 15px;
+}
+.mt{
+	margin-top: 15px;
+}
+.mr{
+	margin-right: 15px;
+}
+.mb{
+	margin-bottom: 15px;
+}
+.ml{
+	margin-left: 15px;
+}
+.m0a{
+	margin: 0 auto;
+}
+.ma{
+	margin: auto;
+}
+.m0{
+	margin: 0;
+}
+// ? margin
+// ! flex
+.f{
+	display: flex;
+	flex-wrap: wrap;
+}
+.fc{
+	display: flex;
+	flex-direction: column;
+}
+.fcc{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.g{
+	gap: 15px;
+}
+// ? flex
+// ! position
+.c{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+// ? position
+// ! font
+.fw500{
+	font-weight: 500;
+}
+.fw700{
+	font-weight: 700;
+}
+// ? font
+// ! width
+.w100{
+	width: 100%;
+}
+// ? width
+// ! other
+.br{
+	outline: 1px solid red;
+}
+// ? other
+// ?? SHORTCUTS

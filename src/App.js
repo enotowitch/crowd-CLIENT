@@ -1,13 +1,30 @@
 import React from "react"
 import TextEditor from "./components/TextEditor/TextEditor"
 import Articles from "./components/Articles/Articles"
+import ArticleFull from "./components/Articles/ArticleFull"
+import { Routes, Route } from "react-router-dom"
+import NavBottom from "./components/Navs/NavBottom/NavBottom"
+import Header from "./components/Navs/Header/Header"
+import Banner from "./components/Banner/Banner"
 
 export default function App() {
 
 	return (
-		<>
-			<TextEditor />
-			<Articles />
-		</>
+		<div className="app">
+
+			<Header />
+			<Banner />
+
+			<div className="app__mid">
+				<NavBottom />
+
+				<Routes>
+					<Route exact path="add-article" element={<TextEditor />} />
+					<Route exact path="articles" element={<Articles />} />
+					<Route exact path="article/:id" element={<ArticleFull />} />
+				</Routes>
+			</div>
+
+		</div>
 	)
 }

@@ -22,3 +22,12 @@ export const getArticles = async () => {
 	}
 }
 
+export const getArticle = async (id) => {
+	try {
+		const { data } = await instance.get(`/article/${id}`)
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+

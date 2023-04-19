@@ -1,10 +1,13 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 export default function Button(props) {
 
-	const { text } = props
+	const { text, path, className } = props
 
 	return (
-		<button {...props}>{text}</button>
+		<Link to={path}>
+			<button {...props} className={className}>{text}</button>
+		</Link>
 	)
 }

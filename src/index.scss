@@ -51,6 +51,13 @@ button{
 	}
 }
 
+.icon{
+	&_small{
+		height: 16px !important;
+		width: fit-content !important;
+	}
+}
+
 // !! SHORTCUTS
 // ! margin
 .m{
@@ -61,6 +68,9 @@ button{
 }
 .mr{
 	margin-right: 15px;
+}
+.mr05{
+	margin-right: 5px;
 }
 .mb{
 	margin-bottom: 15px;

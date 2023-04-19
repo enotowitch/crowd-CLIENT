@@ -1,6 +1,6 @@
 import React from "react"
 import "./index.scss"
-import IconText from "../NavBottom/IconText"
+import IconText from "../../IconText/IconText"
 import Button from "../../formElements/Button/Button"
 
 export default function Header() {

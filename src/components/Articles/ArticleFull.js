@@ -3,6 +3,7 @@ import "./index.scss"
 import Markdown from "marked-react";
 import { useParams } from "react-router-dom";
 import * as api from "../../api"
+import IconText from "../IconText/IconText";
 
 export default function ArticleFull() {
 
@@ -22,6 +23,7 @@ export default function ArticleFull() {
 	return (
 		<div className="articleFull">
 			{<Markdown>{article?.value}</Markdown>}
+			<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
 		</div>
 	)
 }

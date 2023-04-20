@@ -18,6 +18,7 @@ export default function Articles() {
 				title={title}
 				img={img}
 				views={article.views}
+				likes={article.likes.length}
 			/>
 		)
 	})

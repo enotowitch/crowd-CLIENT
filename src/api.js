@@ -32,3 +32,11 @@ export const getArticle = async (id) => {
 	}
 }
 
+export const likeArticle = async (id) => {
+	try {
+		const { data } = await instance.post(`/likeArticle`, { id })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}

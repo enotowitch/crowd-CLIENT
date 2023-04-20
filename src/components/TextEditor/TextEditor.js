@@ -6,10 +6,10 @@ import * as api from "../../api"
 
 export default function TextEditor() {
 
-	const [value, setValue] = useState("")
+	const [value, valueSet] = useState("")
 
 	const onChange = useCallback((value) => {
-		setValue(value);
+		valueSet(value);
 	}, []);
 
 	async function addArticle() {

@@ -1,6 +1,6 @@
 import React from "react"
 import "./index.scss"
-import IconText from "../../IconText/IconText"
+import IconText from "../IconText/IconText"
 
 export default function NavBottom() {
 	return (

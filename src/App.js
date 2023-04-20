@@ -3,8 +3,8 @@ import TextEditor from "./components/TextEditor/TextEditor"
 import Articles from "./components/Articles/Articles"
 import ArticleFull from "./components/Articles/ArticleFull"
 import { Routes, Route } from "react-router-dom"
-import NavBottom from "./components/Navs/NavBottom/NavBottom"
-import Header from "./components/Navs/Header/Header"
+import NavBottom from "./components/Navs/NavBottom"
+import Header from "./components/Navs/Header"
 import Banner from "./components/Banner/Banner"
 
 export default function App() {

@@ -1,0 +1,34 @@
+@import "../../vars.scss";
+
+// !!
+header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 90px;
+	background: $light;
+	width: 100%;
+	padding: 20px;
+	border-radius: $borderRadiusBig;
+	// !!
+	a{
+		width: fit-content;
+		height: fit-content;
+	}
+}
+
+// !!
+nav{
+	display: flex;
+	flex-direction: column;
+	width: $widthSmall;
+	padding: 25px;
+	background: $light;
+	font-size: 22px;
+	border-radius: $borderRadiusBig;
+	// !!
+	a{
+		margin-bottom: 30px;
+		width: $widthSmall;
+	}
+}

@@ -1,6 +1,6 @@
 import React from "react"
 import "./index.scss"
-import Button from "../../components/formElements/Button/Button"
+import Button from "../../components/FormElements/Button"
 import IconText from "../IconText/IconText"
 
 export default function ArticleCard({ title, img, id, views }) {

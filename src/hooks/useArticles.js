@@ -1,16 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import * as api from "../api"
 
 export default function useArticles() {
 
 	const [articles, articlesSet] = useState()
 
-	async function getArticles() {
-		const res = await api.getArticles()
-		articlesSet(res)
-	}
+	useEffect(() => {
+		async function getArticles() {
+			const res = await api.getArticles()
+			articlesSet(res)
+		}
 
-	getArticles()
+		getArticles()
+	}, [])
 
 	return (
 		[articles]

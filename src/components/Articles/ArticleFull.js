@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import "./index.scss"
 import Markdown from "marked-react";
 import { useParams } from "react-router-dom";
-import * as api from "../../api"
 import IconText from "../IconText/IconText";
+import useArticleFull from "../../hooks/useArticleFull"
 
 export default function ArticleFull() {
 
 	const { id } = useParams()
-	const [article, articleSet] = useState()
-
-	useEffect(() => {
-		async function getArticle() {
-			const res = await api.getArticle(id)
-			articleSet(res)
-		}
-
-		getArticle()
-	}, [id])
+	const [article] = useArticleFull(id)
 
 
 	return (

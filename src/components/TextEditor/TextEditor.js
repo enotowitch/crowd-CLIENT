@@ -20,7 +20,7 @@ export default function TextEditor() {
 	return (
 		<div className="w100">
 			<SimpleMDE value={value} onChange={onChange} />
-			<Button text="Add Article" onClick={addArticle} className="c" />
+			<Button text="Add Article" onClick={addArticle} btnClassName="c" />
 		</div>
 	)
 }

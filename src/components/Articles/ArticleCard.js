@@ -13,7 +13,7 @@ export default function ArticleCard({ title, img, id, views }) {
 				<IconText src="views" text={views} iconClassName="icon_small mr05" />
 			</div>
 
-			<Button text="Read More" path={`/article/${id}`} className="btn_sec w100" />
+			<Button text="Read More" path={`/article/${id}`} btnClassName="btn_sec w100" />
 		</div>
 	)
 }

@@ -9,7 +9,7 @@ export default function Header() {
 			<IconText src="logo" text="Copilot Funding" path="/" />
 
 			<div className="f g">
-				<Button text="Log In" className="btn_out" />
+				<Button text="Log In" btnClassName="btn_out" />
 				<Button text="Sign Up" />
 			</div>
 		</header>

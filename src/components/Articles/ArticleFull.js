@@ -14,7 +14,11 @@ export default function ArticleFull() {
 	return (
 		<div className="articleFull">
 			{<Markdown>{article?.value}</Markdown>}
-			<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
+
+			<div className="f jcsb">
+				<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
+				<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small mr05" />
+			</div>
 		</div>
 	)
 }

@@ -1,0 +1,14 @@
+@import "../../vars.scss";
+
+.profileMenu{
+	position: absolute;
+	top: 129px;
+	right: 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 20px 15px;
+	background: $light;
+	min-width: 290px;
+	border-radius: $borderRadiusBig;
+}

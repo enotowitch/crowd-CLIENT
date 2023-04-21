@@ -3,19 +3,28 @@ import "./index.scss"
 import IconText from "../IconText/IconText"
 import Button from "../FormElements/Button"
 import { Context } from "../../Context"
+import useUser from "../../hooks/useUser"
+import ProfileTop from "../Profile/ProfileTop"
+
 
 export default function Header() {
 
 	const { popupElementSet } = useContext(Context)
+	const [user] = useUser()
+
 
 	return (
 		<header>
 			<IconText src="logo" text="Copilot Funding" path="/" />
 
-			<div className="f g">
-				<Button text="Log In" btnClassName="btn_out" onClick={() => popupElementSet("Login")} />
-				<Button text="Sign Up" onClick={() => popupElementSet("Register")} />
-			</div>
+			<ProfileTop />
+
+			{!user &&
+				<div className="f g">
+					<Button text="Log In" btnClassName="btn_out" onClick={() => popupElementSet("Login")} />
+					<Button text="Sign Up" onClick={() => popupElementSet("Register")} />
+				</div>
+			}
 		</header>
 	)
 }

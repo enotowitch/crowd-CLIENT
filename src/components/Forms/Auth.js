@@ -14,8 +14,8 @@ export default function Auth({ children, type }) { // type=Log In/Sign Up
 		<form className="fc" onSubmit={onSubmit}>
 			<IconText src="auth logo" text="Crowd Funding Plus" className="fc g black" />
 
-			<Input name="email" type="email" placeholder="Enter Email" />
-			<Input name="password" type="password" placeholder="Enter Password" />
+			<Input name="email" type="email" placeholder="Enter Email" required />
+			<Input name="password" type="password" placeholder="Enter Password" required />
 
 			{children}
 

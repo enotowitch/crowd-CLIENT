@@ -1,18 +1,11 @@
 import React from "react"
 import "./index.scss"
-import useUser from "../../hooks/useUser"
 import IconText from "../IconText/IconText"
+import useLogOut from "../../hooks/useLogOut"
 
 export default function ProfileMenu({ showMenu }) {
 
-	const [user, userSet] = useUser() // ! don't touch user
-
-	function logOut() {
-		userSet("")
-		localStorage.removeItem("token")
-		window.location.reload()
-	}
-
+	const [logOut] = useLogOut()
 
 	return (
 		showMenu &&

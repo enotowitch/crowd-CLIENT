@@ -9,7 +9,6 @@ export default function ProfileTop() {
 	const [user] = useUser()
 	const [showMenu, showMenuSet] = useState(false)
 
-	
 	return (
 		user &&
 

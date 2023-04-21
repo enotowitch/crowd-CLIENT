@@ -1,30 +1,22 @@
-import React, { useContext } from "react"
+import React from "react"
 import "./index.scss"
 import IconText from "../IconText/IconText"
-import Button from "../FormElements/Button"
-import { Context } from "../../Context"
-import useUser from "../../hooks/useUser"
 import ProfileTop from "../Profile/ProfileTop"
+import Burger from "./Burger"
+import HeaderButtons from "./HeaderButtons"
 
 
 export default function Header() {
 
-	const { popupElementSet } = useContext(Context)
-	const [user] = useUser()
-
-
 	return (
 		<header>
-			<IconText src="logo" text="Copilot Funding" path="/" />
+			<IconText src="logo" text="Copilot Funding" path="/" className="logo" />
 
 			<ProfileTop />
+			<Burger />
 
-			{!user &&
-				<div className="f g">
-					<Button text="Log In" btnClassName="btn_out" onClick={() => popupElementSet("Login")} ignoreOutside="true" />
-					<Button text="Sign Up" onClick={() => popupElementSet("Register")} ignoreOutside="true" />
-				</div>
-			}
+			<HeaderButtons />
+
 		</header>
 	)
 }

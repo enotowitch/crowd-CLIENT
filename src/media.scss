@@ -1,0 +1,19 @@
+@media (max-width:700px) {
+	.logo .iconText{
+		&__text{
+			display: none;
+		}
+	}
+	// !!
+	header button{
+		display: none;
+	}
+}
+
+
+// ! > 700px
+@media (min-width:701px) {
+	.burger{
+		display: none;
+	}
+}

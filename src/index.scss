@@ -48,11 +48,13 @@ input{
 // ?? GLOBAL
 
 .app{
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	background: $dark;
 	gap: 15px;
 	padding: 30px 40px;
+	width: fit-content;
 	
 	&__mid{
 		display: flex;

@@ -7,6 +7,7 @@ import NavBottom from "./components/Navs/NavBottom"
 import Header from "./components/Navs/Header"
 import Banner from "./components/Banner/Banner"
 import Popup from "./components/Popup/Popup"
+import Menu from "./components/Navs/Menu"
 
 export default function App() {
 
@@ -16,6 +17,7 @@ export default function App() {
 			<Header />
 			<Banner />
 			<Popup />
+			<Menu />
 
 			<div className="app__mid">
 				<NavBottom />

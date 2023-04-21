@@ -1,20 +1,28 @@
 import React, { useContext, Suspense } from "react"
 import "./index.scss"
 import { Context } from "../../Context"
+import useOutside from "../../hooks/useOutside"
 
 export default function Popup() {
 
 	const { popupElement } = useContext(Context)
 	const VariableComponent = React.lazy(() => import(`../Forms/${popupElement}`))
+	const { ref, isComponentVisible } = useOutside(true)
 
 	return (
 		popupElement &&
-		<div className="popup">
 
-			<Suspense fallback={<div>Loading...</div>}>
-				<VariableComponent />
-			</Suspense>
+		<div ref={ref}>
+			{isComponentVisible &&
 
+				<div className="popup">
+
+					<Suspense fallback={<div>Loading...</div>}>
+						<VariableComponent />
+					</Suspense>
+
+				</div>
+			}
 		</div>
 	)
 }

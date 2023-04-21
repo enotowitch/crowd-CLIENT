@@ -21,8 +21,8 @@ export default function Header() {
 
 			{!user &&
 				<div className="f g">
-					<Button text="Log In" btnClassName="btn_out" onClick={() => popupElementSet("Login")} />
-					<Button text="Sign Up" onClick={() => popupElementSet("Register")} />
+					<Button text="Log In" btnClassName="btn_out" onClick={() => popupElementSet("Login")} ignoreOutside="true" />
+					<Button text="Sign Up" onClick={() => popupElementSet("Register")} ignoreOutside="true" />
 				</div>
 			}
 		</header>

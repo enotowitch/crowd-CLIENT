@@ -5,6 +5,11 @@ const instance = axios.create({
 	baseURL: baseURL
 })
 
+instance.interceptors.request.use(config => {
+	config.headers.Authorization = localStorage.getItem("token")
+	return config
+})
+
 // !! ARTICLE
 export const addArticle = async (value) => {
 	try {
@@ -47,6 +52,15 @@ export const likeArticle = async (id) => {
 export const auth = async (type, form) => {
 	try {
 		const { data } = await instance.post(`/auth`, { type, ...form })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const autoAuth = async () => {
+	try {
+		const { data } = await instance.post(`/autoAuth`)
 		return data
 	} catch (error) {
 		console.log(error)

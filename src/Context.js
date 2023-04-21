@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react"
-import * as api from "./api"
+import React, { useState } from "react"
+import useUser from "./hooks/useUser"
 
 const Context = React.createContext()
 
 function ContextProvider(props) {
 
 	const [popupElement, popupElementSet] = useState()
+	const [user] = useUser()
 
 	// ! RETURN
 	return (

@@ -124,6 +124,9 @@ input{
 .jcsb{
 	justify-content: space-between;
 }
+.dn{
+	display: none;
+}
 // ? flex & display
 // ! position
 .c{
@@ -132,14 +135,17 @@ input{
 	transform: translate(-50%);
 }
 // ? position
-// ! font
+// ! font & text
 .fw500{
 	font-weight: 500;
 }
 .fw700{
 	font-weight: 700;
 }
-// ? font
+.tac{
+	text-align: center;
+}
+// ? font & text
 // ! width
 .w100{
 	width: 100%;
@@ -148,6 +154,9 @@ input{
 // ! other
 .brand{
 	color: $brand;
+}
+.danger{
+	color: $danger;
 }
 .black{
 	color: $black;

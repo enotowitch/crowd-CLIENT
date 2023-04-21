@@ -2,24 +2,13 @@ import React from "react"
 import "./index.scss"
 import Input from "../FormElements/Input"
 import IconText from "../IconText/IconText"
-import * as api from "../../api"
+import useAuth from "../../hooks/useAuth"
+import ErrorMsg from "../FormElements/ErrorMsg"
 
 
 export default function Auth({ children, type }) { // type=Log In/Sign Up
 
-	async function onSubmit(e) {
-		e.preventDefault()
-
-		let form = {} // {"email": "@","password": "123","user name": "abc"}
-
-		// put all input values to "form"
-		e.target.querySelectorAll("input").forEach(each => {
-			form = { ...form, [each.name]: each.value }
-		})
-
-		const res = await api.auth(type, form)
-		console.log(res)
-	}
+	const { onSubmit, errorMsg } = useAuth(type)
 
 	return (
 		<form className="fc" onSubmit={onSubmit}>
@@ -31,6 +20,8 @@ export default function Auth({ children, type }) { // type=Log In/Sign Up
 			{children}
 
 			<button>{type}</button>
+
+			<ErrorMsg text={errorMsg} />
 		</form>
 	)
 }

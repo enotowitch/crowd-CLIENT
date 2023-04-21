@@ -5,6 +5,7 @@ const instance = axios.create({
 	baseURL: baseURL
 })
 
+// !! ARTICLE
 export const addArticle = async (value) => {
 	try {
 		const { data } = await instance.post("/addArticle", { value })
@@ -40,3 +41,15 @@ export const likeArticle = async (id) => {
 		console.log(error)
 	}
 }
+// ?? ARTICLE
+
+// !! USER
+export const auth = async (type, form) => {
+	try {
+		const { data } = await instance.post(`/auth`, { type, ...form })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? USER

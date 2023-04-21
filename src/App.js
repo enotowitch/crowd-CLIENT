@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom"
 import NavBottom from "./components/Navs/NavBottom"
 import Header from "./components/Navs/Header"
 import Banner from "./components/Banner/Banner"
+import Popup from "./components/Popup/Popup"
 
 export default function App() {
 
@@ -14,6 +15,7 @@ export default function App() {
 
 			<Header />
 			<Banner />
+			<Popup />
 
 			<div className="app__mid">
 				<NavBottom />

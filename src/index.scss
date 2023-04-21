@@ -15,7 +15,7 @@ a{
 		color: $white;
 	}
 }
-
+// ! button
 button{
 	height: 56px;
 	background: $brand;
@@ -35,6 +35,16 @@ button{
 		background: $light;
 	}
 }
+// ? button
+// ! input
+input{
+	height: 50px;
+	padding: 10px 20px;
+	border: 1px solid #B8B8B8;
+	border-radius: 8px;
+	min-width: 220px;
+}
+// ? input
 // ?? GLOBAL
 
 .app{
@@ -88,7 +98,13 @@ button{
 	margin: 0;
 }
 // ? margin
-// ! flex
+// ! flex & display
+.db{
+	display: block;
+}
+.dib{
+	display: inline-block;
+}
 .f{
 	display: flex;
 	flex-wrap: wrap;
@@ -108,7 +124,7 @@ button{
 .jcsb{
 	justify-content: space-between;
 }
-// ? flex
+// ? flex & display
 // ! position
 .c{
 	position: relative;
@@ -130,6 +146,15 @@ button{
 }
 // ? width
 // ! other
+.brand{
+	color: $brand;
+}
+.black{
+	color: $black;
+}
+.white{
+	color: $white;
+}
 .br{
 	outline: 1px solid red;
 }

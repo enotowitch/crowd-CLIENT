@@ -1,18 +1,41 @@
-@media (max-width:700px) {
+@import "./vars.scss";
+
+@media (max-width:$breakpointMobile) {
+	// * HIDE main logo text on mobile
 	.logo .iconText{
 		&__text{
 			display: none;
 		}
 	}
+	// ! logo_user
+	// * HIDE logo_user on destop (in Header); SHOW logo_user on mobile (in Menu)
+	.logo_user{
+		display: none !important;
+	}
+	.menu .logo_user{
+		display: flex !important;
+	}
+	// ? logo_user
 	// !!
 	header button{
 		display: none;
+	}
+	// TODO: add media.scss to every folder like: Navs, Profile, Form, etc...
+	.app{
+		padding: 0;
+	}
+	.navBottom{
+		display: none;
+	}
+	// * HIDE navBottom on destop; SHOW navBottom on mobile (in Menu)
+	.menu .navBottom{
+		display: block;
 	}
 }
 
 
 // ! > 700px
-@media (min-width:701px) {
+@media (min-width:($breakpointMobile+1)) {
 	.burger{
 		display: none;
 	}

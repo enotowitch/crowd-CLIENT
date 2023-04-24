@@ -28,8 +28,9 @@ nav{
 	font-size: 22px;
 	border-radius: $borderRadiusBig;
 	// !!
+	// * distance between IconText(s) in NavBottom/Nav...
 	a{
-		margin-bottom: 30px;
+		margin-bottom: 15px;
 		width: $widthSmall;
 	}
 }
@@ -73,7 +74,7 @@ nav{
  }
  .burger__btn {
 	 position: fixed;
-	 top: 55px;
+	 top: 25px;
 	 right: 20px;
 	 padding:20px 0;
 	width: 40px;

@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./index.scss"
 import IconText from "../IconText/IconText"
 import useLogOut from "../../hooks/useLogOut"
+import { Context } from "../../Context"
 
-export default function ProfileMenu({ showProfileMenu }) {
+export default function ProfileMenu() {
 
 	const { logOut } = useLogOut()
+	const { showProfileMenu } = useContext(Context)
 
 	return (
 		showProfileMenu &&

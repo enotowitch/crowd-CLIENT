@@ -3,6 +3,7 @@ import "./index.scss"
 import NavBottom from "./NavBottom"
 import { Context } from "../../Context"
 import HeaderButtons from "./HeaderButtons"
+import ProfileTop from "../Profile/ProfileTop"
 
 export default function Menu() {
 
@@ -12,6 +13,7 @@ export default function Menu() {
 		showMenu &&
 
 		<div className="menu">
+			<ProfileTop />
 			<HeaderButtons />
 			<NavBottom />
 		</div>

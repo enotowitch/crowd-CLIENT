@@ -2,8 +2,8 @@
 
 .profileMenu{
 	position: absolute;
-	top: 129px;
-	right: 40px;
+	top: 100px;
+	right: 0px;
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
@@ -11,4 +11,12 @@
 	background: $light;
 	min-width: 290px;
 	border-radius: $borderRadiusBig;
+}
+
+// !!
+@media (max-width:$breakpointMobile) {
+	.menu .profileMenu{
+		left: 0px;
+		top: 110px;
+	}
 }

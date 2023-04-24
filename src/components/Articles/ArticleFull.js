@@ -7,6 +7,7 @@ import IconText from "../IconText/IconText";
 import useArticleFull from "../../hooks/useArticleFull"
 import useTimeAgo from "../../hooks/useTimeAgo";
 import useTimeRead from "../../hooks/timeRead";
+import Icon2Text from "../IconText/Icon2Text";
 
 export default function ArticleFull() {
 
@@ -18,12 +19,16 @@ export default function ArticleFull() {
 
 	return (
 		<div className="articleFull">
+			<div className="brand">Blog</div>
+
 			<IconText src={article?.tag} text={article?.tag} iconClassName="icon_small mr05" className="tag" />
 
-			<div className="f g">
-				{timeAgo(article?.createdAt)}
-				<IconText src="dot" text={timeRead(article?.value)} iconClassName="icon_small mr" />
-			</div>
+			<Icon2Text src="logo author" text="By Crypto.io Global" iconClassName="icon_big">
+				<div className="f g">
+					{timeAgo(article?.createdAt)}
+					<IconText src="dot" text={timeRead(article?.value)} iconClassName="icon_small mr" />
+				</div>
+			</Icon2Text>
 
 			{<Markdown>{article?.value}</Markdown>}
 

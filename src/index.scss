@@ -69,6 +69,12 @@ input:not([type="checkbox"]){
 		width: fit-content !important;
 		border-radius: 0px !important;
 	}
+	&_big{
+		height: 90px !important;
+		width: 90px !important;
+		width: fit-content !important;
+		border-radius: 0px !important;
+	}
 }
 
 // !! SHORTCUTS
@@ -114,6 +120,10 @@ input:not([type="checkbox"]){
 }
 .if{
 	display: inline-flex;
+}
+.ifc{
+	display: inline-flex;
+	flex-direction: column;
 }
 .fc{
 	display: flex;

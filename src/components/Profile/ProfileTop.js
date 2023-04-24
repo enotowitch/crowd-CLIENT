@@ -7,14 +7,14 @@ import ProfileMenu from "./ProfileMenu"
 export default function ProfileTop() {
 
 	const { user } = useUser()
-	const [showMenu, showMenuSet] = useState(false)
+	const [showProfileMenu, showProfileMenuSet] = useState(false)
 
 	return (
 		user &&
 
 		<>
-			<IconText src="userDummy" text={user?.["user name"]} onClick={() => showMenuSet(prev => !prev)} />
-			<ProfileMenu showMenu={showMenu} />
+			<IconText src="userDummy" text={user?.["user name"]} onClick={() => showProfileMenuSet(prev => !prev)} />
+			<ProfileMenu showProfileMenu={showProfileMenu} />
 		</>
 	)
 }

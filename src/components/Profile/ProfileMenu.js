@@ -3,12 +3,12 @@ import "./index.scss"
 import IconText from "../IconText/IconText"
 import useLogOut from "../../hooks/useLogOut"
 
-export default function ProfileMenu({ showMenu }) {
+export default function ProfileMenu({ showProfileMenu }) {
 
 	const { logOut } = useLogOut()
 
 	return (
-		showMenu &&
+		showProfileMenu &&
 
 		<div className="profileMenu">
 			<IconText src="profile" text="My Profile" />

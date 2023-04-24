@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import "./index.scss"
+import "./media.scss"
 import NavBottom from "./NavBottom"
 import { Context } from "../../Context"
 import HeaderButtons from "./HeaderButtons"

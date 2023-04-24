@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import "./index.scss"
+import "./media.scss"
 import { Link } from "react-router-dom"
 import { Context } from "../../Context"
 

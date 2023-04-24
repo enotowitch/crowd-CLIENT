@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./index.scss"
+import "./media.scss"
 
 export default function Input(props) {
 

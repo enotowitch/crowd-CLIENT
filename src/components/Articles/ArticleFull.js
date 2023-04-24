@@ -1,5 +1,6 @@
 import React from "react"
 import "./index.scss"
+import "./media.scss"
 import Markdown from "marked-react";
 import { useParams } from "react-router-dom";
 import IconText from "../IconText/IconText";

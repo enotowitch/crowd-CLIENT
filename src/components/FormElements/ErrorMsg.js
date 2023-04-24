@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import "./index.scss"
+import "./media.scss"
 
 export default function ErrorMsg({ text }) {
 

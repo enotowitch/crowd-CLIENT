@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import "./index.scss"
+import "./media.scss"
 import IconText from "../IconText/IconText"
 import useLogOut from "../../hooks/useLogOut"
 import { Context } from "../../Context"

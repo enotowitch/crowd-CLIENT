@@ -1,5 +1,6 @@
 import React from "react"
 import "./index.scss"
+import "./media.scss"
 import Button from "../../components/FormElements/Button"
 import IconText from "../IconText/IconText"
 import useArticleLikes from "../../hooks/useArticleLikes"

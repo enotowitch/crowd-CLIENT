@@ -1,5 +1,6 @@
 import React, { useContext, Suspense } from "react"
 import "./index.scss"
+import "./media.scss"
 import { Context } from "../../Context"
 import useOutside from "../../hooks/useOutside"
 

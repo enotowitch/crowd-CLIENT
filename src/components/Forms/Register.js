@@ -1,5 +1,6 @@
 import React from "react"
 import "./index.scss"
+import "./media.scss"
 import Auth from "./Auth"
 import Input from "../FormElements/Input"
 

@@ -1,5 +1,6 @@
 import React from "react"
 import "./index.scss"
+import "./media.scss"
 import IconText from "../IconText/IconText"
 
 export default function NavBottom() {

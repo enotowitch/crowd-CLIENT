@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import "./index.scss"
+import "./media.scss"
 import Button from "../FormElements/Button"
 import { Context } from "../../Context"
 import useUser from "../../hooks/useUser"

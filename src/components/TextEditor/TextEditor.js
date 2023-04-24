@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import Select from "../FormElements/Select";
+import Input from "../FormElements/Input";
 import "./index.scss"
 import "./media.scss"
 import useArticle from "../../hooks/useArticle"
@@ -17,10 +18,12 @@ export default function TextEditor() {
 	const { addArticle } = useArticle(value)
 
 	return (
-		<form className="textEditor" onSubmit={addArticle}>
+		<form className="textEditor fc" onSubmit={addArticle}>
+			<Input name="title" placeholder="title" />
+			<Input name="card text change this field later" placeholder="card text" />
 			<Select name="tag" options={["bricks", "realt"]} />
 			<SimpleMDE value={value} onChange={onChange} />
-			<button>Add Article</button>
+			<button className="c wfc">Add Article</button>
 		</form>
 	)
 }

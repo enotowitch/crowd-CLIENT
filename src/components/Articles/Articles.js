@@ -12,14 +12,13 @@ export default function Articles() {
 			{
 				articles?.map(article => {
 
-					const title = article.value.match(/(?:#+)(.+)/)?.[1] // * match (#) .+ ...\n
 					const img = article.value.match(/((https|http).+)(?:\))/)?.[1] // * match http(s) .+ ...)
 
 					return (
 						<ArticleCard
 							key={article._id}
 							id={article._id}
-							title={title}
+							title={article.title}
 							img={img}
 							views={article.views}
 							likes={article.likes.length}

@@ -21,6 +21,8 @@ export default function ArticleFull() {
 		<div className="articleFull">
 			<div className="brand">Blog</div>
 
+			<h2>{article?.title}</h2>
+
 			<IconText src={article?.tag} text={article?.tag} iconClassName="icon_small mr05" className="tag" />
 
 			<Icon2Text src="logo author" text="By Crypto.io Global" iconClassName="icon_big">

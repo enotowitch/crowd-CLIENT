@@ -9,7 +9,7 @@ export default function useArticle(value) {
 		const { form } = parseForm(e)
 
 		const res = await api.addArticle({ ...form, value })
-		console.log(res)
+		res && (window.location.href = `/article/${res._id}`)
 	}
 
 	return (

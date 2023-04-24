@@ -41,6 +41,11 @@
 	> * {
 		margin-bottom: 15px;
 	}
+	// * underline links in articleFull (textEditor wraps `a` with `p` tag)
+	p a{
+		text-decoration: underline;
+		color: $brand;
+	}
 }
 
 .tag{

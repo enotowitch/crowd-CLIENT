@@ -15,7 +15,7 @@ export default function LogoUser() {
 			src="userDummy"
 			text={user?.["user name"]}
 			onClick={() => showProfileMenuSet(prev => !prev)}
-			className="logo_user"
+			className="logo_user ml"
 		/>
 	)
 }

@@ -23,7 +23,7 @@ nav{
 	display: flex;
 	flex-direction: column;
 	width: $widthSmall;
-	padding: 25px;
+	padding: 15px;
 	background: $light;
 	font-size: 22px;
 	border-radius: $borderRadiusBig;
@@ -53,6 +53,16 @@ nav{
 }
 // ? menu
 
+// ! logo(s)
+.logo{
+	&_user{
+		position: relative;
+		z-index: 2;
+	}
+}
+// ? logo(s)
+
+
 // ! Burger
 #burger__toggle {
 	opacity: 0;
@@ -73,7 +83,7 @@ nav{
 	left: 0 !important;
  }
  .burger__btn {
-	 position: fixed;
+	 position: absolute;
 	 top: 25px;
 	 right: 20px;
 	 padding:20px 0;

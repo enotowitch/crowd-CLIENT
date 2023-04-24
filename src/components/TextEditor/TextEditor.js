@@ -3,6 +3,8 @@ import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import Button from "../FormElements/Button";
 import * as api from "../../api"
+import "./index.scss"
+import "./media.scss"
 
 export default function TextEditor() {
 
@@ -18,7 +20,7 @@ export default function TextEditor() {
 	}
 
 	return (
-		<div className="w100">
+		<div className="textEditor">
 			<SimpleMDE value={value} onChange={onChange} />
 			<Button text="Add Article" onClick={addArticle} btnClassName="c" />
 		</div>

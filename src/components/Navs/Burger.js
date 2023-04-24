@@ -3,14 +3,22 @@ import { Context } from "../../Context"
 
 export default function Burger() {
 
-	const { showMenuSet } = useContext(Context)
+	const { showMenu, showMenuSet } = useContext(Context)
 
 	return (
 		<div className="burger">
-			<input id="burger__toggle" type="checkbox" onClick={() => showMenuSet(prev => !prev)} />
+
+			<input
+				id="burger__toggle"
+				type="checkbox"
+				onClick={() => showMenuSet(prev => !prev)}
+				checked={showMenu}
+			/>
+
 			<label className="burger__btn" htmlFor="burger__toggle">
 				<span></span>
 			</label>
+
 		</div>
 	)
 }

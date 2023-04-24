@@ -1,5 +1,6 @@
 @import "../../vars.scss";
 
+// ! < 768px or $breakpointMobile
 @media (max-width:$breakpointMobile) {
 	// !!
 	header button{
@@ -32,7 +33,7 @@
 }
 
 
-// ! > 700px
+// ! > 768px or $breakpointMobile
 @media (min-width:($breakpointMobile+1)) {
 	.burger{
 		display: none;

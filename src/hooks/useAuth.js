@@ -1,5 +1,6 @@
 import { useState } from "react"
 import * as api from "../api"
+import parseForm from "../utils/parseForm"
 
 export default function useAuth(type) { // type=Log In/Sign Up
 
@@ -8,12 +9,7 @@ export default function useAuth(type) { // type=Log In/Sign Up
 	async function onSubmit(e) {
 		e.preventDefault()
 
-		let form = {} // {"email": "@","password": "123","user name": "abc"}
-
-		// put all input values to "form"
-		e.target.querySelectorAll("input").forEach(each => {
-			form = { ...form, [each.name]: each.value }
-		})
+		const { form } = parseForm(e)
 
 		const res = await api.auth(type, form)
 

@@ -67,6 +67,7 @@ input:not([type="checkbox"]){
 	&_small{
 		height: 16px !important;
 		width: fit-content !important;
+		border-radius: 0px !important;
 	}
 }
 
@@ -110,6 +111,9 @@ input:not([type="checkbox"]){
 .f{
 	display: flex;
 	flex-wrap: wrap;
+}
+.if{
+	display: inline-flex;
 }
 .fc{
 	display: flex;

@@ -11,9 +11,9 @@ instance.interceptors.request.use(config => {
 })
 
 // !! ARTICLE
-export const addArticle = async (value) => {
+export const addArticle = async (formAndValue) => {
 	try {
-		const { data } = await instance.post("/addArticle", { value })
+		const { data } = await instance.post("/addArticle", { ...formAndValue })
 		return data
 	} catch (error) {
 		console.log(error)

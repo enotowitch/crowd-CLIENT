@@ -17,12 +17,13 @@ export default function Articles() {
 
 					return (
 						<ArticleCard
-							key={article.id}
+							key={article._id}
 							id={article._id}
 							title={title}
 							img={img}
 							views={article.views}
 							likes={article.likes.length}
+							tag={article.tag}
 						/>
 					)
 				})

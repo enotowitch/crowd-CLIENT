@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
-import Button from "../FormElements/Button";
-import * as api from "../../api"
+import Select from "../FormElements/Select";
 import "./index.scss"
 import "./media.scss"
+import useArticle from "../../hooks/useArticle"
 
 export default function TextEditor() {
 
@@ -12,17 +12,15 @@ export default function TextEditor() {
 
 	const onChange = useCallback((value) => {
 		valueSet(value);
-	}, []);
+	}, [])
 
-	async function addArticle() {
-		const res = await api.addArticle(value)
-		console.log(res)
-	}
+	const { addArticle } = useArticle(value)
 
 	return (
-		<div className="textEditor">
+		<form className="textEditor" onSubmit={addArticle}>
+			<Select name="tag" options={["bricks", "realt"]} />
 			<SimpleMDE value={value} onChange={onChange} />
-			<Button text="Add Article" onClick={addArticle} btnClassName="c" />
-		</div>
+			<button>Add Article</button>
+		</form>
 	)
 }

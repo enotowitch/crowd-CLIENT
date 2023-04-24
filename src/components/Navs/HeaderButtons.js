@@ -7,7 +7,7 @@ import useUser from "../../hooks/useUser"
 export default function HeaderButtons() {
 
 	const { popupElementSet } = useContext(Context)
-	const [user] = useUser()
+	const { user } = useUser()
 
 	return (
 		!user &&

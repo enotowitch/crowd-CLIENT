@@ -8,7 +8,7 @@ import useArticleFull from "../../hooks/useArticleFull"
 export default function ArticleFull() {
 
 	const { id } = useParams()
-	const [article] = useArticleFull(id)
+	const { article } = useArticleFull(id)
 
 
 	return (

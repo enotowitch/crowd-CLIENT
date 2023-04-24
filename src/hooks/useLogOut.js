@@ -2,7 +2,7 @@ import useUser from "./useUser"
 
 export default function useLogOut() {
 
-	const [user, userSet] = useUser() // ! don't touch user
+	const { userSet } = useUser()
 
 	function logOut() {
 		userSet("")
@@ -11,6 +11,6 @@ export default function useLogOut() {
 	}
 
 	return (
-		[logOut]
+		{ logOut }
 	)
 }

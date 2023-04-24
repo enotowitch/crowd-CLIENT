@@ -6,7 +6,7 @@ import useArticleLikes from "../../hooks/useArticleLikes"
 
 export default function ArticleCard({ title, img, id, views, likes }) {
 
-	const [likeCount, likeArticle] = useArticleLikes(id, likes)
+	const { likeCount, likeArticle } = useArticleLikes(id, likes)
 
 	return (
 		<div className="articleCard">

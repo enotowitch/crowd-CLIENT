@@ -4,7 +4,7 @@ import useArticles from "../../hooks/useArticles";
 
 export default function Articles() {
 
-	const [articles] = useArticles()
+	const { articles } = useArticles()
 
 	return (
 		<div className="articles">

@@ -15,6 +15,6 @@ export default function useUser() {
 	}, [])
 
 	return (
-		[user, userSet]
+		{ user, userSet }
 	)
 }

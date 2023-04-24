@@ -5,7 +5,7 @@ import useLogOut from "../../hooks/useLogOut"
 
 export default function ProfileMenu({ showMenu }) {
 
-	const [logOut] = useLogOut()
+	const { logOut } = useLogOut()
 
 	return (
 		showMenu &&

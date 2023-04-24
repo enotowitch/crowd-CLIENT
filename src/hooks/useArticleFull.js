@@ -16,6 +16,6 @@ export default function useArticleFull(id) {
 
 
 	return (
-		[article]
+		{ article }
 	)
 }

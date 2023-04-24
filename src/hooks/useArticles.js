@@ -15,6 +15,6 @@ export default function useArticles() {
 	}, [])
 
 	return (
-		[articles]
+		{articles}
 	)
 }

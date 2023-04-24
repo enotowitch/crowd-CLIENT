@@ -11,6 +11,6 @@ export default function useArticleLikes(id, likes) { // id=articleId likes=dbLik
 	}
 
 	return (
-		[likeCount, likeArticle]
+		{ likeCount, likeArticle }
 	)
 }

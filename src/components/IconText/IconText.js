@@ -12,10 +12,12 @@ export default function IconText(props) {
 	const { showMenuSet } = useContext(Context)
 
 	let src_
-	try {
-		src_ = require(`../../img/${src}.svg`)
-	} catch (error) {
-		src_ = require(`../../img/${src}.png`)
+	if (src) {
+		try {
+			src_ = require(`../../img/${src}.svg`)
+		} catch (error) {
+			src_ = require(`../../img/${src}.png`)
+		}
 	}
 
 	return (

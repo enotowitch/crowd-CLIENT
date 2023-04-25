@@ -4,7 +4,7 @@ import "./media.scss"
 
 export default function Select(props) {
 
-	const { className } = props // ! don't touch {...props}
+	const { className, options } = props // ! don't touch {...props}
 
 	const [value, valueSet] = useState()
 
@@ -15,7 +15,7 @@ export default function Select(props) {
 			className={className}
 			{...props}
 		>
-			{props.options.map(option => <option>{option}</option>)}
+			{options.map(option => <option>{option}</option>)}
 		</select>
 	)
 }

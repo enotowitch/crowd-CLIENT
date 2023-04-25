@@ -10,6 +10,7 @@ export default function Comments({ articleId }) {
 
 	return (
 		<>
+			{/* TODO: ended here */}
 			{comments?.map(com => <div>{com.value}</div>)}
 			<AddComment />
 		</>

@@ -11,7 +11,6 @@ export default function Login() {
 					<div>Remember Me</div>
 					<div>Forgot Password</div>
 				</div>
-
 			</Auth>
 		</>
 	)

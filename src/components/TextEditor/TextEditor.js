@@ -1,13 +1,12 @@
 import React, { useCallback, useState } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
-import Select from "../FormElements/Select";
-import Input from "../FormElements/Input";
 import "./index.scss"
 import "./media.scss"
 import useArticle from "../../hooks/useArticle"
+import useComment from "../../hooks/useComment";
 
-export default function TextEditor() {
+export default function TextEditor({ children, btnText, fn }) {
 
 	const [value, valueSet] = useState("")
 
@@ -15,14 +14,17 @@ export default function TextEditor() {
 		valueSet(value);
 	}, [])
 
+	// * functions are gray because of eval(fn)
 	const { addArticle } = useArticle(value)
+	const { addComment } = useComment(value)
 
 	return (
-		<form className="textEditor fc" onSubmit={addArticle}>
-			<Input name="title" placeholder="title" />
-			<Select name="tag" options={["bricks", "realt"]} />
+		<form className="textEditor fc" onSubmit={eval(fn)}>
+
+			{children}
+
 			<SimpleMDE value={value} onChange={onChange} />
-			<button className="c wfc">Add Article</button>
+			<button className="c wfc">{btnText}</button>
 		</form>
 	)
 }

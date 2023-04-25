@@ -7,7 +7,7 @@ export default function Articles() {
 	const { articles } = useArticles()
 
 	return (
-		<div className="articles">
+		<section className="articles">
 
 			{
 				articles?.map(article => {
@@ -35,6 +35,6 @@ export default function Articles() {
 				})
 			}
 
-		</div>
+		</section>
 	)
 }

@@ -8,6 +8,7 @@ import Header from "./components/Navs/Header"
 import Banner from "./components/Banner/Banner"
 import Popup from "./components/Popup/Popup"
 import Menu from "./components/Navs/Menu"
+import AddArticle from "./components/Articles/AddArticle"
 
 export default function App() {
 
@@ -23,7 +24,7 @@ export default function App() {
 				<NavBottom />
 
 				<Routes>
-					<Route exact path="add-article" element={<TextEditor />} />
+					<Route exact path="add-article" element={<AddArticle />} />
 					<Route exact path="articles" element={<Articles />} />
 					<Route exact path="article/:id" element={<ArticleFull />} />
 				</Routes>

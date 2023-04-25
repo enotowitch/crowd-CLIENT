@@ -45,6 +45,10 @@ input:not([type="checkbox"]), select{
 	min-width: 220px;
 }
 // ? input
+section{
+	padding: 15px;
+	border-radius: $borderRadiusBig;
+}
 // ?? GLOBAL
 
 .app{

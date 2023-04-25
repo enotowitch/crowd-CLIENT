@@ -1,7 +1,7 @@
 import * as api from "../api"
 import parseForm from "../utils/parseForm"
 
-export default function useArticle(value) {
+export default function useArticle(value) { // value=textEditor value
 
 	async function addArticle(e) {
 		e.preventDefault()

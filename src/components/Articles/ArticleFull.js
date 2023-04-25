@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./index.scss"
 import "./media.scss"
 import Markdown from "marked-react";
@@ -8,17 +8,24 @@ import useArticleFull from "../../hooks/useArticleFull"
 import useTimeAgo from "../../hooks/useTimeAgo";
 import useTimeRead from "../../hooks/timeRead";
 import Icon2Text from "../IconText/Icon2Text";
+import Comments from "../Comments/Comments";
+import { Context } from "../../Context";
 
 export default function ArticleFull() {
 
+	// TODO id=articleId
 	const { id } = useParams()
 	const { article } = useArticleFull(id)
 	const { timeAgo } = useTimeAgo()
 	const { timeRead } = useTimeRead()
 
+	// * article id user is watching now (for creating comments)
+	const { watchingArticleSet } = useContext(Context)
+	watchingArticleSet(id)
+
 
 	return (
-		<div className="articleFull">
+		<section className="articleFull">
 			<div className="brand">Blog</div>
 
 			<h2>{article?.title}</h2>
@@ -38,6 +45,9 @@ export default function ArticleFull() {
 				<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
 				<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small mr05" />
 			</div>
-		</div>
+
+			{/* TODO id=articleId */}
+			<Comments id={id} />
+		</section>
 	)
 }

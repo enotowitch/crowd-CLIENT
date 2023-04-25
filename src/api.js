@@ -67,3 +67,23 @@ export const autoAuth = async () => {
 	}
 }
 // ?? USER
+
+// !! COMMENT
+export const addComment = async (value, articleId) => {
+	try {
+		const { data } = await instance.post(`/addComment`, { value, articleId })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const getComments = async (articleId) => {
+	try {
+		const { data } = await instance.post(`/getComments`, { articleId })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? COMMENT

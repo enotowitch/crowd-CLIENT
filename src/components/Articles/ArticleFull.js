@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import "./index.scss"
 import "./media.scss"
 import Markdown from "marked-react";
@@ -9,7 +9,6 @@ import useTimeAgo from "../../hooks/useTimeAgo";
 import useTimeRead from "../../hooks/useTimeRead";
 import Icon2Text from "../IconText/Icon2Text";
 import Comments from "../Comments/Comments";
-import { Context } from "../../Context";
 
 export default function ArticleFull() {
 
@@ -17,10 +16,6 @@ export default function ArticleFull() {
 	const { article } = useArticleFull(articleId)
 	const { timeAgo } = useTimeAgo()
 	const { timeRead } = useTimeRead()
-
-	// * articleId user is watching now (for creating comments)
-	const { watchingArticleSet } = useContext(Context)
-	watchingArticleSet(articleId)
 
 
 	return (

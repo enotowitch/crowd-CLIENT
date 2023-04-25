@@ -20,7 +20,6 @@ export default function TextEditor() {
 	return (
 		<form className="textEditor fc" onSubmit={addArticle}>
 			<Input name="title" placeholder="title" />
-			<Input name="card text change this field later" placeholder="card text" />
 			<Select name="tag" options={["bricks", "realt"]} />
 			<SimpleMDE value={value} onChange={onChange} />
 			<button className="c wfc">Add Article</button>

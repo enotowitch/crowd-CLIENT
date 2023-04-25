@@ -16,6 +16,17 @@
 	}
 }
 
+.cardText, .cardTitle{
+	max-height: 43px;
+	overflow: hidden;
+	font-weight: 200;
+	color: $lightGray;
+}
+.cardTitle{
+	font-weight: 700;
+	color: $white;
+}
+
 .articles{
 	display: flex;
 	justify-content: center;

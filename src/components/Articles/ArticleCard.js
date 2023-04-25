@@ -5,14 +5,15 @@ import Button from "../../components/FormElements/Button"
 import IconText from "../IconText/IconText"
 import useArticleLikes from "../../hooks/useArticleLikes"
 
-export default function ArticleCard({ title, img, id, views, likes, tag }) {
+export default function ArticleCard({ title, img, id, views, likes, tag, cardText }) {
 
 	const { likeCount, likeArticle } = useArticleLikes(id, likes)
 
 	return (
 		<div className="articleCard">
 			<img src={img} className="articleCard__img" />
-			<div>{title}</div>
+			<div className="cardTitle">{title}</div>
+			<div className="cardText">{cardText}</div>
 
 			<div className="f g">
 				<IconText src={tag} text={tag} iconClassName="icon_small mr05" />

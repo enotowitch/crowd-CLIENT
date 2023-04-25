@@ -6,22 +6,21 @@ import { useParams } from "react-router-dom";
 import IconText from "../IconText/IconText";
 import useArticleFull from "../../hooks/useArticleFull"
 import useTimeAgo from "../../hooks/useTimeAgo";
-import useTimeRead from "../../hooks/timeRead";
+import useTimeRead from "../../hooks/useTimeRead";
 import Icon2Text from "../IconText/Icon2Text";
 import Comments from "../Comments/Comments";
 import { Context } from "../../Context";
 
 export default function ArticleFull() {
 
-	// TODO id=articleId
-	const { id } = useParams()
-	const { article } = useArticleFull(id)
+	const { articleId } = useParams()
+	const { article } = useArticleFull(articleId)
 	const { timeAgo } = useTimeAgo()
 	const { timeRead } = useTimeRead()
 
-	// * article id user is watching now (for creating comments)
+	// * articleId user is watching now (for creating comments)
 	const { watchingArticleSet } = useContext(Context)
-	watchingArticleSet(id)
+	watchingArticleSet(articleId)
 
 
 	return (
@@ -46,8 +45,7 @@ export default function ArticleFull() {
 				<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small mr05" />
 			</div>
 
-			{/* TODO id=articleId */}
-			<Comments id={id} />
+			<Comments articleId={articleId} />
 		</section>
 	)
 }

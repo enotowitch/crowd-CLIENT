@@ -26,7 +26,7 @@ export default function App() {
 				<Routes>
 					<Route exact path="add-article" element={<AddArticle />} />
 					<Route exact path="articles" element={<Articles />} />
-					<Route exact path="article/:id" element={<ArticleFull />} />
+					<Route exact path="article/:articleId" element={<ArticleFull />} />
 				</Routes>
 			</div>
 

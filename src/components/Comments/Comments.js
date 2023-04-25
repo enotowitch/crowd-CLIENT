@@ -4,11 +4,9 @@ import "./media.scss"
 import AddComment from "./AddComment"
 import useComments from "../../hooks/useComments"
 
-// TODO id=articleId
-export default function Comments({ id }) { //id=articleId
+export default function Comments({ articleId }) {
 
-	const { comments } = useComments(id)
-	console.log(comments)
+	const { comments } = useComments(articleId)
 
 	return (
 		<>

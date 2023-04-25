@@ -12,10 +12,11 @@ export default function LogoUser() {
 
 	return (
 		<IconText
-			src="userDummy"
-			text={user?.["user name"]}
+			url={user?.img}
+			text={user?.name}
 			onClick={() => showProfileMenuSet(prev => !prev)}
 			className="logo_user ml"
+			iconClassName="icon_mid"
 		/>
 	)
 }

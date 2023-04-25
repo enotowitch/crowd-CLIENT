@@ -1,0 +1,10 @@
+$commentLeft: 72px;
+
+.comment{
+	width: calc(100% - $commentLeft);
+	.Icon2Text .text2{
+		left: $commentLeft;
+		top: -15px;
+		word-break: break-all;
+	}
+}

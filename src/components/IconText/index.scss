@@ -6,11 +6,16 @@
 .Icon2Text{
 	position: relative;
 	.text1,.text2{
-		position: absolute;
-		left: 105px;
-		top: 15px;
+		position: relative;
+		top: -15px;
+	}
+	.text1{
+		font-weight: 700;
 	}
 	.text2{
-		top: 50px;
+		position: relative;
+		top: -40px;
+		left: 105px;
+		font-weight: 200; 
 	}
 }

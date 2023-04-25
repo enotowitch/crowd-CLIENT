@@ -10,7 +10,7 @@ export default function useComment(value) { // value=textEditor value
 		e.preventDefault()
 
 		const res = await api.addComment(value, watchingArticle)
-		console.log(res)
+		res && window.location.reload()
 	}
 
 	return (

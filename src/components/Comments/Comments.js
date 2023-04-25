@@ -3,6 +3,7 @@ import "./index.scss"
 import "./media.scss"
 import AddComment from "./AddComment"
 import useComments from "../../hooks/useComments"
+import Comment from "./Comment"
 
 export default function Comments({ articleId }) {
 
@@ -10,8 +11,8 @@ export default function Comments({ articleId }) {
 
 	return (
 		<>
-			{/* TODO: ended here */}
-			{comments?.map(com => <div>{com.value}</div>)}
+			{comments?.map(obj => <Comment key={obj._id} obj={obj} />)}
+
 			<AddComment />
 		</>
 	)

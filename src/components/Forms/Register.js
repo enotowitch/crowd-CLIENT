@@ -8,7 +8,7 @@ export default function Register() {
 	return (
 		<>
 			<Auth type="Sign Up">
-				<Input name="user name" placeholder="User Name" required />
+				<Input name="name" placeholder="User Name" required />
 			</Auth>
 		</>
 	)

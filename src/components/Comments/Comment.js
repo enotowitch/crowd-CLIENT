@@ -1,20 +1,31 @@
 import React from "react"
 import "./index.scss"
 import "./media.scss"
-import Icon2Text from "../IconText/Icon2Text"
+import Rating from "./Rating"
 
 export default function Comment({ obj }) { //obj=comment
 
-	// user
+	// comment.user
 	const { img, name } = obj.user
 	// comment
-	const { value } = obj
+	let { value, createdAt, _id: commentId } = obj
+	createdAt = createdAt.match(/(.+)(?:T.+)/)[1]
 
 	return (
 		<div className="comment">
-			<Icon2Text url={img} text={name} iconClassName="icon_mid">
+			<div className="f fwn">
+				<img src={img} className="icon_mid" />
+				<div className="comment__title">
+					<div>{name}</div>
+					<div className="f">
+						{createdAt}
+						<Rating commentId={commentId} />
+					</div>
+				</div>
+			</div>
+			<div className="comment__text">
 				{value}
-			</Icon2Text>
+			</div>
 		</div>
 	)
 }

@@ -86,4 +86,13 @@ export const getComments = async (articleId) => {
 		console.log(error)
 	}
 }
+
+export const rateComment = async (act, commentId) => {
+	try {
+		const { data } = await instance.post(`/rateComment`, { act, commentId })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? COMMENT

@@ -85,6 +85,10 @@ section{
 		width: fit-content !important;
 		border-radius: 0px !important;
 	}
+	&_comment{
+		height: 24px !important;
+		width: 24px !important;
+	}
 }
 
 // !! SHORTCUTS
@@ -94,6 +98,9 @@ section{
 }
 .mt{
 	margin-top: 15px;
+}
+.mt05{
+	margin-top: 5px;
 }
 .mr{
 	margin-right: 15px;
@@ -127,6 +134,9 @@ section{
 .f{
 	display: flex;
 	flex-wrap: wrap;
+}
+.fwn{
+	flex-wrap: nowrap;
 }
 .if{
 	display: inline-flex;
@@ -195,6 +205,9 @@ section{
 }
 .white{
 	color: $white;
+}
+.tr180{
+	transform: rotate(180deg);
 }
 .br{
 	outline: 1px solid red;

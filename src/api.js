@@ -55,6 +55,15 @@ export const deleteArticle = async (id) => {
 		console.log(error)
 	}
 }
+
+export const editArticle = async (id, formAndValue) => {
+	try {
+		const { data } = await instance.post(`/editArticle`, { id, ...formAndValue })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? ARTICLE
 
 // !! USER

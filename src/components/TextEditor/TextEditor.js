@@ -6,7 +6,7 @@ import "./media.scss"
 import useArticle from "../../hooks/useArticle"
 import useComment from "../../hooks/useComment";
 
-export default function TextEditor({ children, btnText, fn }) {
+export default function TextEditor({ children, btnText, fn, editValue }) { // children=Input/Select/etc...
 
 	const [value, valueSet] = useState("")
 
@@ -15,7 +15,7 @@ export default function TextEditor({ children, btnText, fn }) {
 	}, [])
 
 	// * functions are gray because of eval(fn)
-	const { addArticle } = useArticle(value)
+	const { addArticle, editArticle } = useArticle(value || editValue)
 	const { addComment } = useComment(value)
 
 	return (
@@ -23,7 +23,7 @@ export default function TextEditor({ children, btnText, fn }) {
 
 			{children}
 
-			<SimpleMDE value={value} onChange={onChange} />
+			<SimpleMDE value={editValue || value} onChange={onChange} />
 			<button className="c wfc" ignoreOutside="true">{btnText}</button>
 		</form>
 	)

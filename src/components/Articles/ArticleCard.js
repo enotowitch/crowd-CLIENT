@@ -18,7 +18,7 @@ export default function ArticleCard({ title, img, id, views, likes, tag, cardTex
 
 			{showTopIcons &&
 				<div className="topIcons">
-					<img src={edit} />
+					<img src={edit} onClick={() => window.location.href = `edit/${id}`} />
 					<img src={del} onClick={(e) => deleteArticle(id, e)} />
 				</div>
 			}

@@ -4,13 +4,13 @@ import "./media.scss"
 
 export default function Select(props) {
 
-	const { className, options } = props // ! don't touch {...props}
+	const { className, options, editValue } = props // ! don't touch {...props}
 
 	const [value, valueSet] = useState()
 
 	return (
 		<select
-			value={value}
+			value={value || editValue}
 			onChange={(e) => valueSet(e.target.value)}
 			className={className}
 			{...props}

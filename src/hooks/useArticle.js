@@ -1,7 +1,9 @@
+import { useContext } from "react"
 import * as api from "../api"
 import parseForm from "../utils/parseForm"
 import useNoUser from "./useNoUser"
 import useValidation from "./useValidation"
+import { Context } from "../Context"
 
 export default function useArticle(value) { // value=textEditor value
 
@@ -33,8 +35,21 @@ export default function useArticle(value) { // value=textEditor value
 		}
 	}
 
+	// ! editArticle
+	const { watchingArticle } = useContext(Context) // * id of article I am editing now
+
+	async function editArticle(e) {
+		e.preventDefault()
+
+		const { form } = parseForm(e)
+		const formAndValue = { ...form, value }
+
+		const res = await api.editArticle(watchingArticle, formAndValue)
+		res.ok && (window.location.href = `/article/${watchingArticle}`)
+	}
+
 
 	return (
-		{ addArticle, deleteArticle }
+		{ addArticle, deleteArticle, editArticle }
 	)
 }

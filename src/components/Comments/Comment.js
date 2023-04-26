@@ -10,7 +10,7 @@ export default function Comment({ obj }) { //obj=comment
 	// comment
 	let { value, createdAt, _id: commentId, likes, dislikes } = obj
 	createdAt = createdAt.match(/(.+)(?:T.+)/)[1]
-	const initRating = likes.length - dislikes.length
+	const initRating = likes.length > dislikes.length ? likes.length : Number(-dislikes.length)
 
 	return (
 		<div className="comment">

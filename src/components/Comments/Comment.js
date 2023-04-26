@@ -2,6 +2,7 @@ import React from "react"
 import "./index.scss"
 import "./media.scss"
 import Rating from "./Rating"
+import Markdown from "marked-react";
 
 export default function Comment({ obj }) { //obj=comment
 
@@ -25,7 +26,7 @@ export default function Comment({ obj }) { //obj=comment
 				</div>
 			</div>
 			<div className="comment__text">
-				{value}
+				<Markdown>{value}</Markdown>
 			</div>
 		</div>
 	)

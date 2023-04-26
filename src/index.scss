@@ -8,6 +8,9 @@
 }
 
 // !! GLOBAL
+body{
+	overflow-x: hidden;
+}
 a{
 	text-decoration: none;
 	color: $white;
@@ -198,6 +201,12 @@ section{
 }
 .tac{
 	text-align: center;
+}
+.title{
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 38px;
+	color: $white;
 }
 // ? font & text
 // ! width

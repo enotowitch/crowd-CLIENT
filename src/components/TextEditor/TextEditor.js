@@ -24,7 +24,7 @@ export default function TextEditor({ children, btnText, fn }) {
 			{children}
 
 			<SimpleMDE value={value} onChange={onChange} />
-			<button className="c wfc">{btnText}</button>
+			<button className="c wfc" ignoreOutside="true">{btnText}</button>
 		</form>
 	)
 }

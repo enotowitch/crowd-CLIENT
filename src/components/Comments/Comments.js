@@ -11,6 +11,9 @@ export default function Comments({ articleId }) {
 
 	return (
 		<>
+			<div className="title">Comments</div>
+			<hr></hr>
+
 			{comments?.map(obj => <Comment key={obj._id} obj={obj} />)}
 
 			<AddComment />

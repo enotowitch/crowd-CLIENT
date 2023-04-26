@@ -8,8 +8,9 @@ export default function Comment({ obj }) { //obj=comment
 	// comment.user
 	const { img, name } = obj.user
 	// comment
-	let { value, createdAt, _id: commentId } = obj
+	let { value, createdAt, _id: commentId, likes, dislikes } = obj
 	createdAt = createdAt.match(/(.+)(?:T.+)/)[1]
+	const initRating = likes.length - dislikes.length
 
 	return (
 		<div className="comment">
@@ -19,7 +20,7 @@ export default function Comment({ obj }) { //obj=comment
 					<div>{name}</div>
 					<div className="f">
 						{createdAt}
-						<Rating commentId={commentId} />
+						<Rating commentId={commentId} initRating={initRating} />
 					</div>
 				</div>
 			</div>

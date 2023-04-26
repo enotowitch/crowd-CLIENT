@@ -4,6 +4,8 @@ import "./media.scss"
 
 export default function Input(props) {
 
+	const { label } = props // ! don't touch {...props}
+
 	const [value, valueSet] = useState("")
 
 	function onChange(e) {
@@ -11,10 +13,14 @@ export default function Input(props) {
 	}
 
 	return (
-		<input
-			value={value}
-			onChange={onChange}
-			{...props}
-		/>
+		<label>
+			<div className="fw600 mt mb">{label}</div>
+
+			<input
+				value={value}
+				onChange={onChange}
+				{...props}
+			/>
+		</label>
 	)
 }

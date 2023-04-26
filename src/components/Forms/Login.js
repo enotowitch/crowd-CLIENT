@@ -9,7 +9,7 @@ export default function Login() {
 			<Auth type="Log In">
 				<div className="f jcsb">
 					<div>Remember Me</div>
-					<div>Forgot Password</div>
+					<div className="brand fw700">Forgot Password</div>
 				</div>
 			</Auth>
 		</>

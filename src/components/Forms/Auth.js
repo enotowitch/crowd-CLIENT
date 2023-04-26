@@ -5,6 +5,7 @@ import Input from "../FormElements/Input"
 import IconText from "../IconText/IconText"
 import useAuth from "../../hooks/useAuth"
 import ErrorMsg from "../FormElements/ErrorMsg"
+import AuthNew from "./AuthNew"
 
 
 export default function Auth({ children, type }) { // type=Log In/Sign Up
@@ -12,17 +13,19 @@ export default function Auth({ children, type }) { // type=Log In/Sign Up
 	const { onSubmit, errorMsg } = useAuth(type)
 
 	return (
-		<form className="fc" onSubmit={onSubmit}>
-			<IconText src="logo auth" text="Crowd Funding Plus" className="fc g black" />
+		<form className="auth" onSubmit={onSubmit}>
+			<IconText src="logo2" text="Copilot Funding" className="fc g black" />
 
-			<Input name="email" type="email" placeholder="Enter Email" required />
-			<Input name="password" type="password" placeholder="Enter Password" required />
+			<Input name="email" label="Email" type="email" placeholder="Enter Email" required />
+			<Input name="password" label="Password" type="password" placeholder="Enter Password" required />
 
 			{children}
 
 			<button>{type}</button>
 
 			<ErrorMsg text={errorMsg} />
+
+			<AuthNew type={type} />
 		</form>
 	)
 }

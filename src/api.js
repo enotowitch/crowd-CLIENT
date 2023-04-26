@@ -86,7 +86,7 @@ export const getComments = async (articleId) => {
 		console.log(error)
 	}
 }
-// test commit
+
 export const rateComment = async (act, commentId) => {
 	try {
 		const { data } = await instance.post(`/rateComment`, { act, commentId })

@@ -1,9 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./index.scss"
 import "./media.scss"
+import IconText from "../IconText/IconText"
+import { Context } from "../../Context"
 
 export default function Alert() {
+
+	const { modalText } = useContext(Context)
+
 	return (
-		<div>ALERT</div>
+		<div className="alert">
+			<IconText src="alert" text={modalText} iconClassName="icon_big" textClassName="black" />
+		</div>
 	)
 }

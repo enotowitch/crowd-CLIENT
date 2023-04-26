@@ -23,7 +23,7 @@ export default function Auth({ children, type }) { // type=Log In/Sign Up
 
 			<button>{type}</button>
 
-			<ErrorMsg text={errorMsg} />
+			{errorMsg && <ErrorMsg text={errorMsg} />}
 
 			<AuthNew type={type} />
 		</form>

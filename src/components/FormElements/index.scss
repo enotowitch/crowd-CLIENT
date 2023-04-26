@@ -1,0 +1,11 @@
+@import "../../vars.scss";
+
+.errorMsg{
+	color: $danger; 
+	border: 1px solid $danger;
+	width: fit-content;
+	margin: 0 auto;
+	padding: 10px;
+	margin-top: 15px;
+	border-radius: $borderRadiusSmall;
+}

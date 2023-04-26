@@ -1,19 +1,18 @@
-import React, { useRef } from "react"
+import React, { useState } from "react"
 import "./index.scss"
 import "./media.scss"
 
 export default function ErrorMsg({ text }) {
 
-	const ref = useRef()
-
-	ref.current?.classList.remove("dn")
-	ref.current?.classList.add("db")
-
-	setTimeout(() => {
-		ref.current?.classList.add("dn")
-	}, 3000);
+	const [show, showSet] = useState(true)
 
 	return (
-		<div className="tac danger" ref={ref}>{text}</div>
+		show &&
+		<>
+			<div className="errorMsg">
+				{text}
+				<span className="ml" onClick={() => showSet(prev => !prev)}>X</span>
+			</div>
+		</>
 	)
 }

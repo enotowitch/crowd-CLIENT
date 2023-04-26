@@ -1,15 +1,28 @@
-import React from "react"
+import React, { useState } from "react"
 import "./index.scss"
 import "./media.scss"
 import IconText from "../IconText/IconText"
 import useArticleLikes from "../../hooks/useArticleLikes"
+import edit from "../../img/edit.svg"
+import del from "../../img/del.svg"
+import useArticle from "../../hooks/useArticle"
 
 export default function ArticleCard({ title, img, id, views, likes, tag, cardText }) {
 
 	const { likeCount, likeArticle } = useArticleLikes(id, likes)
+	const [showTopIcons, showTopIconsSet] = useState(false)
+	const { deleteArticle } = useArticle()
 
 	return (
-		<div className="articleCard">
+		<div className="articleCard" onMouseEnter={() => showTopIconsSet(true)} onMouseLeave={() => showTopIconsSet(false)}>
+
+			{showTopIcons &&
+				<div className="topIcons">
+					<img src={edit} />
+					<img src={del} onClick={(e) => deleteArticle(id, e)} />
+				</div>
+			}
+
 			<img src={img} className="articleCard__img" />
 			<IconText src={tag} text={tag} iconClassName="icon_small mr05" />
 			<div className="cardTitle">{title}</div>

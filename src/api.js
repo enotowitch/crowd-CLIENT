@@ -46,6 +46,15 @@ export const likeArticle = async (id) => {
 		console.log(error)
 	}
 }
+
+export const deleteArticle = async (id) => {
+	try {
+		const { data } = await instance.post(`/deleteArticle`, { id })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? ARTICLE
 
 // !! USER

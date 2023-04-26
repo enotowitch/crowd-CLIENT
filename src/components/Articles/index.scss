@@ -1,6 +1,7 @@
 @import "../../vars.scss";
 
 .articleCard{
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -68,4 +69,21 @@
 	background: $dark;
 	padding: 10px 15px;
 	border-radius: $borderRadiusMax;
+}
+
+.topIcons{
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.animationDelete{
+	animation: animationDelete .5s forwards;
+}
+
+@keyframes animationDelete {
+	to{
+		filter: blur(5px);
+	}
 }

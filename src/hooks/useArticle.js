@@ -5,6 +5,7 @@ import useValidation from "./useValidation"
 
 export default function useArticle(value) { // value=textEditor value
 
+	// ! addArticle
 	const { noUser } = useNoUser()
 	const { validation } = useValidation()
 
@@ -21,7 +22,19 @@ export default function useArticle(value) { // value=textEditor value
 		noUser(res)
 	}
 
+	// ! deleteArticle
+	async function deleteArticle(id, e) {
+		const res = await api.deleteArticle(id)
+		if (res.ok) {
+			e.target.closest(".articleCard").classList.add("animationDelete")
+			setTimeout(() => {
+				e.target.closest(".articleCard").classList.add("dn")
+			}, 500);
+		}
+	}
+
+
 	return (
-		{ addArticle }
+		{ addArticle, deleteArticle }
 	)
 }

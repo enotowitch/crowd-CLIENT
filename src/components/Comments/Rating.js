@@ -9,7 +9,7 @@ export default function Rating({ commentId, initRating }) {
 
 	const { rating, rate } = useRating(commentId)
 	const rating_ = rating || initRating
-	const ratingColor = rating_ > 0 ? "brand" : "danger"
+	const ratingColor = rating_ >= 0 ? "brand" : "danger"
 
 	return (
 		<div className="if">

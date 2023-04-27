@@ -3,11 +3,11 @@ import "./index.scss"
 import "./media.scss"
 import { LinkedinShareButton, LinkedinIcon } from "react-share";
 
-export default function Share() {
+export default function Share({ title }) {
 	return (
 		<LinkedinShareButton
 			url={window.location.href}
-			title={window.location.href}
+			title={title}
 			summary="Description of the shared page"
 			source="Source of the content (e.g. your website or application name)"
 		>

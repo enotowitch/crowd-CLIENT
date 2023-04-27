@@ -40,7 +40,7 @@ export default function ArticleFull() {
 				<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
 				<div className="f g">
 					<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small mr05" />
-					<Share title={article?.title} />
+					<Share title={article?.title} tag={article?.tag} />
 				</div>
 			</div>
 

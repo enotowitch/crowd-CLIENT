@@ -9,6 +9,7 @@ function ContextProvider(props) {
 	const [showProfileMenu, showProfileMenuSet] = useState(false)
 	const [watchingArticle, watchingArticleSet] = useState("") // * article id user is watching now (for creating comments)
 	const [modalText, modalTextSet] = useState("") // for Alert & other modals
+	const [visitedPage, visitedPageSet] = useState("") // for coloring icons depending on page visited
 
 	// ! RETURN
 	return (
@@ -17,7 +18,8 @@ function ContextProvider(props) {
 			showMenu, showMenuSet,
 			showProfileMenu, showProfileMenuSet,
 			watchingArticle, watchingArticleSet,
-			modalText, modalTextSet
+			modalText, modalTextSet,
+			visitedPage, visitedPageSet
 		}}>
 
 			{props.children}

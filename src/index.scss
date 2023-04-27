@@ -10,6 +10,7 @@
 // !! GLOBAL
 body{
 	overflow-x: hidden;
+	background: $dark;
 }
 a{
 	text-decoration: none;
@@ -52,8 +53,14 @@ label input{
 }
 // ? input
 section{
-	padding: 15px;
+	padding: 30px;
+	padding-bottom: 0px;
+}
+// bg color
+header, footer, nav, section{
 	border-radius: $borderRadiusBig;
+	background: $light;
+	color: $white;
 }
 // ?? GLOBAL
 
@@ -207,6 +214,12 @@ section{
 	font-size: 28px;
 	line-height: 38px;
 	color: $white;
+}
+.title2{
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 30px;
+	color: $brand;
 }
 // ? font & text
 // ! width

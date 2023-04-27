@@ -20,31 +20,34 @@ export default function ArticleFull() {
 
 
 	return (
-		<section className="articleFull">
-			<div className="brand">Blog</div>
+		<div className="fc">
+			<section className="articleFull mb">
+				<div className="title2">Blog</div>
 
-			<h2>{article?.title}</h2>
+				<div className="title">{article?.title}</div>
 
-			<IconText src={article?.tag} text={article?.tag} iconClassName="icon_small mr05" className="tag" />
+				<IconText src={article?.tag} text={article?.tag} iconClassName="icon_small mr05" className="tag" />
 
-			<Icon2Text src="logo author" text="By Crypto.io Global" iconClassName="icon_big">
-				<div className="f g">
-					{timeAgo(article?.createdAt)}
-					<IconText src="dot" text={timeRead(article?.value)} iconClassName="icon_small mr" />
+				<Icon2Text src="logo author" text="By Crypto.io Global" iconClassName="icon_big">
+					<div className="f g">
+						{timeAgo(article?.createdAt)}
+						<IconText src="dot" text={timeRead(article?.value)} iconClassName="icon_small mr" />
+					</div>
+				</Icon2Text>
+
+				{<Markdown>{article?.value}</Markdown>}
+
+				<div className="f jcsb">
+					<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
+					<div className="f g">
+						<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small mr05" />
+						<Share title={article?.title} tag={article?.tag} />
+					</div>
 				</div>
-			</Icon2Text>
 
-			{<Markdown>{article?.value}</Markdown>}
-
-			<div className="f jcsb">
-				<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
-				<div className="f g">
-					<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small mr05" />
-					<Share title={article?.title} tag={article?.tag} />
-				</div>
-			</div>
+			</section>
 
 			<Comments articleId={articleId} />
-		</section>
+		</div>
 	)
 }

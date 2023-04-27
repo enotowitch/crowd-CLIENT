@@ -17,9 +17,11 @@ export default function AddArticle() {
 	const fn = isEdit ? "editArticle" : "addArticle"
 
 	return (
-		<TextEditor btnText={btnText} fn={fn} editValue={article?.value}>
-			<Input name="title" placeholder="title" editValue={article?.title} />
-			<Select name="tag" options={["bricks", "realt"]} editValue={article?.tag} />
-		</TextEditor>
+		<section className="w100">
+			<TextEditor btnText={btnText} fn={fn} editValue={article?.value}>
+				<Input name="title" placeholder="title" editValue={article?.title} />
+				<Select name="tag" options={["bricks", "realt"]} editValue={article?.tag} />
+			</TextEditor>
+		</section>
 	)
 }

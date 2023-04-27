@@ -13,9 +13,9 @@ export default function ProfileMenu() {
 	return (
 		showProfileMenu &&
 
-		<div className="profileMenu">
+		<section className="profileMenu">
 			<IconText src="profile" text="My Profile" />
 			<IconText src="log out" text="Log Out" onClick={logOut} />
-		</div>
+		</section>
 	)
 }

@@ -10,13 +10,13 @@ export default function Comments({ articleId }) {
 	const { comments } = useComments(articleId)
 
 	return (
-		<>
+		<section className="comments">
 			<div className="title">Comments</div>
 			<hr></hr>
 
 			{comments?.map(obj => <Comment key={obj._id} obj={obj} />)}
 
 			<AddComment />
-		</>
+		</section>
 	)
 }

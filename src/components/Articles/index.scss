@@ -7,8 +7,9 @@
 	justify-content: space-between;
 	width: $widthSmall;
 	background: $dark;
-	color: $white;
 	border-radius: $borderRadiusBig;
+	max-width: 345px;
+	min-width: 345px;
 	&__img{
 		height: 200px;
 		width: 100%;
@@ -39,14 +40,12 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 15px;
-	background: $light;
 	border-radius: $borderRadiusBig;
+	padding-bottom: 30px;
 }
 
 .articleFull{
 	width: 100%;
-	color: $white;
-	background: $light;
 	// !!
 	img{
 		border-radius: $borderRadiusBig;
@@ -55,7 +54,7 @@
 		object-fit: cover;
 	}
 	> * {
-		margin-bottom: 15px;
+		margin-bottom: 24px;
 	}
 	// * underline links in articleFull (textEditor wraps `a` with `p` tag)
 	p a{

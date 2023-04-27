@@ -16,8 +16,8 @@ export default function useArticle(value) { // value=textEditor value
 
 		const { form } = parseForm(e)
 
-		// validation(form.title, "Article title")
-		// validation(value, "Article text")
+		validation(form.title, "Article title")
+		validation(value, "Article text")
 
 		const res = await api.addArticle({ ...form, value })
 		res.ok && (window.location.href = `/article/${res.id}`)

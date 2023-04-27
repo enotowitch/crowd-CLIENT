@@ -16,8 +16,8 @@ export default function useArticle(value) { // value=textEditor value
 
 		const { form } = parseForm(e)
 
-		validation(form.title, "Article title")
-		validation(value, "Article text")
+		// validation(form.title, "Article title")
+		// validation(value, "Article text")
 
 		const res = await api.addArticle({ ...form, value })
 		res.ok && (window.location.href = `/article/${res.id}`)
@@ -28,9 +28,9 @@ export default function useArticle(value) { // value=textEditor value
 	async function deleteArticle(id, e) {
 		const res = await api.deleteArticle(id)
 		if (res.ok) {
-			e.target.closest(".articleCard").classList.add("animationDelete")
+			e.target.closest(".articleCard")?.classList.add("animationDelete")
 			setTimeout(() => {
-				e.target.closest(".articleCard").classList.add("dn")
+				e.target.closest(".articleCard")?.classList.add("dn")
 			}, 500);
 		}
 	}

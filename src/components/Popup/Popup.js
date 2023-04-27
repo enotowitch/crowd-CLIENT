@@ -4,6 +4,7 @@ import "./media.scss"
 import { Context } from "../../Context"
 import useOutside from "../../hooks/useOutside"
 
+// * all popup `VariableComponents` must be in `Form folder`
 export default function Popup() {
 
 	const { popupElement } = useContext(Context)

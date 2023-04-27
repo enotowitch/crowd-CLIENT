@@ -12,13 +12,13 @@ export default function Articles() {
 			{
 				articles?.map(article => {
 
-					const img = article.value.match(/((https|http).+)(?:\))/)?.[1] // * match http(s) .+ ...)
+					const img = article.value?.match(/((https|http).+)(?:\))/)?.[1] // * match http(s) .+ ...)
 
-					let cardText = article.value.replace(/!\[.*\]/g, "") // * ![abc]
-					cardText = cardText.replace(/\[.*\]/g, "") // * [abc]
-					cardText = cardText.replace(/\(http.*\)/g, "") // * (http...)
-					cardText = cardText.replace(/#|>|\*+/g, "") // * replace #>*
-					cardText = cardText.trim()
+					let cardText = article.value?.replace(/!\[.*\]/g, "") // * ![abc]
+					cardText = cardText?.replace(/\[.*\]/g, "") // * [abc]
+					cardText = cardText?.replace(/\(http.*\)/g, "") // * (http...)
+					cardText = cardText?.replace(/#|>|\*+/g, "") // * replace #>*
+					cardText = cardText?.trim()
 
 					return (
 						<ArticleCard

@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { Context } from "../Context"
 
-export default function useAlert() {
+export default function useModal() {
 
 	const { popupElementSet, modalTextSet } = useContext(Context)
 
@@ -10,12 +10,12 @@ export default function useAlert() {
 		modalTextSet(text)
 	}
 
-	function alertHide() {
+	function modalHide() {
 		popupElementSet("")
 		modalTextSet("")
 	}
 
 	return (
-		{ alert, alertHide }
+		{ alert, modalHide }
 	)
 }

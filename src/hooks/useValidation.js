@@ -1,20 +1,20 @@
-import useAlert from "./useAlert"
+import useModal from "./useModal"
 
 
 export default function useValidation() {
 
-	const { alert, alertHide } = useAlert()
+	const { alert, modalHide } = useModal()
 
 	function validation(value, field) { // value=textEditor value/title/any string...
 
 		let minLength = 3
 
-		if (value.length < minLength) {
+		if (!value || value.length < minLength) {
 			alert(`${field} must have atleast ${minLength} characters!`)
 			throw new Error(`validation failed`)
 		}
 
-		alertHide()
+		modalHide()
 	}
 
 	return (

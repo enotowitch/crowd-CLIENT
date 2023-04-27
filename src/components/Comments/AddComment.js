@@ -5,8 +5,6 @@ import TextEditor from "../TextEditor/TextEditor"
 
 export default function AddComment() {
 	return (
-		<section>
-			<TextEditor btnText="Add Comment" fn="addComment" />
-		</section>
+		<TextEditor btnText="Add Comment" fn="addComment" />
 	)
 }

@@ -3,6 +3,7 @@ import "./index.scss"
 import "./media.scss"
 import Rating from "./Rating"
 import Markdown from "marked-react";
+import quotes from "../../img/quotes.svg"
 
 export default function Comment({ obj }) { //obj=comment
 
@@ -19,8 +20,9 @@ export default function Comment({ obj }) { //obj=comment
 				<img src={img} className="icon_mid" />
 				<div className="comment__title">
 					<div>{name}</div>
-					<div className="f">
+					<div className="fcc g">
 						{createdAt}
+						<img src={quotes} />
 						<Rating commentId={commentId} initRating={initRating} />
 					</div>
 				</div>

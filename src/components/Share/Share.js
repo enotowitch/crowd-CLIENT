@@ -9,7 +9,7 @@ export default function Share({ title }) {
 			url={window.location.href}
 			title={title}
 			summary="Description of the shared page"
-			source="Source of the content (e.g. your website or application name)"
+			source={window.location.host}
 		>
 			<LinkedinIcon size="26" round="true"></LinkedinIcon>
 		</LinkedinShareButton>

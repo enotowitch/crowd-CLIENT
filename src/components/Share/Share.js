@@ -16,8 +16,8 @@ export default function Share({ title, tag }) {
 
 			<TwitterShareButton
 				url={window.location.href}
-				title={"title"}
-				hashtags={["tag", tag]}
+				title={title}
+				hashtags={[tag]}
 			>
 				<TwitterIcon size="26" round="true" />
 			</TwitterShareButton>

@@ -20,7 +20,7 @@ export default function ArticleFull() {
 
 
 	return (
-		<div className="fc">
+		<div className="fc w100">
 			<section className="articleFull mb">
 				<div className="title2">Blog</div>
 

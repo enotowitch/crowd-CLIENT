@@ -6,14 +6,6 @@ import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } fr
 export default function Share({ title, tag }) {
 	return (
 		<>
-			<FacebookShareButton
-				url={window.location.href}
-				quote={"quote"}
-				hashtag={"tag"}
-			>
-				<FacebookIcon size="26" round="true" />
-			</FacebookShareButton>
-
 			<TwitterShareButton
 				url={window.location.href}
 				title={title}
@@ -21,6 +13,14 @@ export default function Share({ title, tag }) {
 			>
 				<TwitterIcon size="26" round="true" />
 			</TwitterShareButton>
+
+			<FacebookShareButton
+				url={window.location.href}
+				quote={"quote"}
+				hashtag={"tag"}
+			>
+				<FacebookIcon size="26" round="true" />
+			</FacebookShareButton>
 		</>
 	)
 }

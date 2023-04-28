@@ -16,3 +16,25 @@
 	border-radius: $borderRadiusBig;
 	padding: 15px;
 }
+
+.share{
+	padding: 30px;
+	// !
+	.title{
+		text-align: center;
+		color: $black;
+		margin-bottom: 15px;
+	}
+	// !!
+	img:not(a img){
+		border-radius: $borderRadiusBig;
+	}
+	button{
+		height: 60px; 
+		width: 32%;
+		// * fb icon, twitter icon...
+		a img{
+			height: 40px;
+		}
+	}
+}

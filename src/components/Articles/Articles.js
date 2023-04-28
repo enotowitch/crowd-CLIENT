@@ -1,6 +1,7 @@
 import React from "react"
 import ArticleCard from "./ArticleCard";
 import useArticles from "../../hooks/useArticles";
+import parseImg from "../../utils/parseImg";
 
 export default function Articles() {
 
@@ -12,8 +13,7 @@ export default function Articles() {
 			{
 				articles?.map(article => {
 
-					{/* TODO: can grab link, not img */ }
-					const img = article.value?.match(/((https|http).+)(?:\))/)?.[1] // * match http(s) .+ ...)
+					const img = parseImg(article?.value)
 
 					let cardText = article.value?.replace(/!\[.*\]/g, "") // * ![abc]
 					cardText = cardText?.replace(/\[.*\]/g, "") // * [abc]

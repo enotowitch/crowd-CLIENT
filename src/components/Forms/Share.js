@@ -1,0 +1,53 @@
+import React, { useContext } from "react"
+import "./index.scss"
+import "./media.scss"
+import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from "react-share"
+import IconText from "../IconText/IconText"
+import { Context } from "../../Context"
+import parseImg from "../../utils/parseImg"
+
+// TODO: props { title, tag }
+export default function Share({ title, tag }) {
+
+	const url = window.location.href
+	const { sharing } = useContext(Context)
+	const img = parseImg(sharing?.value)
+
+	return (
+		<div className="share">
+
+			<div className="title">{sharing?.tag}</div>
+			<img src={img} />
+			<div className="title">Share:{sharing?.title}</div>
+
+			<div className="f jcsb">
+				<TwitterShareButton
+					url={url}
+					title={title}
+					hashtags={[tag]}
+					style={{ background: "#00aced" }}
+				>
+					<IconText src="twitter" iconClassName="m0 c" />
+				</TwitterShareButton>
+
+				<FacebookShareButton
+					url={url}
+					quote={title}
+					hashtag={tag}
+					style={{ background: "#3b5998" }}
+				>
+					<IconText src="facebook" iconClassName="m0 c" />
+				</FacebookShareButton>
+
+				<LinkedinShareButton
+					url={url}
+					title={title}
+					hashtag={tag}
+					style={{ background: "#0072b1" }}
+				>
+					<IconText src="linkedin" iconClassName="m0 c" />
+				</LinkedinShareButton>
+			</div>
+		</div>
+	)
+}

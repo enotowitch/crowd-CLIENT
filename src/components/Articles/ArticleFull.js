@@ -9,7 +9,7 @@ import useTimeAgo from "../../hooks/useTimeAgo";
 import useTimeRead from "../../hooks/useTimeRead";
 import Icon2Text from "../IconText/Icon2Text";
 import Comments from "../Comments/Comments";
-import Share from "../Share/Share";
+import IconShare from "../IconText/IconShare";
 
 export default function ArticleFull() {
 
@@ -41,7 +41,7 @@ export default function ArticleFull() {
 					<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
 					<div className="f g">
 						<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small mr05" />
-						<Share title={article?.title} tag={article?.tag} />
+						<IconShare share={article} />
 					</div>
 				</div>
 

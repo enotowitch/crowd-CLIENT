@@ -24,7 +24,9 @@
 			border: 2px solid $black;
 		}
 	}
-	img{
+	// not IconText img
+	img:not(a img){
 		width: 100%;
+		max-width: 700px;
 	}
 }

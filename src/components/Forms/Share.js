@@ -6,19 +6,19 @@ import IconText from "../IconText/IconText"
 import { Context } from "../../Context"
 import parseImg from "../../utils/parseImg"
 
-// TODO: props { title, tag }
-export default function Share({ title, tag }) {
+export default function Share() {
 
 	const url = window.location.href
 	const { sharing } = useContext(Context)
-	const img = parseImg(sharing?.value)
+	const { title, tag, value } = sharing
+	const img = parseImg(value)
 
 	return (
 		<div className="share">
 
-			<div className="title">{sharing?.tag}</div>
+			<div className="title">{tag}</div>
 			<img src={img} />
-			<div className="title">Share:{sharing?.title}</div>
+			<div className="title">Share: {title}</div>
 
 			<div className="f jcsb">
 				<TwitterShareButton

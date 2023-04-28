@@ -16,4 +16,12 @@
 		width: 100%;
 		// margin: 5px 0;
 	}
+	input{
+		background: $white;
+		border: 1px solid $lightGray;
+		color: $black;
+		&:focus{
+			border: 2px solid $black;
+		}
+	}
 }

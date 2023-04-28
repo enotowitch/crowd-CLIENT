@@ -28,7 +28,7 @@ export default function ArticleFull() {
 
 				<IconText src={article?.tag} text={article?.tag} iconClassName="icon_small mr05" className="tag" />
 
-				<Icon2Text src="logo author" text="By Crypto.io Global" iconClassName="icon_big">
+				<Icon2Text src="logo author" text={article?.author} iconClassName="icon_big">
 					<div className="f g">
 						{timeAgo(article?.createdAt)}
 						<IconText src="dot" text={timeRead(article?.value)} iconClassName="icon_small mr" />

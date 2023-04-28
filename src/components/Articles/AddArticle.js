@@ -20,6 +20,7 @@ export default function AddArticle() {
 		<section className="w100">
 			<TextEditor btnText={btnText} fn={fn} editValue={article?.value}>
 				<Input name="title" placeholder="title" editValue={article?.title} />
+				<Input name="author" placeholder="author" editValue={article?.author} />
 				<Select name="tag" options={["bricks", "realt"]} editValue={article?.tag} />
 			</TextEditor>
 		</section>

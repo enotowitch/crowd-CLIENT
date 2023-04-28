@@ -7,7 +7,7 @@
 		display: none;
 	}
 	// * HIDE main logo text on mobile
-	.logo .iconText{
+	header .logo .iconText{
 		&__text{
 			display: none;
 		}
@@ -30,6 +30,11 @@
 		display: block;
 	}
 	// ? navBottom
+	// ! footer
+	footer{
+		flex-direction: column;
+	}
+	// ? footer
 }
 
 

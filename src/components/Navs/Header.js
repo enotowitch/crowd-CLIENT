@@ -1,17 +1,17 @@
 import React from "react"
 import "./index.scss"
 import "./media.scss"
-import IconText from "../IconText/IconText"
 import ProfileTop from "../Profile/ProfileTop"
 import Burger from "./Burger"
 import HeaderButtons from "./HeaderButtons"
+import Logo from "./Logo"
 
 
 export default function Header() {
 
 	return (
 		<header>
-			<IconText src="logo" text="Copilot Funding" path="/" className="logo" />
+			<Logo />
 
 			<ProfileTop />
 			<Burger />

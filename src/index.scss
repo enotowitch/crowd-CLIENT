@@ -44,9 +44,15 @@ button{
 input:not([type="checkbox"]), select{
 	height: 50px;
 	padding: 10px 20px;
-	border: 1px solid #B8B8B8;
+	border: none;
 	border-radius: 8px;
 	min-width: 220px;
+	background: $dark;
+	outline: none;
+	color: $white;
+	&:focus{
+		outline: 1px solid $white;
+	}
 }
 label input{
 	width: 100%;
@@ -104,7 +110,7 @@ header, footer, nav, section{
 }
 
 // !! SHORTCUTS
-// ! margin
+// ! margin & padding
 .m{
 	margin: 15px;
 }
@@ -135,7 +141,14 @@ header, footer, nav, section{
 .m0{
 	margin: 0;
 }
-// ? margin
+// ! padding
+.p{
+	padding: 15px;
+}
+.p2{
+	padding: 30px;
+}
+// ? margin & padding
 // ! flex & display
 .db{
 	display: block;
@@ -168,6 +181,12 @@ header, footer, nav, section{
 }
 .g{
 	gap: 15px;
+}
+.g2{
+	gap: 30px;
+}
+.g3{
+	gap: 45px;
 }
 .jcsb{
 	justify-content: space-between;
@@ -241,6 +260,9 @@ header, footer, nav, section{
 }
 .black{
 	color: $black;
+}
+.darkBg{
+	background: $dark;
 }
 .white{
 	color: $white;

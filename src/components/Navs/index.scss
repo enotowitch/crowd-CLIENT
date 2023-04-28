@@ -33,6 +33,17 @@ nav{
 	}
 }
 
+// !!
+footer{
+	width: 100%;
+	// !!
+	> * {
+		// min-width: 320px;
+		// max-width: 620px;
+		flex: 1 1;
+	}
+}
+
 // ! menu
 .menu{
 	position: fixed;

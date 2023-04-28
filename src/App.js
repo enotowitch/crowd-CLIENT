@@ -1,5 +1,4 @@
 import React from "react"
-import TextEditor from "./components/TextEditor/TextEditor"
 import Articles from "./components/Articles/Articles"
 import ArticleFull from "./components/Articles/ArticleFull"
 import { Routes, Route } from "react-router-dom"
@@ -9,6 +8,7 @@ import Banner from "./components/Banner/Banner"
 import Popup from "./components/Popup/Popup"
 import Menu from "./components/Navs/Menu"
 import AddArticle from "./components/Articles/AddArticle"
+import Footer from "./components/Navs/Footer"
 
 export default function App() {
 
@@ -30,6 +30,8 @@ export default function App() {
 					<Route exact path="edit/:articleId" element={<AddArticle />} />
 				</Routes>
 			</div>
+
+			<Footer />
 
 		</div>
 	)

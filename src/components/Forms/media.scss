@@ -1,0 +1,15 @@
+@import "../../vars.scss";
+
+// ! < $breakpointMobile
+@media (max-width:$breakpointMobile) {	
+	.auth{
+		width: auto;
+		padding: 15px;
+	}
+}
+
+
+// ! > $breakpointMobile
+@media (min-width:($breakpointMobile+1)) {
+
+}

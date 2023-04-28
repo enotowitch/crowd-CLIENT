@@ -5,6 +5,7 @@ import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from "re
 import IconText from "../IconText/IconText"
 import { Context } from "../../Context"
 import parseImg from "../../utils/parseImg"
+import InputButton from "../FormElements/InputButton"
 
 export default function Share() {
 
@@ -48,6 +49,8 @@ export default function Share() {
 					<IconText src="linkedin" iconClassName="m0 c" />
 				</LinkedinShareButton>
 			</div>
+
+			<InputButton text="Copy" value={url} onClick={() => navigator.clipboard.writeText(url)} />
 		</div>
 	)
 }

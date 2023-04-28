@@ -9,3 +9,18 @@
 	margin-top: 15px;
 	border-radius: $borderRadiusSmall;
 }
+
+.inputButton{
+	position: relative;
+	// !!
+	button{
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 80% !important;
+		width: 130px !important;
+	}
+}

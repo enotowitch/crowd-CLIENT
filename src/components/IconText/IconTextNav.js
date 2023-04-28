@@ -6,8 +6,8 @@ import { Context } from "../../Context"
 
 export default function IconTextNav(props) {
 
-	const { visitedPage } = useContext(Context)
 	const { src } = props
+	const { visitedPage } = useContext(Context)
 
 	// * if src = Context(visitedPage) or localStorage(visitedPage) => then it's `iconNameVisited`
 	// * example: articles.svg & articlesVisited.svg

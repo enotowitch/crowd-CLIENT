@@ -12,6 +12,7 @@ export default function Articles() {
 			{
 				articles?.map(article => {
 
+					{/* TODO: can grab link, not img */ }
 					const img = article.value?.match(/((https|http).+)(?:\))/)?.[1] // * match http(s) .+ ...)
 
 					let cardText = article.value?.replace(/!\[.*\]/g, "") // * ![abc]

@@ -9,7 +9,6 @@ export default function IconText(props) {
 
 	const { path, text, src, className, iconClassName, textClassName, url } = props // * don't touch => {...props}
 
-	// * every IconText must close mobile Menu
 	const { showMenuSet, visitedPageSet } = useContext(Context)
 
 	let src_

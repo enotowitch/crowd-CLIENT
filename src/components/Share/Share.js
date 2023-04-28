@@ -4,22 +4,26 @@ import "./media.scss"
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from "react-share";
 
 export default function Share({ title, tag }) {
+
+	const url = window.location.href
+	const size = 26
+
 	return (
 		<>
 			<TwitterShareButton
-				url={window.location.href}
+				url={url}
 				title={title}
 				hashtags={[tag]}
 			>
-				<TwitterIcon size="26" round="true" />
+				<TwitterIcon size={size} round="true" />
 			</TwitterShareButton>
 
 			<FacebookShareButton
-				url={window.location.href}
-				quote={"quote"}
-				hashtag={"tag"}
+				url={url}
+				quote={title}
+				hashtag={tag}
 			>
-				<FacebookIcon size="26" round="true" />
+				<FacebookIcon size={size} round="true" />
 			</FacebookShareButton>
 		</>
 	)

@@ -10,6 +10,9 @@ export default function IconShare({ share }) {
 	sharingSet(share)
 
 	return (
-		<img src={img} className="icon_small mr05" onClick={() => popupElementSet("Share")} ignoreOutside="true" />
+		<div className="fcc" onClick={() => popupElementSet("Share")}>
+			<img src={img} className="icon_small mr05" ignoreOutside="true" />
+			<span ignoreOutside="true">share</span>
+		</div>
 	)
 }

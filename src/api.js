@@ -114,3 +114,14 @@ export const rateComment = async (act, commentId) => {
 	}
 }
 // ?? COMMENT
+
+// !! SUBSCRIBER
+export const subscribe = async (form) => {
+	try {
+		const { data } = await instance.post(`/subscribe`, { ...form })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? SUBSCRIBER

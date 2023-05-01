@@ -125,3 +125,23 @@ export const subscribe = async (form) => {
 	}
 }
 // ?? SUBSCRIBER
+
+// !! COMPANY
+export const addCompany = async (formAndValue) => {
+	try {
+		const { data } = await instance.post("/addCompany", { ...formAndValue })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const getCompany = async (id) => {
+	try {
+		const { data } = await instance.get(`/company/${id}`)
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? COMPANY

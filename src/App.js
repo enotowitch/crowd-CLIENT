@@ -9,6 +9,9 @@ import Popup from "./components/Popup/Popup"
 import Menu from "./components/Navs/Menu"
 import AddArticle from "./components/Articles/AddArticle"
 import Footer from "./components/Navs/Footer"
+import AddCompany from "./components/Company/AddCompany"
+import Companies from "./components/Company/Companies"
+import CompanyFull from "./components/Company/CompanyFull"
 
 export default function App() {
 
@@ -28,6 +31,9 @@ export default function App() {
 					<Route exact path="articles" element={<Articles />} />
 					<Route exact path="article/:articleId" element={<ArticleFull />} />
 					<Route exact path="edit/:articleId" element={<AddArticle />} />
+					<Route exact path="add-company" element={<AddCompany />} />
+					<Route exact path="companies" element={<Companies />} />
+					<Route exact path="company/:companyId" element={<CompanyFull />} />
 				</Routes>
 			</div>
 

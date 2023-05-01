@@ -5,6 +5,7 @@ import "./index.scss"
 import "./media.scss"
 import useArticle from "../../hooks/useArticle"
 import useComment from "../../hooks/useComment";
+import useCompany from "../../hooks/useCompany";
 
 export default function TextEditor({ children, btnText, fn, editValue }) { // children=Input/Select/etc...
 
@@ -17,6 +18,7 @@ export default function TextEditor({ children, btnText, fn, editValue }) { // ch
 	// * functions are gray because of eval(fn)
 	const { addArticle, editArticle } = useArticle(value || editValue)
 	const { addComment } = useComment(value)
+	const { addCompany } = useCompany(value)
 
 	return (
 		<form className="textEditor fc" onSubmit={eval(fn)}>

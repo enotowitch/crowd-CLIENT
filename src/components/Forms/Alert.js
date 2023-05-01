@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import "./index.scss"
 import "./media.scss"
-import IconText from "../IconText/IconText"
+import IconText from "../Icons/IconText"
 import { Context } from "../../Context"
 
 export default function Alert() {

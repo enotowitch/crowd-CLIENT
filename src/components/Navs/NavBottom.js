@@ -1,7 +1,7 @@
 import React from "react"
 import "./index.scss"
 import "./media.scss"
-import IconTextNav from "../IconText/IconTextNav"
+import IconTextNav from "../Icons/IconTextNav"
 
 export default function NavBottom() {
 	return (

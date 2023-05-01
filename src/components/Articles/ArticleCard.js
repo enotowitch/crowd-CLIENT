@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./index.scss"
 import "./media.scss"
-import IconText from "../IconText/IconText"
+import IconText from "../Icons/IconText"
 import useArticleLikes from "../../hooks/useArticleLikes"
 import edit from "../../img/edit.svg"
 import del from "../../img/del.svg"

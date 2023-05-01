@@ -3,13 +3,13 @@ import "./index.scss"
 import "./media.scss"
 import Markdown from "marked-react";
 import { useParams } from "react-router-dom";
-import IconText from "../IconText/IconText";
+import IconText from "../Icons/IconText";
 import useArticleFull from "../../hooks/useArticleFull"
 import useTimeAgo from "../../hooks/useTimeAgo";
 import useTimeRead from "../../hooks/useTimeRead";
-import Icon2Text from "../IconText/Icon2Text";
+import Icon2Text from "../Icons/Icon2Text";
 import Comments from "../Comments/Comments";
-import IconShare from "../IconText/IconShare";
+import IconShare from "../Icons/IconShare";
 
 export default function ArticleFull() {
 

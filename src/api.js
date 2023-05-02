@@ -144,4 +144,13 @@ export const getCompany = async (id) => {
 		console.log(error)
 	}
 }
+
+export const getCompanies = async () => {
+	try {
+		const { data } = await instance.get("/getCompanies")
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? COMPANY

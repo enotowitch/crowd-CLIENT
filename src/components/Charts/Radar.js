@@ -36,7 +36,7 @@ export default function Radar_({ obj }) {
 	total >= 9 && (backgroundColor = "rgba(117, 235, 0, 0.7)")
 
 	const data = {
-		labels: ["Fiabilite", "Localization", "TVL", "Impayes/Retards", "Liquidity", "Commnuaute", "Frais", "Rendement"],
+		labels: ["Fiabilite", "Localization", "TVL", "Impayes", "Liquidity", "Commnuaute", "Frais", "Rendement"],
 		datasets: [
 			{
 				label: "# of 10",
@@ -73,11 +73,16 @@ export default function Radar_({ obj }) {
 				max: 10,
 				min: 0
 			}
+		},
+		plugins: {
+			legend: {
+				display: false
+			}
 		}
 	}
 
 	return (
-		<div className="w50 c">
+		<div className="c">
 			<Radar data={data} options={options} />
 		</div>
 	)

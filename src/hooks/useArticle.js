@@ -4,6 +4,7 @@ import parseForm from "../utils/parseForm"
 import useNoUser from "./useNoUser"
 import useValidation from "./useValidation"
 import { Context } from "../Context"
+import animationDelete from "../utils/animationDelete"
 
 export default function useArticle(value) { // value=textEditor value
 
@@ -27,12 +28,7 @@ export default function useArticle(value) { // value=textEditor value
 	// ! deleteArticle
 	async function deleteArticle(id, e) {
 		const res = await api.deleteArticle(id)
-		if (res.ok) {
-			e.target.closest(".articleCard")?.classList.add("animationDelete")
-			setTimeout(() => {
-				e.target.closest(".articleCard")?.classList.add("dn")
-			}, 500);
-		}
+		animationDelete(res, e)
 	}
 
 	// ! editArticle

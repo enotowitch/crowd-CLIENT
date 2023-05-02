@@ -153,6 +153,15 @@ export const getCompanies = async () => {
 		console.log(error)
 	}
 }
+
+export const deleteCompany = async (id) => {
+	try {
+		const { data } = await instance.post(`/deleteCompany`, { id })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? COMPANY
 
 // !! ADD IMAGE

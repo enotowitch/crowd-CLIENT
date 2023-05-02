@@ -5,11 +5,14 @@ import Radar from "../Charts/Radar"
 import IconText from "../Icons/IconText"
 import IconsTop from "../Icons/IconsTop"
 import { baseURL } from "../../consts"
+import del from "../../img/del.svg"
+import useCompany from "../../hooks/useCompany"
 
 export default function CompanyCard({ obj }) {
 
 	const { name, img, _id: id } = obj
 	const cardRef = useRef(null)
+	const { deleteCompany } = useCompany()
 
 	return (
 		<div className="card" ref={cardRef}>
@@ -22,6 +25,10 @@ export default function CompanyCard({ obj }) {
 					textClassName="brand"
 					onClick={() => window.location.href = `company/${id}`}
 				/>
+			</IconsTop>
+
+			<IconsTop cardRef={cardRef} className="iconsTop">
+				<img src={del} onClick={(e) => deleteCompany(id, e)} ignoreOutside="true" />
 			</IconsTop>
 
 			<div className="tac white">{name}</div>

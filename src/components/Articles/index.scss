@@ -71,11 +71,20 @@
 	border-radius: $borderRadiusMax;
 }
 
-.topIcons{
+.iconsTop{
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+}
+
+.iconsMid{
 	position: absolute;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
+	height: 100%;
 }
 
 .animationDelete{

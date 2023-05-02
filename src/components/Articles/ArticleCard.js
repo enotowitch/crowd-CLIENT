@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef } from "react"
 import "./index.scss"
 import "./media.scss"
 import IconText from "../Icons/IconText"
@@ -6,22 +6,21 @@ import useArticleLikes from "../../hooks/useArticleLikes"
 import edit from "../../img/edit.svg"
 import del from "../../img/del.svg"
 import useArticle from "../../hooks/useArticle"
+import IconsTop from "../Icons/IconsTop"
 
 export default function ArticleCard({ title, img, id, views, likes, tag, cardText }) {
 
 	const { likeCount, likeArticle } = useArticleLikes(id, likes)
-	const [showTopIcons, showTopIconsSet] = useState(false)
 	const { deleteArticle } = useArticle()
+	const cardRef = useRef(null)
 
 	return (
-		<div className="card" onMouseEnter={() => showTopIconsSet(true)} onMouseLeave={() => showTopIconsSet(false)}>
+		<div className="card" ref={cardRef}>
 
-			{showTopIcons &&
-				<div className="topIcons">
-					<img src={edit} onClick={() => window.location.href = `edit/${id}`} />
-					<img src={del} onClick={(e) => deleteArticle(id, e)} ignoreOutside="true" />
-				</div>
-			}
+			<IconsTop cardRef={cardRef} className="iconsTop">
+				<img src={edit} onClick={() => window.location.href = `edit/${id}`} />
+				<img src={del} onClick={(e) => deleteArticle(id, e)} ignoreOutside="true" />
+			</IconsTop>
 
 			<img src={img} className="card__img" />
 			<IconText src={tag} text={tag} iconClassName="icon_small mr05" />

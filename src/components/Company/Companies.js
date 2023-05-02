@@ -9,7 +9,7 @@ export default function Companies() {
 	const { companies } = useCompanies()
 
 	return (
-		<section className="articles">
+		<section className="cards">
 			{companies?.map(company => <CompanyCard key={company._id} obj={company} />)}
 		</section>
 	)

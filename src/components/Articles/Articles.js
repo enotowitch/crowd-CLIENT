@@ -8,7 +8,7 @@ export default function Articles() {
 	const { articles } = useArticles()
 
 	return (
-		<section className="articles">
+		<section className="cards">
 
 			{
 				articles?.map(article => {

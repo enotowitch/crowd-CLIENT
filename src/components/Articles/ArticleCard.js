@@ -14,7 +14,7 @@ export default function ArticleCard({ title, img, id, views, likes, tag, cardTex
 	const { deleteArticle } = useArticle()
 
 	return (
-		<div className="articleCard" onMouseEnter={() => showTopIconsSet(true)} onMouseLeave={() => showTopIconsSet(false)}>
+		<div className="card" onMouseEnter={() => showTopIconsSet(true)} onMouseLeave={() => showTopIconsSet(false)}>
 
 			{showTopIcons &&
 				<div className="topIcons">
@@ -23,7 +23,7 @@ export default function ArticleCard({ title, img, id, views, likes, tag, cardTex
 				</div>
 			}
 
-			<img src={img} className="articleCard__img" />
+			<img src={img} className="card__img" />
 			<IconText src={tag} text={tag} iconClassName="icon_small mr05" />
 			<div className="cardTitle">{title}</div>
 			<div className="cardText">{cardText}</div>

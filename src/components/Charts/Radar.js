@@ -82,7 +82,7 @@ export default function Radar_({ obj }) {
 	}
 
 	return (
-		<div className="c">
+		<div className="c chart">
 			<Radar data={data} options={options} />
 		</div>
 	)

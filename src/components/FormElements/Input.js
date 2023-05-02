@@ -13,8 +13,8 @@ export default function Input(props) {
 	}
 
 	return (
-		<label>
-			<div className="fw600 mt mb">{label}</div>
+		<label {...props}>
+			{label && <div className="fw600 mt mb">{label}</div>}
 
 			<input
 				value={value || editValue}

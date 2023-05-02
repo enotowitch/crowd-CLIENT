@@ -154,3 +154,14 @@ export const getCompanies = async () => {
 	}
 }
 // ?? COMPANY
+
+// !! ADD IMAGE
+export const addImg = async (formData) => {
+	try {
+		const { data } = await instance.post("/upload", formData)
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? ADD IMAGE

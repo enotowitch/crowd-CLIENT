@@ -4,16 +4,18 @@ import "./media.scss"
 import Radar from "../Charts/Radar"
 import IconText from "../Icons/IconText"
 import IconsTop from "../Icons/IconsTop"
+import { baseURL } from "../../consts"
 
 export default function CompanyCard({ obj }) {
 
-	const { name } = obj
+	const { name, img } = obj
 	const cardRef = useRef(null)
 
 	return (
 		<div className="card" ref={cardRef}>
 
 			<IconsTop cardRef={cardRef} className="iconsMid">
+				<IconText url={`${baseURL}/upload/${img}`} iconClassName="icon_mid" />
 				<IconText text="See review >" textClassName="brand" />
 			</IconsTop>
 

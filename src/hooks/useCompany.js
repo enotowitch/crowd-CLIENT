@@ -12,8 +12,9 @@ export default function useCompany(value) { // value=textEditor value
 		e.preventDefault()
 
 		const { form } = parseForm(e)
+		const img = form.img.replace(/(.+)(?:\\)/, "") // todo C:\fakepath\
 
-		const res = await api.addCompany({ ...form, value })
+		const res = await api.addCompany({ ...form, img, value })
 		res.ok && (window.location.href = `/company/${res.id}`)
 	}
 

@@ -3,12 +3,18 @@ import "./index.scss"
 import "./media.scss"
 import Input from "../FormElements/Input"
 import TextEditor from "../TextEditor/TextEditor"
+import InputFile from "../FormElements/InputFile"
 
 export default function AddCompany() {
 	return (
 		<section className="w100">
 			<TextEditor btnText="Add Company" fn="addCompany">
-				<Input name="name" placeholder="company name" />
+
+				<div className="if">
+					<InputFile />
+					<Input name="name" placeholder="company name" className="w100" />
+				</div>
+
 				<Input name="link" placeholder="company link" />
 
 				<Input name="Fiabilite" type="number" placeholder="Fiabilite" />

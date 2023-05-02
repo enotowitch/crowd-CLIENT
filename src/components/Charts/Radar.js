@@ -30,8 +30,10 @@ export default function Radar_({ obj }) {
 	const total = (Number(Fiabilite) + Number(Localization) + Number(TVL) + Number(Impayes) + Number(Liquidity) + Number(Commnuaute) + Number(Frais) + Number(Rendement)) / 8
 	let backgroundColor
 	total >= 0 && (backgroundColor = "#F40000")
-	total >= 4 && (backgroundColor = "#F6CF00")
-	total >= 7 && (backgroundColor = "#75EB00")
+	total >= 3 && (backgroundColor = "#E05114")
+	total >= 5 && (backgroundColor = "#F6CF00")
+	total >= 7 && (backgroundColor = "#58A907")
+	total >= 9 && (backgroundColor = "#75EB00")
 
 	const data = {
 		labels: ["Fiabilite", "Localization", "TVL", "Impayes/Retards", "Liquidity", "Commnuaute", "Frais", "Rendement"],

@@ -29,11 +29,11 @@ export default function Radar_({ obj }) {
 
 	const total = (Number(Fiabilite) + Number(Localization) + Number(TVL) + Number(Impayes) + Number(Liquidity) + Number(Commnuaute) + Number(Frais) + Number(Rendement)) / 8
 	let backgroundColor
-	total >= 0 && (backgroundColor = "#F40000")
-	total >= 3 && (backgroundColor = "#E05114")
-	total >= 5 && (backgroundColor = "#F6CF00")
-	total >= 7 && (backgroundColor = "#58A907")
-	total >= 9 && (backgroundColor = "#75EB00")
+	total >= 0 && (backgroundColor = "rgba(244, 0, 0, 0.7)")
+	total >= 3 && (backgroundColor = "rgba(224, 81, 20, 0.7)")
+	total >= 5 && (backgroundColor = "rgba(246, 207, 0, 0.7)")
+	total >= 7 && (backgroundColor = "rgba(88, 169, 7, 0.7)")
+	total >= 9 && (backgroundColor = "rgba(117, 235, 0, 0.7)")
 
 	const data = {
 		labels: ["Fiabilite", "Localization", "TVL", "Impayes/Retards", "Liquidity", "Commnuaute", "Frais", "Rendement"],
@@ -65,6 +65,9 @@ export default function Radar_({ obj }) {
 				grid: {
 					circular: true,
 					color: "#333333"
+				},
+				ticks: {
+					display: false
 				},
 				beginAtZero: true,
 				max: 10,

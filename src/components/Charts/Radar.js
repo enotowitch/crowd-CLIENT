@@ -22,31 +22,58 @@ ChartJS.register(
 
 export default function Radar_({ obj }) {
 
+	let Fiabilite, Localization, TVL, Impayes, Liquidity, Commnuaute, Frais, Rendement
+	if (obj) {
+		({ Fiabilite, Localization, TVL, Impayes, Liquidity, Commnuaute, Frais, Rendement } = obj)
+	}
+
+	const total = (Number(Fiabilite) + Number(Localization) + Number(TVL) + Number(Impayes) + Number(Liquidity) + Number(Commnuaute) + Number(Frais) + Number(Rendement)) / 8
+	let backgroundColor
+	total >= 0 && (backgroundColor = "#F40000")
+	total >= 4 && (backgroundColor = "#F6CF00")
+	total >= 7 && (backgroundColor = "#75EB00")
+
 	const data = {
 		labels: ["Fiabilite", "Localization", "TVL", "Impayes/Retards", "Liquidity", "Commnuaute", "Frais", "Rendement"],
 		datasets: [
 			{
-				label: "# of Votes",
+				label: "# of 10",
 				data: [
-					obj?.["Fiabilite"],
-					obj?.["Localization"],
-					obj?.["TVL"],
-					obj?.["Impayes/Retards"],
-					obj?.["Liquidity"],
-					obj?.["Commnuaute"],
-					obj?.["Frais"],
-					obj?.["Rendement"]
+					Fiabilite,
+					Localization,
+					TVL,
+					Impayes,
+					Liquidity,
+					Commnuaute,
+					Frais,
+					Rendement
 				],
-				backgroundColor: "rgba(255, 99, 132, 0.2)",
+				backgroundColor: backgroundColor,
 				borderColor: "rgba(255, 99, 132, 1)",
-				borderWidth: 1,
+				borderWidth: 0,
+				pointBackgroundColor: "transparent",
+				tension: 0.3
 			},
 		],
 	};
 
+	const options = {
+		scales: {
+			r: {
+				grid: {
+					circular: true,
+					color: "#333333"
+				},
+				beginAtZero: true,
+				max: 10,
+				min: 0
+			}
+		}
+	}
+
 	return (
 		<div className="w50 c">
-			<Radar data={data} />
+			<Radar data={data} options={options} />
 		</div>
 	)
 }

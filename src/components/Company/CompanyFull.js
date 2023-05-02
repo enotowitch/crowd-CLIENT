@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom"
 import useCompanyFull from "../../hooks/useCompanyFull"
 import InputButton from "../FormElements/InputButton"
 import Markdown from "marked-react"
-import Polar from "../Charts/Polar"
 import Radar from "../Charts/Radar"
 
 export default function CompanyFull() {
@@ -23,7 +22,6 @@ export default function CompanyFull() {
 
 				{<Markdown>{company?.value}</Markdown>}
 
-				<Polar obj={company} />
 				<Radar obj={company} />
 
 			</section>

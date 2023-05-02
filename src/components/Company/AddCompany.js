@@ -14,7 +14,7 @@ export default function AddCompany() {
 				<Input name="Fiabilite" type="number" placeholder="Fiabilite" />
 				<Input name="Localization" type="number" placeholder="Localization" />
 				<Input name="TVL" type="number" placeholder="TVL" />
-				<Input name="Impayes/Retards" type="number" placeholder="Impayes/Retards" />
+				<Input name="Impayes" type="number" placeholder="Impayes/Retards" />
 				<Input name="Liquidity" type="number" placeholder="Liquidity" />
 				<Input name="Commnuaute" type="number" placeholder="Commnuaute" />
 				<Input name="Frais" type="number" placeholder="Frais" />

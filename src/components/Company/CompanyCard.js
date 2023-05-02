@@ -8,15 +8,20 @@ import { baseURL } from "../../consts"
 
 export default function CompanyCard({ obj }) {
 
-	const { name, img } = obj
+	const { name, img, _id: id } = obj
 	const cardRef = useRef(null)
 
 	return (
 		<div className="card" ref={cardRef}>
 
 			<IconsTop cardRef={cardRef} className="iconsMid">
-				<IconText url={`${baseURL}/upload/${img}`} iconClassName="icon_mid" />
-				<IconText text="See review >" textClassName="brand" />
+				<IconText
+					url={`${baseURL}/upload/${img}`}
+					iconClassName="icon_mid"
+					text="See review >"
+					textClassName="brand"
+					onClick={() => window.location.href = `company/${id}`}
+				/>
 			</IconsTop>
 
 			<div className="tac white">{name}</div>

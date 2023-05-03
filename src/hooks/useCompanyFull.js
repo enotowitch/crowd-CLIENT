@@ -15,6 +15,10 @@ export default function useCompanyFull(companyId) {
 		getCompany()
 	}, [])
 
+	// * companyId user is watching now (for edit company)
+	const { watchingPostSet } = useContext(Context)
+	watchingPostSet(companyId)
+
 
 	return (
 		{ company }

@@ -32,7 +32,7 @@ export default function useArticle(value) { // value=textEditor value
 	}
 
 	// ! editArticle
-	const { watchingArticle } = useContext(Context) // * id of article I am editing now
+	const { watchingPost } = useContext(Context) // * id of article I am editing now
 
 	async function editArticle(e) {
 		e.preventDefault()
@@ -40,8 +40,8 @@ export default function useArticle(value) { // value=textEditor value
 		const { form } = parseForm(e)
 		const formAndValue = { ...form, value }
 
-		const res = await api.editArticle(watchingArticle, formAndValue)
-		res.ok && (window.location.href = `/article/${watchingArticle}`)
+		const res = await api.editArticle(watchingPost, formAndValue)
+		res.ok && (window.location.href = `/article/${watchingPost}`)
 	}
 
 

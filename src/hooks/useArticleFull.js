@@ -15,9 +15,9 @@ export default function useArticleFull(articleId) {
 		getArticle()
 	}, [])
 
-	// * articleId user is watching now (for creating comments)
-	const { watchingArticleSet } = useContext(Context)
-	watchingArticleSet(articleId)
+	// * articleId user is watching now (for creating comments / edit article)
+	const { watchingPostSet } = useContext(Context)
+	watchingPostSet(articleId)
 
 
 	return (

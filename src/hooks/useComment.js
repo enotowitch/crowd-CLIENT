@@ -6,7 +6,7 @@ import useValidation from "./useValidation"
 
 export default function useComment(value) { // value=textEditor value
 
-	const { watchingArticle } = useContext(Context)
+	const { watchingPost } = useContext(Context)
 	const { noUser } = useNoUser()
 	const { validation } = useValidation()
 
@@ -15,7 +15,7 @@ export default function useComment(value) { // value=textEditor value
 
 		validation(value, "Comment")
 
-		const res = await api.addComment(value, watchingArticle)
+		const res = await api.addComment(value, watchingPost)
 		res.ok && window.location.reload()
 		noUser(res)
 	}

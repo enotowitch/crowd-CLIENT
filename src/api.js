@@ -162,6 +162,15 @@ export const deleteCompany = async (id) => {
 		console.log(error)
 	}
 }
+
+export const editCompany = async (id, formAndValue) => {
+	try {
+		const { data } = await instance.post(`/editCompany`, { id, ...formAndValue })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? COMPANY
 
 // !! ADD IMAGE

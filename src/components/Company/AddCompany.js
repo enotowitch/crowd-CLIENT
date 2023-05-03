@@ -4,27 +4,38 @@ import "./media.scss"
 import Input from "../FormElements/Input"
 import TextEditor from "../TextEditor/TextEditor"
 import InputFile from "../FormElements/InputFile"
+import { useParams } from "react-router-dom"
+import useCompanyFull from "../../hooks/useCompanyFull"
 
 export default function AddCompany() {
+
+	const { companyId } = useParams()
+	const { company } = useCompanyFull(companyId)
+
+	// todo prepareEdit ?
+	const isEdit = window.location.pathname.includes("edit")
+	const btnText = isEdit ? "Edit Company" : "Add Company"
+	const fn = isEdit ? "editCompany" : "addCompany"
+
 	return (
 		<section className="w100">
-			<TextEditor btnText="Add Company" fn="addCompany">
+			<TextEditor btnText={btnText} fn={fn} editValue={company?.value}>
 
 				<div className="if">
-					<InputFile />
-					<Input name="name" placeholder="company name" className="w100" />
+					<InputFile editValue={company?.img} />
+					<Input name="name" placeholder="company name" className="w100" editValue={company?.name} />
 				</div>
 
-				<Input name="link" placeholder="company link" />
+				<Input name="link" placeholder="company link" editValue={company?.link} />
 
-				<Input name="Fiabilite" type="number" placeholder="Fiabilite" />
-				<Input name="Localization" type="number" placeholder="Localization" />
-				<Input name="TVL" type="number" placeholder="TVL" />
-				<Input name="Impayes" type="number" placeholder="Impayes/Retards" />
-				<Input name="Liquidity" type="number" placeholder="Liquidity" />
-				<Input name="Commnuaute" type="number" placeholder="Commnuaute" />
-				<Input name="Frais" type="number" placeholder="Frais" />
-				<Input name="Rendement" type="number" placeholder="Rendement" />
+				<Input name="Fiabilite" type="number" placeholder="Fiabilite" editValue={company?.Fiabilite} />
+				<Input name="Localization" type="number" placeholder="Localization" editValue={company?.Localization} />
+				<Input name="TVL" type="number" placeholder="TVL" editValue={company?.TVL} />
+				<Input name="Impayes" type="number" placeholder="Impayes/Retards" editValue={company?.Impayes} />
+				<Input name="Liquidity" type="number" placeholder="Liquidity" editValue={company?.Liquidity} />
+				<Input name="Commnuaute" type="number" placeholder="Commnuaute" editValue={company?.Commnuaute} />
+				<Input name="Frais" type="number" placeholder="Frais" editValue={company?.Frais} />
+				<Input name="Rendement" type="number" placeholder="Rendement" editValue={company?.Rendement} />
 			</TextEditor>
 		</section>
 	)

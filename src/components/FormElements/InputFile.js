@@ -1,14 +1,25 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import "./index.scss"
 import "./media.scss"
 import addImage from "../../img/addImage.svg"
 import * as api from "../../api"
+import { baseURL } from "../../consts"
 
-export default function InputFile(props) {
+export default function InputFile(props) { // don't touch {...props}
 
 	const [preview, previewSet] = useState("")
+	const [updatedImg, updatedImgSet] = useState(false)
+
+	// ! edit preview
+	const { editValue } = props
+	useEffect(() => {
+		editValue && previewSet(`${baseURL}/upload/${editValue}`)
+	}, [editValue])
+	// ? edit preview
 
 	async function onChange(e) {
+		updatedImgSet(true)
+
 		// ! preview
 		if (e.target.files[0]) {
 			const reader = new FileReader();
@@ -37,6 +48,12 @@ export default function InputFile(props) {
 				onChange={onChange}
 				ref={ref}
 				{...props}
+			/>
+
+			<input
+				hidden
+				name="updatedImg"
+				value={updatedImg}
 			/>
 
 			<img

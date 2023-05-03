@@ -34,6 +34,7 @@ export default function App() {
 					<Route exact path="add-company" element={<AddCompany />} />
 					<Route exact path="companies" element={<Companies />} />
 					<Route exact path="company/:companyId" element={<CompanyFull />} />
+					<Route exact path="editCompany/:companyId" element={<AddCompany />} />
 				</Routes>
 			</div>
 

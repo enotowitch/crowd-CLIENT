@@ -12,6 +12,7 @@ export default function AddArticle() {
 	const { articleId } = useParams()
 	const { article } = useArticleFull(articleId)
 
+	// todo prepareEdit ?
 	const isEdit = window.location.pathname.includes("edit")
 	const btnText = isEdit ? "Edit Article" : "Add Article"
 	const fn = isEdit ? "editArticle" : "addArticle"

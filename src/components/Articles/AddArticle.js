@@ -6,16 +6,14 @@ import Input from "../FormElements/Input"
 import Select from "../FormElements/Select"
 import { useParams } from "react-router-dom"
 import useArticleFull from "../../hooks/useArticleFull"
+import prepareEdit from "../../utils/prepareEdit"
 
 export default function AddArticle() {
 
 	const { articleId } = useParams()
 	const { article } = useArticleFull(articleId)
 
-	// todo prepareEdit ?
-	const isEdit = window.location.pathname.includes("edit")
-	const btnText = isEdit ? "Edit Article" : "Add Article"
-	const fn = isEdit ? "editArticle" : "addArticle"
+	const { btnText, fn } = prepareEdit("Article")
 
 	return (
 		<section className="w100">

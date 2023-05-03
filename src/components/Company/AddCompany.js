@@ -6,16 +6,14 @@ import TextEditor from "../TextEditor/TextEditor"
 import InputFile from "../FormElements/InputFile"
 import { useParams } from "react-router-dom"
 import useCompanyFull from "../../hooks/useCompanyFull"
+import prepareEdit from "../../utils/prepareEdit"
 
 export default function AddCompany() {
 
 	const { companyId } = useParams()
 	const { company } = useCompanyFull(companyId)
 
-	// todo prepareEdit ?
-	const isEdit = window.location.pathname.includes("edit")
-	const btnText = isEdit ? "Edit Company" : "Add Company"
-	const fn = isEdit ? "editCompany" : "addCompany"
+	const { btnText, fn } = prepareEdit("Company")
 
 	return (
 		<section className="w100">

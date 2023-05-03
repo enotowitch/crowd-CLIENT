@@ -30,7 +30,7 @@ export default function App() {
 					<Route exact path="add-article" element={<AddArticle />} />
 					<Route exact path="articles" element={<Articles />} />
 					<Route exact path="article/:articleId" element={<ArticleFull />} />
-					<Route exact path="edit/:articleId" element={<AddArticle />} />
+					<Route exact path="editArticle/:articleId" element={<AddArticle />} />
 					<Route exact path="add-company" element={<AddCompany />} />
 					<Route exact path="companies" element={<Companies />} />
 					<Route exact path="company/:companyId" element={<CompanyFull />} />

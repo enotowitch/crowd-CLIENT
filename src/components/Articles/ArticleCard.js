@@ -3,9 +3,9 @@ import "./index.scss"
 import "./media.scss"
 import IconText from "../Icons/IconText"
 import useArticleLikes from "../../hooks/useArticleLikes"
-import edit from "../../img/edit.svg"
 import IconsTop from "../Icons/IconsTop"
 import IconDelete from "../Icons/IconDelete"
+import IconEdit from "../Icons/IconEdit"
 
 export default function ArticleCard({ title, img, id, views, likes, tag, cardText }) {
 
@@ -16,7 +16,7 @@ export default function ArticleCard({ title, img, id, views, likes, tag, cardTex
 		<div className="card" ref={cardRef}>
 
 			<IconsTop cardRef={cardRef} className="iconsTop">
-				<img src={edit} onClick={() => window.location.href = `edit/${id}`} />
+				<IconEdit id={id} fn="editArticle" />
 				<IconDelete id={id} fn="deleteArticle" />
 			</IconsTop>
 

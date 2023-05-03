@@ -6,6 +6,7 @@ import IconText from "../Icons/IconText"
 import IconsTop from "../Icons/IconsTop"
 import { baseURL } from "../../consts"
 import IconDelete from "../Icons/IconDelete"
+import IconEdit from "../Icons/IconEdit"
 
 export default function CompanyCard({ obj }) {
 
@@ -26,6 +27,7 @@ export default function CompanyCard({ obj }) {
 			</IconsTop>
 
 			<IconsTop cardRef={cardRef} className="iconsTop">
+				<IconEdit id={id} fn="editCompany" />
 				<IconDelete id={id} fn="deleteCompany" />
 			</IconsTop>
 

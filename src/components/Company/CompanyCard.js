@@ -5,14 +5,12 @@ import Radar from "../Charts/Radar"
 import IconText from "../Icons/IconText"
 import IconsTop from "../Icons/IconsTop"
 import { baseURL } from "../../consts"
-import del from "../../img/del.svg"
-import useCompany from "../../hooks/useCompany"
+import IconDelete from "../Icons/IconDelete"
 
 export default function CompanyCard({ obj }) {
 
 	const { name, img, _id: id } = obj
 	const cardRef = useRef(null)
-	const { deleteCompany } = useCompany()
 
 	return (
 		<div className="card" ref={cardRef}>
@@ -28,7 +26,7 @@ export default function CompanyCard({ obj }) {
 			</IconsTop>
 
 			<IconsTop cardRef={cardRef} className="iconsTop">
-				<img src={del} onClick={(e) => deleteCompany(id, e)} ignoreOutside="true" />
+				<IconDelete id={id} fn="deleteCompany" />
 			</IconsTop>
 
 			<div className="tac white">{name}</div>

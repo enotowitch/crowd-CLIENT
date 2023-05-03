@@ -9,6 +9,7 @@ import {
 	Legend,
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
+import radarClip from "../../img/radarClip.svg"
 
 ChartJS.register(
 	RadialLinearScale,
@@ -20,7 +21,7 @@ ChartJS.register(
 );
 
 
-export default function Radar_({ obj }) {
+export default function Radar_({ obj, clipNum }) {
 
 	let Fiabilite, Localization, TVL, Impayes, Liquidity, Commnuaute, Frais, Rendement
 	if (obj) {
@@ -83,6 +84,7 @@ export default function Radar_({ obj }) {
 
 	return (
 		<div className="c chart">
+			{clipNum >= 0 && <img src={radarClip} className={`radarClip radarClip${clipNum}`} />}
 			<Radar data={data} options={options} />
 		</div>
 	)

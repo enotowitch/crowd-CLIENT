@@ -5,10 +5,19 @@
 	.cards{
 		padding: 30px 0;
 	}
+	.postFull{
+		.chart{
+			width: 100%;
+		}
+	}
 }
 
 
 // ! > $breakpointMobile
 @media (min-width:($breakpointMobile+1)) {
-
+	.postFull{
+		.chart{
+			width: 50%;
+		}
+	}
 }

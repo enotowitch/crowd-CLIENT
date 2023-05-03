@@ -18,7 +18,7 @@ export default function TextEditor({ children, btnText, fn, editValue }) { // ch
 	// * functions are gray because of eval(fn)
 	const { addArticle, editArticle } = useArticle(value || editValue)
 	const { addComment } = useComment(value)
-	const { addCompany, editCompany } = useCompany(value)
+	const { addCompany, editCompany } = useCompany(value || editValue)
 
 	return (
 		<form className="textEditor fc" onSubmit={eval(fn)}>

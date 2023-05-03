@@ -45,7 +45,7 @@
 	padding-bottom: 30px;
 }
 
-.articleFull{
+.postFull{
 	width: 100%;
 	// !!
 	img{
@@ -57,13 +57,10 @@
 	> * {
 		margin-bottom: 24px;
 	}
-	// * underline links in articleFull (textEditor wraps `a` with `p` tag)
+	// * underline links in postFull (textEditor wraps `a` with `p` tag)
 	p a{
 		text-decoration: underline;
 		color: $brand;
-	}
-	.chart{
-		width: 50%;
 	}
 }
 

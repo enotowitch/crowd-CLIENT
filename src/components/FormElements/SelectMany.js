@@ -3,7 +3,7 @@ import "./index.scss"
 import "./media.scss"
 import Select from "./Select"
 import Input from "./Input"
-import Tag from "./Tag"
+import Tags from "./Tags"
 
 export default function SelectMany({ options, name }) {
 
@@ -30,17 +30,13 @@ export default function SelectMany({ options, name }) {
 			<Select options={options} onChange={onChange} />
 			<Input hidden name={name} value={arr} />
 
-			<div className="f g">
-				{arr.map(item => (
-					<Tag
-						src="del"
-						text={item}
-						textClassName="order1 mr"
-						iconClassName="order2 icon_small m0"
-						onClick={onClick}
-					/>
-				))}
-			</div>
+			<Tags
+				arr={arr}
+				onClick={onClick}
+				src="del"
+				textClassName="order1 mr"
+				iconClassName="order2 icon_small m0"
+			/>
 		</>
 	)
 }

@@ -10,7 +10,7 @@ export default function Select(props) {
 
 	function onChangeFew(e) {
 		valueSet(e.target.value)
-		props.onChange(e)
+		props.onChange && props.onChange(e)
 	}
 
 	return (

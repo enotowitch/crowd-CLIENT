@@ -5,7 +5,7 @@ import Select from "./Select"
 import Input from "./Input"
 import Tag from "./Tag"
 
-export default function SelectFew({ options, name }) {
+export default function SelectMany({ options, name }) {
 
 	const [arr, arrSet] = useState([]) // * arr of tags
 

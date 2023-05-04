@@ -52,9 +52,9 @@ export default function Radar_({ obj, clipNum }) {
 					Rendement
 				],
 				backgroundColor: backgroundColor,
-				borderColor: "rgba(255, 99, 132, 1)",
-				borderWidth: 0,
-				pointBackgroundColor: "transparent",
+				borderColor: backgroundColor,
+				borderWidth: 1,
+				pointBackgroundColor: backgroundColor,
 				tension: 0.3
 			},
 		],

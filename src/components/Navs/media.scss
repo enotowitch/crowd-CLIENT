@@ -6,12 +6,6 @@
 	header button{
 		display: none;
 	}
-	// * HIDE main logo text on mobile
-	header .logo .iconText{
-		&__text{
-			display: none;
-		}
-	}
 	// ! logo_user
 	// * HIDE logo_user on destop (in Header); SHOW logo_user on mobile (in Menu)
 	.logo_user{

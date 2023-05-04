@@ -45,6 +45,8 @@ export default function Bar_({ currentCompanyName }) {
 	let arrMore = []
 	companies?.map(item => Number(item.TVL) < currentCompanyTVL && arrLess.push(item))
 	companies?.map(item => Number(item.TVL) > currentCompanyTVL && arrMore.push(item))
+	arrLess.sort((a, b) => a.TVL - b.TVL)
+	arrMore.sort((a, b) => a.TVL - b.TVL)
 
 	let currentCompany
 	companies?.map(item => item.name === currentCompanyName && (currentCompany = item))

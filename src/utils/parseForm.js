@@ -4,7 +4,8 @@ export default function parseForm(e) { // e=event from onSubmit (html form)
 
 	// put all `inputs` values to "form"
 	e.target.querySelectorAll("input, select").forEach(each => {
-		form = { ...form, [each.name]: each.value }
+		// !! each.name != ""
+		each.name && (form = { ...form, [each.name]: each.value })
 	})
 
 	return (

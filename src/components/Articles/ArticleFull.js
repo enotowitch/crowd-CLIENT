@@ -10,6 +10,7 @@ import useTimeRead from "../../hooks/useTimeRead";
 import Icon2Text from "../Icons/Icon2Text";
 import Comments from "../Comments/Comments";
 import IconShare from "../Icons/IconShare";
+import Tag from "../FormElements/Tag";
 
 export default function ArticleFull() {
 
@@ -26,7 +27,7 @@ export default function ArticleFull() {
 
 				<div className="title">{article?.title}</div>
 
-				<IconText src={article?.tag} text={article?.tag} iconClassName="icon_small mr05" className="tag" />
+				<Tag src={article?.tag} text={article?.tag} />
 
 				<Icon2Text src="logo author" text={article?.author} iconClassName="icon_big">
 					<div className="f g">

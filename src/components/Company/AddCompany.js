@@ -7,7 +7,8 @@ import InputFile from "../FormElements/InputFile"
 import { useParams } from "react-router-dom"
 import useCompanyFull from "../../hooks/useCompanyFull"
 import prepareEdit from "../../utils/prepareEdit"
-import Checkboxes from "../FormElements/Checkboxes"
+import SelectFew from "../FormElements/SelectFew"
+import countries from "../../utils/countries"
 
 export default function AddCompany() {
 
@@ -30,7 +31,7 @@ export default function AddCompany() {
 				<Input name="Fiabilite" type="number" placeholder="Fiabilite" editValue={company?.Fiabilite} label="Fiabilite" />
 
 				<Input name="Localization" type="number" placeholder="Localization" editValue={company?.Localization} label="Localization" />
-				<Checkboxes names={["Europe", "North America", "South America", "Australia", "Africa", "Asia"]} />
+				<SelectFew name="LocalizationArray" options={countries} />
 
 				<Input name="TVL" type="number" placeholder="TVL" editValue={company?.TVL} label="TVL" />
 				<Input name="Impayes" type="number" placeholder="Impayes/Retards" editValue={company?.Impayes} label="Impayes" />

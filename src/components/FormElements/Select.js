@@ -8,10 +8,15 @@ export default function Select(props) {
 
 	const [value, valueSet] = useState()
 
+	function onChangeFew(e) {
+		valueSet(e.target.value)
+		props.onChange(e)
+	}
+
 	return (
 		<select
 			value={value || editValue}
-			onChange={(e) => valueSet(e.target.value)}
+			onChange={onChangeFew}
 			className={className}
 			{...props}
 		>

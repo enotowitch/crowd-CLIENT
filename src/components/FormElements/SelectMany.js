@@ -1,13 +1,19 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import "./index.scss"
 import "./media.scss"
 import Select from "./Select"
 import Input from "./Input"
 import Tags from "./Tags"
 
-export default function SelectMany({ options, name }) {
+export default function SelectMany({ options, name, editValue }) {
 
 	const [arr, arrSet] = useState([]) // * arr of tags
+
+	// ! editValue
+	useEffect(() => {
+		arrSet(editValue?.split(","))
+	}, [editValue])
+	// ? editValue
 
 	function onChange(e) {
 		// * add tag

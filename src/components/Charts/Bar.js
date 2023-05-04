@@ -23,18 +23,33 @@ ChartJS.register(
 export default function Bar_({ currentCompanyName }) {
 
 	// ! getTVL
-	const [company, companySet] = useState([])
+	const [companies, companiesSet] = useState([])
 
 	useEffect(() => {
 		async function getTVL() {
 			const res = await api.getTVL() // [{name: 'company name', TVL: '3'}, {...}]
-			companySet(res)
+			companiesSet(res)
 		}
 
 		getTVL()
 	}, [])
 	// ? getTVL
 
+	// 1. find currentCompanyTVL
+	let currentCompanyTVL
+	companies?.map(item => item.name === currentCompanyName && (currentCompanyTVL = item.TVL))
+
+	// 2. arrLess & arrMore: 
+	// * `final arr` = [arrLess[first],arrLess[last],currentCompany,arrMore[first],arrMore[last]]
+	let arrLess = []
+	let arrMore = []
+	companies?.map(item => Number(item.TVL) < currentCompanyTVL && arrLess.push(item))
+	companies?.map(item => Number(item.TVL) > currentCompanyTVL && arrMore.push(item))
+
+	let currentCompany
+	companies?.map(item => item.name === currentCompanyName && (currentCompany = item))
+
+	// ! options
 	const options = {
 		responsive: true,
 		plugins: {
@@ -47,27 +62,19 @@ export default function Bar_({ currentCompanyName }) {
 			},
 		},
 	};
-
-	// ! labels
-	let labels = []
-	company?.map(item => labels.push(item.name))
-	// ! TVLs
-	let TVLs = []
-	company?.map(item => TVLs.push(item.TVL))
-	TVLs.sort((a, b) => a - b)
-
-	// ! color & currentCompanyInd
-	let currentCompanyInd
-	company?.map((item, ind) => item.name === currentCompanyName && (currentCompanyInd = ind))
-	const colorsArr = ["#9327FF", "#9327FF", "#9327FF", "#9327FF", "#9327FF"]
-	colorsArr[currentCompanyInd] = "#FF900D"
-
+	// ! data
 	const data = {
-		labels: [labels[0], labels[1], labels[2], labels[3], labels[4]],
+		labels: [arrLess[0]?.name, arrLess[arrLess.length - 1]?.name, currentCompany?.name, arrMore[0]?.name, arrMore[arrMore.length - 1]?.name],
 		datasets: [{
 			label: "",
-			data: [TVLs[0], TVLs[1], TVLs[2], TVLs[3], TVLs[4]],
-			backgroundColor: colorsArr,
+			data: [arrLess[0]?.TVL, arrLess[arrLess.length - 1]?.TVL, currentCompany?.TVL, arrMore[0]?.TVL, arrMore[arrMore.length - 1]?.TVL],
+			backgroundColor: [
+				"#9327FF",
+				"#9327FF",
+				"#FF900D",
+				"#9327FF",
+				"#9327FF",
+			],
 		}]
 	};
 

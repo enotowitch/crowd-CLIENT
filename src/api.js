@@ -171,6 +171,15 @@ export const editCompany = async (id, formAndValue) => {
 		console.log(error)
 	}
 }
+
+export const getTVL = async () => {
+	try {
+		const { data } = await instance.get("/getTVL")
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? COMPANY
 
 // !! ADD IMAGE

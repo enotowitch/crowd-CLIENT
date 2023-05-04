@@ -4,8 +4,9 @@ import "./media.scss"
 import radarInfo from "../../utils/radarInfo"
 import RadarInfoItem from "./RadarInfoItem"
 import Tags from "../FormElements/Tags"
+import Bar from "./Bar"
 
-export default function RadarInfo({ obj }) {
+export default function RadarInfo({ obj }) { // obj=company
 
 	return (
 		<section className="postFull mb">
@@ -20,9 +21,17 @@ export default function RadarInfo({ obj }) {
 							<Tags arr={LocalizationArray} />
 						</RadarInfoItem>
 					)
-				} else {
-					return <RadarInfoItem title={title} text={text} ind={ind} obj={obj} />
 				}
+
+				if (title === "TVL") {
+					return (
+						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
+							<Bar currentCompanyName={obj?.name} />
+						</RadarInfoItem>
+					)
+				}
+
+				return <RadarInfoItem title={title} text={text} ind={ind} obj={obj} />
 
 			})}
 

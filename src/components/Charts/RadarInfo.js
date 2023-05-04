@@ -5,6 +5,7 @@ import radarInfo from "../../utils/radarInfo"
 import RadarInfoItem from "./RadarInfoItem"
 import Tags from "../FormElements/Tags"
 import Bar from "./Bar"
+import Pie from "./Pie"
 
 export default function RadarInfo({ obj }) { // obj=company
 
@@ -27,6 +28,14 @@ export default function RadarInfo({ obj }) { // obj=company
 					return (
 						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
 							<Bar currentCompanyName={obj?.name} />
+						</RadarInfoItem>
+					)
+				}
+
+				if (title === "Impayes") {
+					return (
+						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
+							<Pie paid={obj?.Impayes} />
 						</RadarInfoItem>
 					)
 				}

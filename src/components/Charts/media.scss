@@ -1,0 +1,16 @@
+@import "../../vars.scss";
+
+// ! < $breakpointMobile
+@media (max-width:$breakpointMobile) {	
+	.pie{
+		width: 80%;
+	}	
+}
+
+
+// ! > $breakpointMobile
+@media (min-width:($breakpointMobile+1)) {
+	.pie{
+		width: 30%;
+	}	
+}

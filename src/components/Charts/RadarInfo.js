@@ -10,7 +10,7 @@ import Pie from "./Pie"
 export default function RadarInfo({ obj }) { // obj=company
 
 	return (
-		<section className="postFull mb">
+		<div className="postFull mb">
 
 			{radarInfo.map((info, ind) => {
 				const { title, text } = info
@@ -44,6 +44,6 @@ export default function RadarInfo({ obj }) { // obj=company
 
 			})}
 
-		</section>
+		</div>
 	)
 }

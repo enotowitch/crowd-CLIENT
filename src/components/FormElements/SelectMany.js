@@ -11,7 +11,7 @@ export default function SelectMany({ options, name, editValue }) {
 
 	// ! editValue
 	useEffect(() => {
-		arrSet(editValue?.split(","))
+		editValue && arrSet(editValue?.split(","))
 	}, [editValue])
 	// ? editValue
 

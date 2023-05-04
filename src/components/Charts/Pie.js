@@ -23,7 +23,7 @@ export default function Pie_({ paid }) {
 	};
 
 	return (
-		<div className="w30 c">
+		<div className="pie c">
 			<Pie data={data} />
 		</div>
 	);

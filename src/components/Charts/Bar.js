@@ -57,6 +57,7 @@ export default function Bar_({ currentCompanyName }) {
 		plugins: {
 			legend: {
 				position: 'top',
+				display: false
 			},
 			title: {
 				display: false,

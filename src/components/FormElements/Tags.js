@@ -8,7 +8,7 @@ export default function Tags(props) { // don't touch {...props}
 	const { arr } = props
 
 	return (
-		<div className="f g">
+		<div className="tags">
 			{arr?.map((item, ind) => (
 				<Tag
 					key={ind}

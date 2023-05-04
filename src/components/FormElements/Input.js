@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import "./index.scss"
 import "./media.scss"
 
@@ -12,12 +12,16 @@ export default function Input(props) {
 		valueSet(e.target.value)
 	}
 
+	useEffect(() => {
+		editValue && valueSet(editValue)
+	}, [editValue])
+
 	return (
 		<label {...props}>
 			{label && <div className="fw600 mt mb">{label}</div>}
 
 			<input
-				value={value || editValue}
+				value={value}
 				onChange={onChange}
 				{...props}
 			/>

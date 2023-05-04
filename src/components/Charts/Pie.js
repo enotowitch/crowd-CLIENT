@@ -17,13 +17,14 @@ export default function Pie_({ paid }) {
 				backgroundColor: [
 					'#FF900D',
 					'#9327FF'
-				]
+				],
+				borderWidth: 0
 			},
 		],
 	};
 
 	return (
-		<div className="pie c">
+		<div className="pie c mb">
 			<Pie data={data} />
 		</div>
 	);

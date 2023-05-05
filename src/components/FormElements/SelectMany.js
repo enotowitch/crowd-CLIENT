@@ -5,7 +5,7 @@ import Select from "./Select"
 import Input from "./Input"
 import Tags from "./Tags"
 
-export default function SelectMany({ options, name, editValue }) {
+export default function SelectMany({ options, name, editValue, placeholder }) {
 
 	const [arr, arrSet] = useState([]) // * arr of tags
 
@@ -33,7 +33,7 @@ export default function SelectMany({ options, name, editValue }) {
 
 	return (
 		<>
-			<Select options={options} onChange={onChange} />
+			<Select options={options} onChange={onChange} placeholder={placeholder} />
 			<Input hidden name={name} value={arr} />
 
 			<Tags

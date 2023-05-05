@@ -21,7 +21,7 @@ export default function RadarInfo({ obj }) { // obj=company
 
 			{radarInfo.map((info, ind) => {
 				const { title, text } = info
-				const LocalizationArray = obj?.LocalizationArray.split(",")
+				const LocalizationArray = obj?.LocalizationArray && obj?.LocalizationArray.split(",")
 
 				if (notShow.includes(title)) {
 					return // * don't show empty titles 
@@ -30,7 +30,7 @@ export default function RadarInfo({ obj }) { // obj=company
 				if (title === "Localization") {
 					return (
 						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
-							<Tags arr={LocalizationArray} />
+							{LocalizationArray && <Tags arr={LocalizationArray} />}
 						</RadarInfoItem>
 					)
 				}
@@ -54,7 +54,7 @@ export default function RadarInfo({ obj }) { // obj=company
 				if (title === "Frais") {
 					return (
 						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
-							<Pie obj={obj?.FraisObj} />
+							{obj?.FraisObj && <Pie obj={obj?.FraisObj} />}
 						</RadarInfoItem>
 					)
 				}

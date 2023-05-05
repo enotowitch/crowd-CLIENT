@@ -32,7 +32,7 @@ export default function AddCompany() {
 				<Input name="Fiabilite" type="number" placeholder="Fiabilite" editValue={company?.Fiabilite} label="Fiabilite" />
 
 				<Input name="Localization" type="number" placeholder="Localization" editValue={company?.Localization} label="Localization" />
-				<SelectMany name="LocalizationArray" options={countries} editValue={company?.LocalizationArray} />
+				<SelectMany name="LocalizationArray" options={countries} editValue={company?.LocalizationArray} placeholder="choose country" />
 
 				<Input name="TVL" type="number" placeholder="TVL" editValue={company?.TVL} label="TVL" />
 				<Input name="Impayes" type="number" placeholder="Impayes/Retards" editValue={company?.Impayes} label="Impayes" />

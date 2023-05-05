@@ -48,7 +48,7 @@ export default function ArticleFull() {
 
 			</section>
 
-			<Comments articleId={articleId} />
+			<Comments />
 		</div>
 	)
 }

@@ -5,9 +5,9 @@ import AddComment from "./AddComment"
 import useComments from "../../hooks/useComments"
 import Comment from "./Comment"
 
-export default function Comments({ articleId }) {
+export default function Comments() {
 
-	const { comments } = useComments(articleId)
+	const { comments } = useComments()
 
 	return (
 		<section className="comments">

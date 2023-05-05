@@ -212,6 +212,12 @@ header, footer, nav, section{
 .dn{
 	display: none !important;
 }
+.f1{
+	flex: 1 1;
+}
+.f2{
+	flex: 2 1;
+}
 // ? flex & display
 // ! position
 .c{
@@ -258,7 +264,7 @@ header, footer, nav, section{
 	color: $brand;
 }
 // ? font & text
-// ! width
+// ! width & height
 .w100{
 	width: 100%;
 }
@@ -271,8 +277,14 @@ header, footer, nav, section{
 .wfc{
 	width: fit-content;
 }
-// ? width
+.ha{
+	height: auto !important;
+}
+// ? width & height
 // ! other
+.ov{
+	overflow: visible;
+}
 .brand{
 	color: $brand;
 }

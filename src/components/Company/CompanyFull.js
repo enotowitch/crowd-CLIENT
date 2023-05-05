@@ -7,6 +7,8 @@ import InputButton from "../FormElements/InputButton"
 import Markdown from "marked-react"
 import Radar from "../Charts/Radar"
 import RadarInfo from "../Charts/RadarInfo"
+import Articles from "../Articles/Articles"
+import Comments from "../Comments/Comments"
 
 export default function CompanyFull() {
 
@@ -14,18 +16,30 @@ export default function CompanyFull() {
 	const { company } = useCompanyFull(companyId)
 
 	return (
-		<div className="fc w100">
-			<section className="postFull mb">
+		<div className="bigFlex">
+			<div className="fc w100 f2">
+				<section className="postFull mb">
 
-				<div className="title">{company?.name}</div>
-				<InputButton text="visit" value={company?.link} path={company?.link} />
+					<div className="title">{company?.name}</div>
+					<InputButton text="visit" value={company?.link} path={company?.link} />
 
-				{<Markdown>{company?.value}</Markdown>}
+					{<Markdown>{company?.value}</Markdown>}
 
-				<Radar obj={company} />
-			</section>
+					<Radar obj={company} />
+				</section>
 
-			<RadarInfo obj={company} />
+				<RadarInfo obj={company} />
+			</div>
+
+			<div className="fc f1">
+				<div className="rightBar ha">
+					<Comments />
+				</div>
+
+				<div className="rightBar mt">
+					<Articles />
+				</div>
+			</div>
 		</div>
 	)
 }

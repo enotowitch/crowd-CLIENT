@@ -7,6 +7,6 @@ import edit from "../../img/edit.svg"
 export default function IconEdit({ id, fn }) { // id=articleId/CompanyId
 
 	return (
-		<img src={edit} onClick={() => window.location.href = `${fn}/${id}`} />
+		<img src={edit} onClick={() => window.location.href = `/${fn}/${id}`} />
 	)
 }

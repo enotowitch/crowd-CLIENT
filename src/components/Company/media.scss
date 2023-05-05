@@ -1,0 +1,14 @@
+@import "../../vars.scss";
+
+// !! 1024px: move comments/articles from rigth to bottom
+@media (max-width:1024px) {	
+	.bigFlex{
+		flex-direction: column;
+	}
+}
+
+
+// ! > $breakpointMobile
+@media (min-width:($breakpointMobile+1)) {
+
+}

@@ -7,7 +7,7 @@ export default function Checkbox({ name }) {
 	const [value, valueSet] = useState(false)
 
 	return (
-		<label className="if wsnw mr">
+		<label className="if wsnw mr wfc">
 			<input
 				type="checkbox"
 				name={name}

@@ -38,6 +38,15 @@ button{
 	&_sec{
 		background: $light;
 	}
+	&_dark{
+		background: $dark;
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 15px;
+		border-radius: $borderRadiusSmall;
+	}
 }
 // ? button
 // ! input

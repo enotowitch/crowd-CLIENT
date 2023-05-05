@@ -6,6 +6,7 @@ import RadarInfoItem from "./RadarInfoItem"
 import Tags from "../FormElements/Tags"
 import Bar from "./Bar"
 import Pie from "./Pie"
+import IconText from "../Icons/IconText"
 
 export default function RadarInfo({ obj }) { // obj=company
 
@@ -47,6 +48,14 @@ export default function RadarInfo({ obj }) { // obj=company
 					return (
 						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
 							<Pie obj={{ paid: obj?.Impayes, "un paid": 10 - Number(obj?.Impayes) }} />
+						</RadarInfoItem>
+					)
+				}
+
+				if (title === "Liquidity") {
+					return (
+						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
+							{obj?.["Secondary Step"] === "true" && <IconText src="check" iconClassName="icon_small" text="Secondary step" className="btn_dark m c" />}
 						</RadarInfoItem>
 					)
 				}

@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom"
 import useCompanyFull from "../../hooks/useCompanyFull"
 import prepareEdit from "../../utils/prepareEdit"
 import SelectMany from "../FormElements/SelectMany"
+import Checkbox from "../FormElements/Checkbox"
 import countries from "../../utils/countries"
 import Frais from "./Frais"
 
@@ -36,7 +37,10 @@ export default function AddCompany() {
 
 				<Input name="TVL" type="number" placeholder="TVL" editValue={company?.TVL} label="TVL" />
 				<Input name="Impayes" type="number" placeholder="Impayes/Retards" editValue={company?.Impayes} label="Impayes" />
+
 				<Input name="Liquidity" type="number" placeholder="Liquidity" editValue={company?.Liquidity} label="Liquidity" />
+				<Checkbox name="Secondary Step" />
+
 				<Input name="Commnuaute" type="number" placeholder="Commnuaute" editValue={company?.Commnuaute} label="Commnuaute" />
 
 				<Frais obj={company} />

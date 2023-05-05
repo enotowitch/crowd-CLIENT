@@ -35,7 +35,15 @@ export default function RadarInfo({ obj }) { // obj=company
 				if (title === "Impayes") {
 					return (
 						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
-							<Pie paid={obj?.Impayes} />
+							<Pie obj={{ paid: obj?.Impayes, "un paid": 10 - Number(obj?.Impayes) }} />
+						</RadarInfoItem>
+					)
+				}
+
+				if (title === "Frais") {
+					return (
+						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
+							<Pie obj={obj?.FraisObj} />
 						</RadarInfoItem>
 					)
 				}

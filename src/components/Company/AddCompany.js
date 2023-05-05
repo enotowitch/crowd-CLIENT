@@ -9,6 +9,7 @@ import useCompanyFull from "../../hooks/useCompanyFull"
 import prepareEdit from "../../utils/prepareEdit"
 import SelectMany from "../FormElements/SelectMany"
 import countries from "../../utils/countries"
+import Frais from "./Frais"
 
 export default function AddCompany() {
 
@@ -37,7 +38,9 @@ export default function AddCompany() {
 				<Input name="Impayes" type="number" placeholder="Impayes/Retards" editValue={company?.Impayes} label="Impayes" />
 				<Input name="Liquidity" type="number" placeholder="Liquidity" editValue={company?.Liquidity} label="Liquidity" />
 				<Input name="Commnuaute" type="number" placeholder="Commnuaute" editValue={company?.Commnuaute} label="Commnuaute" />
-				<Input name="Frais" type="number" placeholder="Frais" editValue={company?.Frais} label="Frais" />
+
+				<Frais obj={company} />
+
 				<Input name="Rendement" type="number" placeholder="Rendement" editValue={company?.Rendement} label="Rendement" />
 			</TextEditor>
 		</section>

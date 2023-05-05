@@ -16,7 +16,23 @@ export default function useCompany(value) { // value=textEditor value
 		const { form } = parseForm(e)
 		const img = replacePath(form.img)
 
-		const res = await api.addCompany({ ...form, img, value })
+		// ! FraisObj
+		const formKeysArr = Object.keys(form)
+
+		let FraisObj = {}
+		formKeysArr.map((keyName, ind) => {
+			if (keyName.includes("FraisLegend")) {
+				const keyName = Object.values(form)[ind]
+				const keyValue = Object.values(form)[ind + 1]
+
+				if (!Number(keyName) && keyName) { // * don't add numbers and "" to FraisObj
+					FraisObj = { ...FraisObj, [keyName]: keyValue } // {"name 1": "value 1","name 2": "value 2"}
+				}
+			}
+		})
+		// ? FraisObj
+
+		const res = await api.addCompany({ ...form, FraisObj, img, value })
 		res.ok && (window.location.href = `/company/${res.id}`)
 	}
 

@@ -4,19 +4,32 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function Pie_({ paid }) {
+export default function Pie_({ obj }) {
 
-	const unPaid = 10 - Number(paid)
+	let objLabels, objData
+	if (obj) {
+		objLabels = Object.keys(obj)
+		objData = Object.values(obj)
+	}
 
 	const data = {
-		labels: ['Unpaid', 'paid'],
+		labels: objLabels,
 		datasets: [
 			{
 				label: '',
-				data: [unPaid, paid],
+				data: objData,
+				// todo colors
 				backgroundColor: [
 					'#FF900D',
-					'#9327FF'
+					'#9327FF',
+					'DeepSkyBlue',
+					'Olive',
+					'Aqua',
+					'Green',
+					'Purple',
+					'Yellow',
+					'Teal',
+					'Navy'
 				],
 				borderWidth: 0
 			},

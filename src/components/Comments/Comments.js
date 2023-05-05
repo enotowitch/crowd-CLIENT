@@ -4,6 +4,7 @@ import "./media.scss"
 import AddComment from "./AddComment"
 import useComments from "../../hooks/useComments"
 import Comment from "./Comment"
+import CommentScroll from "./CommentScroll"
 
 export default function Comments() {
 
@@ -17,6 +18,8 @@ export default function Comments() {
 			{comments?.map(obj => <Comment key={obj._id} obj={obj} />)}
 
 			<AddComment />
+
+			<CommentScroll />
 		</section>
 	)
 }

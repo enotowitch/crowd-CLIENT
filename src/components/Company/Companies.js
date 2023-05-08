@@ -13,7 +13,7 @@ export default function Companies() {
 		<section className="cards">
 			{companies?.map(company => <CompanyCard key={company._id} obj={company} />)}
 
-			<ShowMore onClick={showMore} />
+			<ShowMore onClick={showMore} className="asc" />
 		</section>
 	)
 }

@@ -37,7 +37,7 @@ export default function Articles() {
 				})
 			}
 
-			<ShowMore onClick={showMore} />
+			<ShowMore onClick={showMore} className="asc" />
 
 		</section>
 	)

@@ -3,12 +3,12 @@ import "./index.scss"
 import "./media.scss"
 import img from "../../img/comments.svg"
 
-export default function CommentScroll() {
+export default function ScrollTo() {
 	return (
 		<img
 			src={img}
 			onClick={() => document.querySelector(".comments").scrollIntoView({ behavior: "smooth" })}
-			className="commentScroll"
+			className="scrollTo"
 		/>
 	)
 }

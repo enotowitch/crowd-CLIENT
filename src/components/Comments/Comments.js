@@ -4,7 +4,7 @@ import "./media.scss"
 import AddComment from "./AddComment"
 import useComments from "../../hooks/useComments"
 import Comment from "./Comment"
-import CommentScroll from "./CommentScroll"
+import ScrollTo from "../Navs/ScrollTo"
 
 export default function Comments() {
 
@@ -19,7 +19,7 @@ export default function Comments() {
 
 			<AddComment />
 
-			<CommentScroll />
+			<ScrollTo />
 		</section>
 	)
 }

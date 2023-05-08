@@ -96,9 +96,9 @@ export const addComment = async (value, articleId) => {
 	}
 }
 
-export const getComments = async (articleId) => {
+export const getComments = async (articleId, skip) => {
 	try {
-		const { data } = await instance.post(`/getComments`, { articleId })
+		const { data } = await instance.post(`/getComments`, { articleId, skip })
 		return data
 	} catch (error) {
 		console.log(error)

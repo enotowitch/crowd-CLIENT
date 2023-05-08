@@ -34,11 +34,15 @@
 
 .scrollTo{
 	position: fixed;
-	bottom: 0px;
+	bottom: 55px;
 	right: 10px;
 	z-index: 3;
 	background: $dark;
 	border-radius: 50%;
 	padding: 10px;
 	width: 50px;
+	// !!
+	&.header{
+		bottom: 0px;
+	}
 }

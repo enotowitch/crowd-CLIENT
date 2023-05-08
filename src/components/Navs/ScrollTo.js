@@ -1,14 +1,14 @@
 import React from "react"
 import "./index.scss"
 import "./media.scss"
-import img from "../../img/comments.svg"
+import IconText from "../Icons/IconText"
 
-export default function ScrollTo() {
+export default function ScrollTo({ className }) {
 	return (
-		<img
-			src={img}
-			onClick={() => document.querySelector(".comments").scrollIntoView({ behavior: "smooth" })}
-			className="scrollTo"
+		<IconText
+			src={className}
+			onClick={() => document.querySelector(`.${className}`).scrollIntoView({ behavior: "smooth" })}
+			iconClassName={`scrollTo ${className}`}
 		/>
 	)
 }

@@ -12,6 +12,7 @@ import Footer from "./components/Navs/Footer"
 import AddCompany from "./components/Company/AddCompany"
 import Companies from "./components/Company/Companies"
 import CompanyFull from "./components/Company/CompanyFull"
+import ScrollTo from "./components/Navs/ScrollTo"
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
 			<Banner />
 			<Popup />
 			<Menu />
+			<ScrollTo className="header" />
 
 			<div className="app__mid">
 				<NavBottom />

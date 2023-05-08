@@ -19,7 +19,7 @@ export default function Comments() {
 
 			<AddComment />
 
-			<ScrollTo />
+			<ScrollTo className="comments" />
 		</section>
 	)
 }

@@ -2,10 +2,11 @@ import React from "react"
 import ArticleCard from "./ArticleCard";
 import useArticles from "../../hooks/useArticles";
 import parseImg from "../../utils/parseImg";
+import ShowMore from "../FormElements/ShowMore";
 
 export default function Articles() {
 
-	const { articles } = useArticles()
+	const { articles, showMore } = useArticles()
 
 	return (
 		<section className="cards">
@@ -35,6 +36,8 @@ export default function Articles() {
 					)
 				})
 			}
+
+			<ShowMore onClick={showMore} />
 
 		</section>
 	)

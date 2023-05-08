@@ -20,9 +20,9 @@ export const addArticle = async (formAndValue) => {
 	}
 }
 
-export const getArticles = async () => {
+export const getArticles = async (skip) => {
 	try {
-		const { data } = await instance.get("/getArticles")
+		const { data } = await instance.post("/getArticles", { skip })
 		return data
 	} catch (error) {
 		console.log(error)
@@ -145,9 +145,9 @@ export const getCompany = async (id) => {
 	}
 }
 
-export const getCompanies = async () => {
+export const getCompanies = async (skip) => {
 	try {
-		const { data } = await instance.get("/getCompanies")
+		const { data } = await instance.post("/getCompanies", { skip })
 		return data
 	} catch (error) {
 		console.log(error)

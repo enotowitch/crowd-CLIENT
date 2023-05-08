@@ -17,7 +17,7 @@ export default function IconsTop({ cardRef, children, className }) {
 
 	return (
 		showTopIcons &&
-		<div className={className}>
+		<div className={className} onClick={(e) => e.stopPropagation()}>
 			{children}
 		</div>
 	)

@@ -22,6 +22,7 @@ export default function CompanyCard({ obj }) {
 					iconClassName="icon_mid"
 					text="See review >"
 					textClassName="brand"
+					onClick={() => window.location.href = `/company/${id}`}
 				/>
 			</IconsTop>
 

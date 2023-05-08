@@ -13,7 +13,7 @@ export default function ArticleCard({ title, img, id, views, likes, tag, cardTex
 	const cardRef = useRef(null)
 
 	return (
-		<div className="card" ref={cardRef}>
+		<div className="card" ref={cardRef} onClick={() => window.location.href = `/article/${id}`}>
 
 			<IconsTop cardRef={cardRef} className="iconsTop">
 				<IconEdit id={id} fn="editArticle" />
@@ -30,7 +30,7 @@ export default function ArticleCard({ title, img, id, views, likes, tag, cardTex
 					<IconText src="views" text={views} iconClassName="icon_small mr05" />
 					<IconText src="likes" text={likeCount} iconClassName="icon_small mr05" onClick={likeArticle} />
 				</div>
-				<IconText text="Read more >" className="brand" path={`/article/${id}`} />
+				<IconText text="Read more >" className="brand" />
 			</div>
 
 		</div>

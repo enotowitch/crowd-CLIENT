@@ -14,7 +14,7 @@ export default function CompanyCard({ obj }) {
 	const cardRef = useRef(null)
 
 	return (
-		<div className="card" ref={cardRef}>
+		<div className="card" ref={cardRef} onClick={() => window.location.href = `/company/${id}`}>
 
 			<IconsTop cardRef={cardRef} className="iconsMid">
 				<IconText
@@ -22,7 +22,6 @@ export default function CompanyCard({ obj }) {
 					iconClassName="icon_mid"
 					text="See review >"
 					textClassName="brand"
-					onClick={() => window.location.href = `company/${id}`}
 				/>
 			</IconsTop>
 

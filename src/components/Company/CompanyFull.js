@@ -9,6 +9,7 @@ import Radar from "../Charts/Radar"
 import RadarInfo from "../Charts/RadarInfo"
 import Articles from "../Articles/Articles"
 import Comments from "../Comments/Comments"
+import Companies from "./Companies"
 
 export default function CompanyFull() {
 
@@ -38,6 +39,10 @@ export default function CompanyFull() {
 
 				<div className="rightBar mt">
 					<Articles />
+				</div>
+
+				<div className="rightBar mt">
+					<Companies />
 				</div>
 			</div>
 		</div>

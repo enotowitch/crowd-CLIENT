@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import * as api from "../api"
 import { Context } from "../Context"
+import hideShowMore from "../utils/hideShowMore"
 
 // * watchingPost is set in hook use...Full.js
 export default function useComments(skip) {
@@ -11,14 +12,7 @@ export default function useComments(skip) {
 	useEffect(() => {
 		async function getComments() {
 			const res = await api.getComments(watchingPost, skip)
-			// ! hide/show showMore btn
-			// !! ".showMore"
-			if (res.length === 0) {
-				document.querySelector(".showMore").classList.add("dn")
-			} else {
-				document.querySelector(".showMore").classList.remove("dn")
-			}
-			// ? hide/show showMore btn
+			hideShowMore(res.length)
 			res && commentsSet(prev => [...prev, ...res])
 		}
 

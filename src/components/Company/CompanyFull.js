@@ -38,6 +38,7 @@ export default function CompanyFull() {
 							textClassName="order1 mr"
 							iconClassName="order2 icon_small2"
 							sharePopup="ShareCompany"
+							text={company?.name}
 						/>
 					</div>
 

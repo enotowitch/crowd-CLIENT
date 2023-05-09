@@ -47,6 +47,7 @@ export default function ArticleFull() {
 							src="share"
 							iconClassName="icon_small mr05"
 							sharePopup="ShareArticle"
+							text="share"
 						/>
 					</div>
 				</div>

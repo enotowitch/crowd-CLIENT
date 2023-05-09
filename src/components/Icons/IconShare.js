@@ -5,7 +5,7 @@ import { Context } from "../../Context";
 
 export default function IconShare(props) {
 
-	const { shareObj, src, iconClassName, textClassName, sharePopup } = props
+	const { shareObj, src, iconClassName, textClassName, sharePopup, text } = props
 
 	const { popupElementSet, sharingSet } = useContext(Context)
 	sharingSet(shareObj)
@@ -22,7 +22,7 @@ export default function IconShare(props) {
 	return (
 		<div className="fcc" onClick={() => popupElementSet(sharePopup)}>
 			<img src={src_} ignoreOutside="true" className={iconClassName} />
-			<span ignoreOutside="true" className={textClassName}>share</span>
+			<span ignoreOutside="true" className={textClassName}>{text}</span>
 		</div>
 	)
 }

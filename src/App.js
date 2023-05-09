@@ -13,6 +13,7 @@ import AddCompany from "./components/Company/AddCompany"
 import Companies from "./components/Company/Companies"
 import CompanyFull from "./components/Company/CompanyFull"
 import ScrollTo from "./components/Navs/ScrollTo"
+import Home from "./components/Home/Home"
 
 export default function App() {
 
@@ -29,6 +30,7 @@ export default function App() {
 				<NavBottom />
 
 				<Routes>
+					<Route exact path="/" element={<Home />} />
 					<Route exact path="add-article" element={<AddArticle />} />
 					<Route exact path="articles" element={<Articles />} />
 					<Route exact path="article/:articleId" element={<ArticleFull />} />

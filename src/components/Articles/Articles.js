@@ -11,6 +11,8 @@ export default function Articles() {
 	return (
 		<section className="cards">
 
+			<div className="title w100">Articles</div>
+
 			{
 				articles?.map(article => {
 

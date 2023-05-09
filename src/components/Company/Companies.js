@@ -11,6 +11,8 @@ export default function Companies() {
 
 	return (
 		<section className="cards">
+			<div className="title w100">Crowdfunding Discovery</div>
+
 			{companies?.map(company => <CompanyCard key={company._id} obj={company} />)}
 
 			<ShowMore onClick={showMore} className="asc" />

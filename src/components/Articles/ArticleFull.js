@@ -42,7 +42,12 @@ export default function ArticleFull() {
 					<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
 					<div className="f g">
 						<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small mr05" />
-						<IconShare share={article} />
+						<IconShare
+							shareObj={article}
+							src="share"
+							iconClassName="icon_small mr05"
+							sharePopup="ShareArticle"
+						/>
 					</div>
 				</div>
 

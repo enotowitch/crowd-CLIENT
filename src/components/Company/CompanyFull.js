@@ -11,6 +11,7 @@ import Articles from "../Articles/Articles"
 import Comments from "../Comments/Comments"
 import Companies from "./Companies"
 import IconText from "../Icons/IconText"
+import IconShare from "../Icons/IconShare"
 import { baseURL } from "../../consts"
 
 export default function CompanyFull() {
@@ -29,6 +30,14 @@ export default function CompanyFull() {
 							text={company?.name}
 							textClassName="title order1"
 							iconClassName="icon_mid order2"
+						/>
+
+						<IconShare
+							shareObj={company}
+							src="link"
+							textClassName="order1 mr"
+							iconClassName="order2 icon_small2"
+							sharePopup="ShareCompany"
 						/>
 					</div>
 

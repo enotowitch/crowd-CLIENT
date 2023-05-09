@@ -7,7 +7,7 @@ import { Context } from "../../Context"
 import parseImg from "../../utils/parseImg"
 import InputButton from "../FormElements/InputButton"
 
-export default function Share() {
+export default function ShareArticle() {
 
 	const url = window.location.href
 	const { sharing } = useContext(Context)

@@ -2,17 +2,27 @@ import React, { useContext } from "react"
 import "./index.scss"
 import "./media.scss"
 import { Context } from "../../Context";
-import img from "../../img/share.svg"
 
-export default function IconShare({ share }) {
+export default function IconShare(props) {
+
+	const { shareObj, src, iconClassName, textClassName, sharePopup } = props
 
 	const { popupElementSet, sharingSet } = useContext(Context)
-	sharingSet(share)
+	sharingSet(shareObj)
+
+	let src_
+	if (src) {
+		try {
+			src_ = require(`../../img/${src}.svg`)
+		} catch (error) {
+			src_ = require(`../../img/${src}.png`)
+		}
+	}
 
 	return (
-		<div className="fcc" onClick={() => popupElementSet("Share")}>
-			<img src={img} className="icon_small mr05" ignoreOutside="true" />
-			<span ignoreOutside="true">share</span>
+		<div className="fcc" onClick={() => popupElementSet(sharePopup)}>
+			<img src={src_} ignoreOutside="true" className={iconClassName} />
+			<span ignoreOutside="true" className={textClassName}>share</span>
 		</div>
 	)
 }

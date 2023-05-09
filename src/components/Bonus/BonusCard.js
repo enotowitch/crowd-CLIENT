@@ -5,10 +5,12 @@ import IconsTop from "../Icons/IconsTop"
 import IconDelete from "../Icons/IconDelete"
 import IconEdit from "../Icons/IconEdit"
 import Button from "../FormElements/Button"
+import IconText from "../Icons/IconText"
+import { baseURL } from "../../consts"
 
 export default function BonusCard({ obj }) {
 
-	const { _id: id, name, text } = obj
+	const { _id: id, name, text, img } = obj
 	const cardRef = useRef(null)
 
 	return (
@@ -19,7 +21,12 @@ export default function BonusCard({ obj }) {
 				<IconDelete id={id} fn="deleteBonus" />
 			</IconsTop>
 
-			<div className="title2 white">{name}</div>
+			<IconText
+				url={`${baseURL}/upload/${img}`}
+				iconClassName="icon_small2"
+				text={name}
+				textClassName="title2 white"
+			/>
 			<div>{text}</div>
 
 			<Button text="Get The Bonus" btnClassName="c btn_light" />

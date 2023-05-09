@@ -5,7 +5,6 @@ import AddComment from "./AddComment"
 import useComments from "../../hooks/useComments"
 import Comment from "./Comment"
 import ScrollTo from "../Navs/ScrollTo"
-import ShowMore from "../FormElements/ShowMore"
 
 export default function Comments() {
 
@@ -17,8 +16,6 @@ export default function Comments() {
 			<hr></hr>
 
 			{comments?.map(obj => <Comment key={obj._id} obj={obj} />)}
-
-			<ShowMore onClick={showMore} />
 
 			<AddComment />
 

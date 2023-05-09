@@ -14,7 +14,7 @@ export default function useComments() {
 
 	useEffect(() => {
 		async function getComments() {
-			const res = await api.getComments(watchingPost, skip)
+			const res = await api.getComments(watchingPost, 0)
 			hideShowMore(res)
 			res && commentsSet(prev => [...prev, ...res])
 		}

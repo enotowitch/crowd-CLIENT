@@ -17,10 +17,10 @@ export default function AddBonus() {
 
 	return (
 		<section className="w100">
-			<TextEditor btnText={btnText} fn={fn}>
+			<TextEditor btnText={btnText} fn={fn} editValue={bonus?.value}>
 				<InputFileInput obj={bonus} />
-				<Input name="link" placeholder="partner link" />
-				<Input name="text" placeholder="promo text" />
+				<Input name="link" placeholder="partner link" editValue={bonus?.link} />
+				<Input name="text" placeholder="promo text" editValue={bonus?.text} />
 			</TextEditor>
 		</section>
 	)

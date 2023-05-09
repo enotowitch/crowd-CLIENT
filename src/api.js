@@ -229,4 +229,13 @@ export const deleteBonus = async (id) => {
 		console.log(error)
 	}
 }
+
+export const editBonus = async (id, formAndValue) => {
+	try {
+		const { data } = await instance.post(`/editBonus`, { id, ...formAndValue })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? BONUS

@@ -30,8 +30,30 @@ export default function useBonus(value) { // value=textEditor value
 		animationDelete(res, e)
 	}
 
+	// ! editBonus
+	const { watchingPost } = useContext(Context) // * id of company I am editing now
+
+	async function editBonus(e) {
+		e.preventDefault()
+
+		const { form } = parseForm(e)
+		const img = replacePath(form.img)
+
+		// * keep old img if not uploaded new img
+		let formAndValue
+		if (form.updatedImg === "false") {
+			const { img, ...formWithoutImg } = form
+			formAndValue = { ...formWithoutImg, value }
+		} else {
+			formAndValue = { ...form, img, value }
+		}
+
+		const res = await api.editBonus(watchingPost, formAndValue)
+		res.ok && (window.location.href = `/bonus/${watchingPost}`)
+	}
+
 
 	return (
-		{ addBonus, deleteBonus }
+		{ addBonus, deleteBonus, editBonus }
 	)
 }

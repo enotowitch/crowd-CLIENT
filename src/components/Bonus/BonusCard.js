@@ -1,8 +1,6 @@
 import React, { useRef } from "react"
 import "./index.scss"
 import "./media.scss"
-import IconText from "../Icons/IconText"
-import useArticleLikes from "../../hooks/useArticleLikes"
 import IconsTop from "../Icons/IconsTop"
 import IconDelete from "../Icons/IconDelete"
 import IconEdit from "../Icons/IconEdit"
@@ -24,7 +22,7 @@ export default function BonusCard({ obj }) {
 			<div className="title2 white">{name}</div>
 			<div>{text}</div>
 
-			<Button text="Get The Bonus" />
+			<Button text="Get The Bonus" btnClassName="c btn_light" />
 
 		</div>
 	)

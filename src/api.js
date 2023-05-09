@@ -211,4 +211,13 @@ export const getBonuses = async (skip) => {
 		console.log(error)
 	}
 }
+
+export const getBonus = async (id) => {
+	try {
+		const { data } = await instance.get(`/bonus/${id}`)
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? BONUS

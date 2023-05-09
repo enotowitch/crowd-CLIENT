@@ -16,6 +16,7 @@ import ScrollTo from "./components/Navs/ScrollTo"
 import Home from "./components/Home/Home"
 import AddBonus from "./components/Bonus/AddBonus"
 import Bonuses from "./components/Bonus/Bonuses"
+import BonusFull from "./components/Bonus/BonusFull"
 
 export default function App() {
 
@@ -43,6 +44,7 @@ export default function App() {
 					<Route exact path="editCompany/:companyId" element={<AddCompany />} />
 					<Route exact path="add-bonus" element={<AddBonus />} />
 					<Route exact path="bonuses" element={<Bonuses />} />
+					<Route exact path="bonus/:bonusId" element={<BonusFull />} />
 				</Routes>
 			</div>
 

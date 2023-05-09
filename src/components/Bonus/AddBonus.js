@@ -4,6 +4,7 @@ import "./media.scss"
 import Input from "../FormElements/Input"
 import TextEditor from "../TextEditor/TextEditor"
 import prepareEdit from "../../utils/prepareEdit"
+import InputFileInput from "../FormElements/InputFileInput"
 
 export default function AddBonus() {
 
@@ -12,7 +13,7 @@ export default function AddBonus() {
 	return (
 		<section className="w100">
 			<TextEditor btnText={btnText} fn={fn}>
-				<Input name="name" placeholder="company name" />
+				{/* <InputFileInput obj={bonus} /> */}
 				<Input name="link" placeholder="partner link" />
 				<Input name="text" placeholder="promo text" />
 			</TextEditor>

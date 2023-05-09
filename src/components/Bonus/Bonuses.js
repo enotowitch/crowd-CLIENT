@@ -19,4 +19,3 @@ export default function Bonuses() {
 		</section>
 	)
 }
-// test commit 1

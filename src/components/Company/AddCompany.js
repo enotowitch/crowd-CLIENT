@@ -3,7 +3,7 @@ import "./index.scss"
 import "./media.scss"
 import Input from "../FormElements/Input"
 import TextEditor from "../TextEditor/TextEditor"
-import InputFile from "../FormElements/InputFile"
+import InputFileInput from "../FormElements/InputFileInput"
 import { useParams } from "react-router-dom"
 import useCompanyFull from "../../hooks/useCompanyFull"
 import prepareEdit from "../../utils/prepareEdit"
@@ -23,10 +23,7 @@ export default function AddCompany() {
 		<section className="w100">
 			<TextEditor btnText={btnText} fn={fn} editValue={company?.value}>
 
-				<div className="if">
-					<InputFile editValue={company?.img} />
-					<Input name="name" placeholder="company name" className="w100" editValue={company?.name} />
-				</div>
+				<InputFileInput obj={company} />
 
 				<Input name="link" placeholder="company link" editValue={company?.link} />
 

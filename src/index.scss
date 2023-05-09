@@ -38,7 +38,7 @@ button{
 	&_sec{
 		background: $light;
 	}
-	&_dark{
+	&_dark,&_light{
 		background: $dark;
 		width: 50%;
 		display: flex;
@@ -46,6 +46,9 @@ button{
 		align-items: center;
 		padding: 15px;
 		border-radius: $borderRadiusSmall;
+	}
+	&_light{
+		background: $light;
 	}
 }
 // ? button

@@ -6,6 +6,7 @@ import "./media.scss"
 import useArticle from "../../hooks/useArticle"
 import useComment from "../../hooks/useComment";
 import useCompany from "../../hooks/useCompany";
+import useBonus from "../../hooks/useBonus";
 
 export default function TextEditor({ children, btnText, fn, editValue }) { // children=Input/Select/etc...
 
@@ -19,6 +20,7 @@ export default function TextEditor({ children, btnText, fn, editValue }) { // ch
 	const { addArticle, editArticle } = useArticle(value || editValue)
 	const { addComment } = useComment(value)
 	const { addCompany, editCompany } = useCompany(value || editValue)
+	const { addBonus, editBonus } = useBonus(value || editValue)
 
 	return (
 		<form className="textEditor fc" onSubmit={eval(fn)}>

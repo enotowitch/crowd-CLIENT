@@ -192,3 +192,23 @@ export const addImg = async (formData) => {
 	}
 }
 // ?? ADD IMAGE
+
+// !! BONUS
+export const addBonus = async (formAndValue) => {
+	try {
+		const { data } = await instance.post("/addBonus", { ...formAndValue })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const getBonuses = async (skip) => {
+	try {
+		const { data } = await instance.post("/getBonuses", { skip })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? BONUS

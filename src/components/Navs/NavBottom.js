@@ -12,6 +12,8 @@ export default function NavBottom() {
 			<IconTextNav src="articles" path="articles" text="Articles" />
 			<IconTextNav src="add-company" path="add-company" text="Add Company" />
 			<IconTextNav src="companies" path="companies" text="Crowdfunding Discovery" />
+			<IconTextNav src="add-bonus" path="add-bonus" text="Add Bonus" />
+			<IconTextNav src="bonuses" path="bonuses" text="Bonus" />
 		</nav>
 	)
 }

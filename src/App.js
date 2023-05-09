@@ -17,6 +17,7 @@ import Home from "./components/Home/Home"
 import AddBonus from "./components/Bonus/AddBonus"
 import Bonuses from "./components/Bonus/Bonuses"
 import BonusFull from "./components/Bonus/BonusFull"
+import Aboutus from "./components/Aboutus/Aboutus"
 
 export default function App() {
 
@@ -46,6 +47,7 @@ export default function App() {
 					<Route exact path="bonuses" element={<Bonuses />} />
 					<Route exact path="bonus/:bonusId" element={<BonusFull />} />
 					<Route exact path="editBonus/:bonusId" element={<AddBonus />} />
+					<Route exact path="aboutus" element={<Aboutus />} />
 				</Routes>
 			</div>
 

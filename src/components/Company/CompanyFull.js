@@ -10,6 +10,8 @@ import RadarInfo from "../Charts/RadarInfo"
 import Articles from "../Articles/Articles"
 import Comments from "../Comments/Comments"
 import Companies from "./Companies"
+import IconText from "../Icons/IconText"
+import { baseURL } from "../../consts"
 
 export default function CompanyFull() {
 
@@ -21,7 +23,15 @@ export default function CompanyFull() {
 			<div className="fc w100 f2">
 				<section className="postFull mb">
 
-					<div className="title">{company?.name}</div>
+					<div className="f jcsb">
+						<IconText
+							url={`${baseURL}/upload/${company?.img}`}
+							text={company?.name}
+							textClassName="title order1"
+							iconClassName="icon_mid order2"
+						/>
+					</div>
+
 					<InputButton text="visit" value={company?.link} path={company?.link} />
 
 					{<Markdown>{company?.value}</Markdown>}

@@ -24,8 +24,14 @@ export default function useBonus(value) { // value=textEditor value
 		noUser(res)
 	}
 
+	// ! deleteBonus
+	async function deleteBonus(id, e) {
+		const res = await api.deleteBonus(id)
+		animationDelete(res, e)
+	}
+
 
 	return (
-		{ addBonus }
+		{ addBonus, deleteBonus }
 	)
 }

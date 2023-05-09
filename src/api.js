@@ -220,4 +220,13 @@ export const getBonus = async (id) => {
 		console.log(error)
 	}
 }
+
+export const deleteBonus = async (id) => {
+	try {
+		const { data } = await instance.post(`/deleteBonus`, { id })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? BONUS

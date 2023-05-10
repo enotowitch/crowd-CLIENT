@@ -7,6 +7,7 @@ import useArticle from "../../hooks/useArticle"
 import useComment from "../../hooks/useComment";
 import useCompany from "../../hooks/useCompany";
 import useBonus from "../../hooks/useBonus";
+import useInvestment from "../../hooks/useInvestment";
 
 export default function TextEditor({ children, btnText, fn, editValue, textEditor }) { // children=Input/Select/etc...
 
@@ -21,6 +22,7 @@ export default function TextEditor({ children, btnText, fn, editValue, textEdito
 	const { addComment } = useComment(value)
 	const { addCompany, editCompany } = useCompany(value || editValue)
 	const { addBonus, editBonus } = useBonus(value || editValue)
+	const { addInvestment } = useInvestment(value || editValue)
 
 	return (
 		<form className="textEditor fc" onSubmit={eval(fn)}>

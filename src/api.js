@@ -239,3 +239,14 @@ export const editBonus = async (id, formAndValue) => {
 	}
 }
 // ?? BONUS
+
+// !! INVESTMENT
+export const addInvestment = async (formAndValue) => {
+	try {
+		const { data } = await instance.post("/addInvestment", { ...formAndValue })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? INVESTMENT

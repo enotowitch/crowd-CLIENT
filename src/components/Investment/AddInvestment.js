@@ -4,11 +4,15 @@ import "./media.scss"
 import TextEditor from "../TextEditor/TextEditor"
 import Input from "../FormElements/Input"
 import InputDate from "../FormElements/InputDate"
+import prepareEdit from "../../utils/prepareEdit"
 
 export default function AddInvestment() {
+
+	const { btnText, fn } = prepareEdit("Investment")
+
 	return (
 		<section className="w100">
-			<TextEditor textEditor={false}>
+			<TextEditor btnText={btnText} fn={fn} textEditor={false}>
 				<div className="f fwn g">
 					<Input name="platform" placeholder="platform" label="Platform" className="w100" />
 					<Input name="project name" placeholder="project name" label="Project Name" className="w100" />

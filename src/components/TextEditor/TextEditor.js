@@ -22,7 +22,7 @@ export default function TextEditor({ children, btnText, fn, editValue, textEdito
 	const { addComment } = useComment(value)
 	const { addCompany, editCompany } = useCompany(value || editValue)
 	const { addBonus, editBonus } = useBonus(value || editValue)
-	const { addInvestment } = useInvestment(value || editValue)
+	const { addInvestment, editInvestment } = useInvestment(value || editValue)
 
 	return (
 		<form className="textEditor fc" onSubmit={eval(fn)}>

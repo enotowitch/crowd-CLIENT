@@ -276,4 +276,22 @@ export const deleteInvestment = async (id) => {
 		console.log(error)
 	}
 }
+
+export const getInvestment = async (id) => {
+	try {
+		const { data } = await instance.get(`/investment/${id}`)
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const editInvestment = async (id, formAndValue) => {
+	try {
+		const { data } = await instance.post(`/editInvestment`, { id, ...formAndValue })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? INVESTMENT

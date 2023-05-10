@@ -35,7 +35,20 @@ export default function useInvestment(value) { // value=textEditor value
 		animationDelete(res, e)
 	}
 
+	// ! editInvestment
+	const { watchingPost } = useContext(Context) // * id of article I am editing now
+
+	async function editInvestment(e) {
+		e.preventDefault()
+
+		const { form } = parseForm(e)
+		const formAndValue = { ...form, value }
+
+		const res = await api.editInvestment(watchingPost, formAndValue)
+		res.ok && (window.location.href = `/investments`)
+	}
+
 	return (
-		{ addInvestment, removeInvestment, deleteInvestment }
+		{ addInvestment, removeInvestment, deleteInvestment, editInvestment }
 	)
 }

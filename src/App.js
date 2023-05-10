@@ -54,6 +54,7 @@ export default function App() {
 					<Route exact path="editBonus/:bonusId" element={<AddBonus />} />
 					<Route exact path="aboutus" element={<Aboutus />} />
 					<Route exact path="investments" element={<AddInvestment />} />
+					<Route exact path="editInvestment/:investmentId" element={<AddInvestment />} />
 				</Routes>
 			</div>
 

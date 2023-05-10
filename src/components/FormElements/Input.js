@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./index.scss"
 import "./media.scss"
+import InputLabel from "./InputLabel"
 
 export default function Input(props) {
 
@@ -17,14 +18,12 @@ export default function Input(props) {
 	}, [editValue])
 
 	return (
-		<label {...props}>
-			{label && <div className="fw600 mt mb">{label}</div>}
-
+		<InputLabel label={label}>
 			<input
 				value={value}
 				onChange={onChange}
 				{...props}
 			/>
-		</label>
+		</InputLabel>
 	)
 }

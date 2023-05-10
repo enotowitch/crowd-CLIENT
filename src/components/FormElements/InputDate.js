@@ -1,8 +1,11 @@
 import React, { useState } from "react"
 import "./index.scss"
 import "./media.scss"
+import InputLabel from "./InputLabel"
 
 export default function InputDate(props) {
+
+	const { label } = props
 
 	const [value, valueSet] = useState("")
 
@@ -11,11 +14,13 @@ export default function InputDate(props) {
 	}
 
 	return (
-		<input
-			type="date"
-			value={value}
-			onChange={onChange}
-			{...props}
-		/>
+		<InputLabel label={label}>
+			<input
+				type="date"
+				value={value}
+				onChange={onChange}
+				{...props}
+			/>
+		</InputLabel>
 	)
 }

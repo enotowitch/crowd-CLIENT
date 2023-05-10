@@ -12,7 +12,7 @@ export default function useInvestments() {
 		async function getInvestments() {
 			const res = await api.getInvestments(skip)
 			hideShowMore(res)
-			investmentsSet(prev => [...prev, ...res])
+			res.length > 0 && investmentsSet(prev => [...prev, ...res])
 		}
 
 		getInvestments()

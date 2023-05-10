@@ -267,4 +267,13 @@ export const removeInvestment = async (id) => {
 		console.log(error)
 	}
 }
+
+export const deleteInvestment = async (id) => {
+	try {
+		const { data } = await instance.post(`/deleteInvestment`, { id })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? INVESTMENT

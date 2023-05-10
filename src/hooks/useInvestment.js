@@ -29,7 +29,13 @@ export default function useInvestment(value) { // value=textEditor value
 		animationDelete(res, e)
 	}
 
+	// ! deleteInvestment
+	async function deleteInvestment(id, e) {
+		const res = await api.deleteInvestment(id)
+		animationDelete(res, e)
+	}
+
 	return (
-		{ addInvestment, removeInvestment }
+		{ addInvestment, removeInvestment, deleteInvestment }
 	)
 }

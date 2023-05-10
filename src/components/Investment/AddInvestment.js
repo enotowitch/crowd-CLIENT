@@ -31,7 +31,8 @@ export default function AddInvestment() {
 			</section>
 
 			<section>
-				<Investments />
+				<Investments title="Investments in progress" closed={false} />
+				<Investments title="Investments closed" closed={true} />
 			</section>
 		</div>
 	)

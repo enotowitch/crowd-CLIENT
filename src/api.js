@@ -258,4 +258,13 @@ export const getInvestments = async (skip) => {
 		console.log(error)
 	}
 }
+
+export const removeInvestment = async (id) => {
+	try {
+		const { data } = await instance.post(`/removeInvestment`, { id })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? INVESTMENT

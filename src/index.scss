@@ -69,6 +69,9 @@ input:not([type="checkbox"]), select{
 label input{
 	width: 100%;
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
+	filter: invert(100%);
+ }
 // ? input
 section{
 	padding: 30px;
@@ -211,6 +214,9 @@ header, footer, nav, section{
 .g3{
 	gap: 45px;
 }
+.g0{
+	gap: 0px !important;
+}
 .jcsb{
 	justify-content: space-between;
 }
@@ -285,6 +291,9 @@ header, footer, nav, section{
 .w100{
 	width: 100%;
 }
+.miw100{
+	min-width: 100% !important;
+}
 .w50{
 	width: 50%;
 }
@@ -343,6 +352,12 @@ header, footer, nav, section{
 }
 .order2{
 	order: 2;
+}
+.br0{
+	border-radius: 0px !important;
+}
+.brsm{
+	border-radius: $borderRadiusSmall;
 }
 // ? other
 // ?? SHORTCUTS

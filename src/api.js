@@ -249,4 +249,13 @@ export const addInvestment = async (formAndValue) => {
 		console.log(error)
 	}
 }
+
+export const getInvestments = async (skip) => {
+	try {
+		const { data } = await instance.post("/getInvestments", { skip })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? INVESTMENT

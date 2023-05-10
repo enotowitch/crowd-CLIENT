@@ -295,3 +295,14 @@ export const editInvestment = async (id, formAndValue) => {
 	}
 }
 // ?? INVESTMENT
+
+// !! WRITEUS
+export const writeus = async (form) => {
+	try {
+		const { data } = await instance.post(`/writeus`, { ...form })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? WRITEUS

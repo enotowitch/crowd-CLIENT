@@ -15,7 +15,7 @@ export default function Footer() {
 					La Première Brique is the new 100% digital platform
 					dedicated to real estate investment from €1.
 				</div>
-				<Button text="Write Us" btnClassName="darkBg mt" />
+				<Button text="Write Us" btnClassName="darkBg mt" path="/writeus" />
 			</div>
 
 			<Subscribe />

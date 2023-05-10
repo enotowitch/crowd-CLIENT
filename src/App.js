@@ -20,6 +20,7 @@ import BonusFull from "./components/Bonus/BonusFull"
 import Aboutus from "./components/Aboutus/Aboutus"
 import NavTop from "./components/Navs/NavTop"
 import AddInvestment from "./components/Investment/AddInvestment"
+import Writeus from "./components/Writeus/Writeus"
 
 export default function App() {
 
@@ -55,6 +56,7 @@ export default function App() {
 					<Route exact path="aboutus" element={<Aboutus />} />
 					<Route exact path="investments" element={<AddInvestment />} />
 					<Route exact path="editInvestment/:investmentId" element={<AddInvestment />} />
+					<Route exact path="writeus" element={<Writeus />} />
 				</Routes>
 			</div>
 

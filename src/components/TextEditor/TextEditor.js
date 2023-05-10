@@ -8,7 +8,7 @@ import useComment from "../../hooks/useComment";
 import useCompany from "../../hooks/useCompany";
 import useBonus from "../../hooks/useBonus";
 
-export default function TextEditor({ children, btnText, fn, editValue }) { // children=Input/Select/etc...
+export default function TextEditor({ children, btnText, fn, editValue, textEditor }) { // children=Input/Select/etc...
 
 	const [value, valueSet] = useState("")
 
@@ -27,7 +27,7 @@ export default function TextEditor({ children, btnText, fn, editValue }) { // ch
 
 			{children}
 
-			<SimpleMDE value={editValue || value} onChange={onChange} />
+			{textEditor || textEditor === undefined && <SimpleMDE value={editValue || value} onChange={onChange} />}
 			<button className="c wfc" ignoreOutside="true">{btnText}</button>
 		</form>
 	)

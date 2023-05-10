@@ -18,6 +18,8 @@ import AddBonus from "./components/Bonus/AddBonus"
 import Bonuses from "./components/Bonus/Bonuses"
 import BonusFull from "./components/Bonus/BonusFull"
 import Aboutus from "./components/Aboutus/Aboutus"
+import NavTop from "./components/Navs/NavTop"
+import AddInvestment from "./components/Investment/AddInvestment"
 
 export default function App() {
 
@@ -31,7 +33,10 @@ export default function App() {
 			<ScrollTo className="header" />
 
 			<div className="app__mid">
-				<NavBottom />
+				<div className="fc g">
+					<NavTop />
+					<NavBottom />
+				</div>
 
 				<Routes>
 					<Route exact path="/" element={<Home />} />
@@ -48,6 +53,7 @@ export default function App() {
 					<Route exact path="bonus/:bonusId" element={<BonusFull />} />
 					<Route exact path="editBonus/:bonusId" element={<AddBonus />} />
 					<Route exact path="aboutus" element={<Aboutus />} />
+					<Route exact path="investments" element={<AddInvestment />} />
 				</Routes>
 			</div>
 

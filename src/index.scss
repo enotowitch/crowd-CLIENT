@@ -167,8 +167,14 @@ header, footer, nav, section{
 .mb2{
 	margin-bottom: 30px;
 }
+.mb3{
+	margin-bottom: 45px;
+}
 .ml{
 	margin-left: 15px;
+}
+.mla{
+	margin-left: auto;
 }
 .m0a{
 	margin: 0 auto;
@@ -185,6 +191,18 @@ header, footer, nav, section{
 }
 .p2{
 	padding: 30px;
+}
+.pr{
+	padding-right: 15px;
+}
+.pr2{
+	padding-right: 30px;
+}
+.pl{
+	padding-left: 15px;
+}
+.pl2{
+	padding-left: 30px;
 }
 // ? margin & padding
 // ! flex & display
@@ -231,6 +249,9 @@ header, footer, nav, section{
 }
 .jcsb{
 	justify-content: space-between;
+}
+.jcse{
+	justify-content: space-evenly;
 }
 .aic{
 	align-items: center;

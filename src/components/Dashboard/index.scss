@@ -1,0 +1,19 @@
+@import "../../vars.scss";
+
+.revenue{
+	&__left,&__right{
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 30px; 
+		width: 50%;
+		padding: 30px;
+		background: $dark;
+		outline: 1px solid $darkGray;
+	}
+	&__right{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		padding-right: 30px;
+	}
+}

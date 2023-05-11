@@ -21,6 +21,7 @@ import Aboutus from "./components/Aboutus/Aboutus"
 import NavTop from "./components/Navs/NavTop"
 import AddInvestment from "./components/Investment/AddInvestment"
 import Writeus from "./components/Writeus/Writeus"
+import Dashboard from "./components/Dashboard/Dashboard"
 
 export default function App() {
 
@@ -57,6 +58,7 @@ export default function App() {
 					<Route exact path="investments" element={<AddInvestment />} />
 					<Route exact path="editInvestment/:investmentId" element={<AddInvestment />} />
 					<Route exact path="writeus" element={<Writeus />} />
+					<Route exact path="dashboard" element={<Dashboard />} />
 				</Routes>
 			</div>
 

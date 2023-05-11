@@ -5,6 +5,9 @@
 	.pie{
 		width: 80%;
 	}	
+	.doughnut{
+
+	}
 }
 
 
@@ -12,5 +15,8 @@
 @media (min-width:($breakpointMobile+1)) {
 	.pie{
 		width: 30%;
-	}	
+	}
+	.doughnut{
+		width: 15%;
+	}
 }

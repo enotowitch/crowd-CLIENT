@@ -10,9 +10,7 @@ export default function useSubscribe() {
 		e.preventDefault()
 
 		const { form } = parseForm(e)
-
 		const res = await api.subscribe(form)
-
 		res && msgSet(res.msg) // any message: res || !res
 	}
 

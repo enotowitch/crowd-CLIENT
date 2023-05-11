@@ -3,6 +3,7 @@ import "./index.scss"
 import "./media.scss"
 import Input from "../FormElements/Input"
 import useSubscribe from "../../hooks/useSubscribe"
+import ButtonMsg from "../FormElements/ButtonMsg"
 
 export default function Subscribe() {
 
@@ -16,7 +17,7 @@ export default function Subscribe() {
 				of our news
 			</div>
 			<Input name="email" type="email" placeholder="Enter Your Email" required />
-			<button className={`mt w100 ${msg && "btn_out brand"}`}>{msg || "Subscribe"}</button>
+			<ButtonMsg className="mt w100" msg={msg} text="Subscribe" />
 		</form>
 	)
 }

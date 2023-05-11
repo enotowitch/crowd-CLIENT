@@ -4,14 +4,15 @@ import "./media.scss"
 import Input from "../FormElements/Input"
 import Textarea from "../FormElements/Textarea"
 import useWriteus from "../../hooks/useWriteus"
+import ButtonMsg from "../FormElements/ButtonMsg"
 
 export default function Writeus() {
 
-	const { writeus } = useWriteus()
+	const { onSubmit, msg } = useWriteus()
 
 	return (
 		<section className="w100">
-			<form onSubmit={writeus}>
+			<form onSubmit={onSubmit}>
 				<div className="title">Write us</div>
 				<div>
 					Our team is looking forward to responding to your message.
@@ -19,11 +20,11 @@ export default function Writeus() {
 					You can expect to hear back from us soon.
 				</div>
 
-				<Input name="name" placeholder="name" label="Name" />
-				<Input type="email" name="email" placeholder="email" label="Email" />
-				<Input type="subject" name="subject" placeholder="subject" label="Subject" />
-				<Textarea name="message" label="Message" />
-				<button className="c w50 m">Send message</button>
+				<Input name="name" placeholder="name" label="Name" required />
+				<Input type="email" name="email" placeholder="email" label="Email" required />
+				<Input type="subject" name="subject" placeholder="subject" label="Subject" required />
+				<Textarea name="message" label="Message" required />
+				<ButtonMsg className="c w50 m" msg={msg} text="Send message" />
 			</form>
 		</section>
 	)

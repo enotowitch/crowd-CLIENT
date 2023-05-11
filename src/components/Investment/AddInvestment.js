@@ -3,7 +3,6 @@ import "./index.scss"
 import "./media.scss"
 import TextEditor from "../TextEditor/TextEditor"
 import Input from "../FormElements/Input"
-import InputDate from "../FormElements/InputDate"
 import prepareEdit from "../../utils/prepareEdit"
 import Investments from "./Investments"
 import { useParams } from "react-router-dom"
@@ -29,8 +28,8 @@ export default function AddInvestment() {
 						<Input name="income" placeholder="income" label="Income" className="w100" editValue={investment?.income} />
 					</div>
 					<div className="f fwn g">
-						<InputDate name="start" label="Start Date" className="w100" editValue={investment?.start} />
-						<InputDate name="end" label="End Date" className="w100" editValue={investment?.end} />
+						<Input type="date" name="start" label="Start Date" className="w100" editValue={investment?.start} />
+						<Input type="date" name="end" label="End Date" className="w100" editValue={investment?.end} />
 					</div>
 				</TextEditor>
 			</section>

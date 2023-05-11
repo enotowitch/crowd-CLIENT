@@ -24,8 +24,8 @@ export default function AddInvestment() {
 						<Input name="project" placeholder="project name" label="Project Name" className="w100" editValue={investment?.project} />
 					</div>
 					<div className="f fwn g">
-						<Input name="invested" placeholder="amount invested" label="Amount Invested" className="w100" editValue={investment?.invested} />
-						<Input name="income" placeholder="income" label="Income" className="w100" editValue={investment?.income} />
+						<Input type="number" name="invested" placeholder="amount invested (€)" label="Amount Invested (€)" className="w100" editValue={investment?.invested} />
+						<Input type="number" name="income" placeholder="income (%)" label="Income (%)" className="w100" editValue={investment?.income} />
 					</div>
 					<div className="f fwn g">
 						<Input type="date" name="start" label="Start Date" className="w100" editValue={investment?.start} />

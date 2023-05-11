@@ -24,7 +24,7 @@ ChartJS.register(
 export default function Bar_({ currentCompanyName, labels }) { // * labels="tvl" data=${labels}+"Data" => "tvlData" (eval)
 
 	const { tvl, tvlData, tvlHighlight } = useTVL(currentCompanyName)
-	const { revenue, revenueData, revenueHighlight } = useRevenue()
+	const { revenue, revenueData, revenueHighlight } = useRevenue(currentCompanyName)
 
 	// ! options
 	const options = {

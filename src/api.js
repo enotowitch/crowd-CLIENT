@@ -294,6 +294,16 @@ export const editInvestment = async (id, formAndValue) => {
 		console.log(error)
 	}
 }
+
+export const getInvested = async () => {
+	try {
+		const { data } = await instance.post(`/getInvested`)
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
 // ?? INVESTMENT
 
 // !! WRITEUS

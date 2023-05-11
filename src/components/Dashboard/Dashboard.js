@@ -1,11 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import "./index.scss"
 import "./media.scss"
 import Doughnut from "../Charts/Doughnut"
 import Select from "../FormElements/Select"
 import Bar from "../Charts/Bar"
+import useInvested from "../../hooks/useInvested"
 
 export default function Dashboard() {
+
+	const { platforms } = useInvested()
+	const [currentCompanyName, setCurrentCompanyName] = useState("")
+
 	return (
 		<div className="fc w100">
 			<section>
@@ -32,11 +37,11 @@ export default function Dashboard() {
 				</div>
 
 				<div className="f jcfe">
-					<Select options={[1, 2]} placeholder="Platform" />
+					<Select options={platforms} placeholder="Platform" onChange={(e) => setCurrentCompanyName(e.target.value)} />
 					<Select options={[1, 2]} placeholder="Year" />
 				</div>
 
-				<Bar labels="revenue" />
+				<Bar currentCompanyName={currentCompanyName} labels="revenue" />
 			</section>
 		</div>
 	)

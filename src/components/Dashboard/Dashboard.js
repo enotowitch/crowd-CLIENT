@@ -36,7 +36,7 @@ export default function Dashboard() {
 					<Select options={[1, 2]} placeholder="Year" />
 				</div>
 
-				<Bar />
+				<Bar labels="revenue" />
 			</section>
 		</div>
 	)

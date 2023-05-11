@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -9,7 +9,8 @@ import {
 	Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import * as api from "../../api"
+import useTVL from '../../hooks/useTVL';
+import useRevenue from '../../hooks/useRevenue';
 
 ChartJS.register(
 	CategoryScale,
@@ -20,36 +21,10 @@ ChartJS.register(
 	Legend
 );
 
-export default function Bar_({ currentCompanyName }) {
+export default function Bar_({ currentCompanyName, labels }) { // * labels="tvl" data=${labels}+"Data" => "tvlData" (eval)
 
-	// ! getTVL
-	const [companies, companiesSet] = useState([])
-
-	useEffect(() => {
-		async function getTVL() {
-			const res = await api.getTVL() // [{name: 'company name', TVL: '3'}, {...}]
-			companiesSet(res)
-		}
-
-		getTVL()
-	}, [])
-	// ? getTVL
-
-	// 1. find currentCompanyTVL
-	let currentCompanyTVL
-	companies?.map(item => item.name === currentCompanyName && (currentCompanyTVL = item.TVL))
-
-	// 2. arrLess & arrMore: 
-	// * `final arr` = [arrLess[first],arrLess[last],currentCompany,arrMore[first],arrMore[last]]
-	let arrLess = []
-	let arrMore = []
-	companies?.map(item => Number(item.TVL) < currentCompanyTVL && arrLess.push(item))
-	companies?.map(item => Number(item.TVL) > currentCompanyTVL && arrMore.push(item))
-	arrLess.sort((a, b) => a.TVL - b.TVL)
-	arrMore.sort((a, b) => a.TVL - b.TVL)
-
-	let currentCompany
-	companies?.map(item => item.name === currentCompanyName && (currentCompany = item))
+	const { tvl, tvlData, tvlHighlight } = useTVL(currentCompanyName)
+	const { revenue, revenueData, revenueHighlight } = useRevenue()
 
 	// ! options
 	const options = {
@@ -67,17 +42,11 @@ export default function Bar_({ currentCompanyName }) {
 	};
 	// ! data
 	const data = {
-		labels: [arrLess[0]?.name, arrLess[arrLess.length - 1]?.name, currentCompany?.name, arrMore[0]?.name, arrMore[arrMore.length - 1]?.name],
+		labels: eval(`${labels}`),
 		datasets: [{
 			label: "",
-			data: [arrLess[0]?.TVL, arrLess[arrLess.length - 1]?.TVL, currentCompany?.TVL, arrMore[0]?.TVL, arrMore[arrMore.length - 1]?.TVL],
-			backgroundColor: [
-				"#9327FF",
-				"#9327FF",
-				"#FF900D",
-				"#9327FF",
-				"#9327FF",
-			],
+			data: eval(`${labels + "Data"}`),
+			backgroundColor: eval(`${labels}`).map((item, ind) => ind === eval(`${labels + "Highlight"}`) ? "#FF900D" : "#9327FF"),
 		}]
 	};
 

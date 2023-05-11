@@ -39,7 +39,7 @@ export default function RadarInfo({ obj }) { // obj=company
 				if (title === "TVL") {
 					return (
 						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
-							<Bar currentCompanyName={obj?.name} />
+							<Bar currentCompanyName={obj?.name} labels="tvl" />
 						</RadarInfoItem>
 					)
 				}

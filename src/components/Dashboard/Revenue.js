@@ -7,7 +7,7 @@ import Bar from "../Charts/Bar"
 
 export default function Revenue() {
 
-	const { platforms, years, revenueCurMonth } = useInvested()
+	const { platforms, years, revenueCurMonth, revenueCurYear } = useInvested()
 	const [currentCompanyName, currentCompanyNameSet] = useState("")
 
 	return (
@@ -16,8 +16,8 @@ export default function Revenue() {
 			<div className="f mb3">
 				<div className="revenue__left">Revenue of the current month</div>
 				<div className="revenue__right">{revenueCurMonth} €</div>
-				<div className="revenue__left">Revenue for 2023 year in all platforms</div>
-				<div className="revenue__right">123 €</div>
+				<div className="revenue__left">Revenue for {new Date().getFullYear()} year in all platforms</div>
+				<div className="revenue__right">{revenueCurYear} €</div>
 			</div>
 
 			<div className="f jcfe">

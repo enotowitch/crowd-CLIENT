@@ -8,7 +8,8 @@ export default function useInvested() {
 	const [platforms, platformsSet] = useState([]) // uniq companies invested
 	const tempYears = []
 	const [years, yearsSet] = useState([]) // uniq years invested
-	const [revenueCurMonth, revenueCurMonthSet] = useState("") // current month all platforms revenue
+	const [revenueCurMonth, revenueCurMonthSet] = useState(0) // current month all platforms revenue
+	const [revenueCurYear, revenueCurYearSet] = useState(0) // current year all platforms revenue
 
 	useEffect(() => {
 		async function getInvested() {
@@ -30,11 +31,20 @@ export default function useInvested() {
 			let tempRevenueCurMonth = 0
 			res?.map(res => {
 				const thisMonth = new Date().getMonth()
-				const endMonth = Number(res.end.match(/(?:-)(\d+)(?:-)/)?.[1]) - 1 // !! 01-05-23 => 01-endMonth-23
+				const endMonth = Number(res.end.match(/(?:-)(\d+)(?:-)/)?.[1]) - 1 // !! 2023-05-25 => 2023-endMonth-25
 				if (endMonth !== thisMonth) { return } // += only this month
 				tempRevenueCurMonth += res.invested * res.income / 100 // 1000*5%/100%=50usd
 			})
 			revenueCurMonthSet(tempRevenueCurMonth)
+			// ! revenueCurYear
+			let tempRevenueCurYear = 0
+			res?.map(res => {
+				const thisYear = new Date().getFullYear()
+				const endYear = Number(res.end.match(/\d+/)?.[0]) // !! endYear-05-25
+				if (endYear !== thisYear) { return } // += only this year
+				tempRevenueCurYear += res.invested * res.income / 100 // 1000*5%/100%=50usd
+			})
+			revenueCurYearSet(tempRevenueCurYear)
 		}
 
 		getInvested()
@@ -42,6 +52,6 @@ export default function useInvested() {
 
 
 	return (
-		{ invested, platforms, years, revenueCurMonth }
+		{ invested, platforms, years, revenueCurMonth, revenueCurYear }
 	)
 }

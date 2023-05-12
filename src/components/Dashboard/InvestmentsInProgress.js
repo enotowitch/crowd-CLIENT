@@ -69,9 +69,9 @@ export default function InvestmentsInProgress({ ignoreClosed, title }) {
 			<InvesmentItems arr={["Platform", "Number of projects", "Average income (%)", "Current invested amount"]} />
 			{companies}
 			<div className="investmentsInProgress__charts">
-				<Pie obj={numberOfProjectsObj} />
-				<Pie obj={averageIncomeObj} />
-				<Pie obj={sumInvestedObj} />
+				<Pie obj={numberOfProjectsObj} title="Number of projects" />
+				<Pie obj={averageIncomeObj} title="Average income (%)" />
+				<Pie obj={sumInvestedObj} title="Current invested amount" />
 			</div>
 		</section>
 	)

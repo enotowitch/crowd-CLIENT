@@ -6,7 +6,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Pie_(props) {
 
-	const { obj, className } = props
+	const { obj, className, title } = props
 
 	let objLabels, objData
 	if (obj) {
@@ -38,9 +38,26 @@ export default function Pie_(props) {
 		],
 	};
 
+	const options = {
+		responsive: true,
+		plugins: {
+			title: {
+				display: true,
+				text: title,
+				color: "#ffffff",
+				font: {
+					size: 20,
+					style: 'normal',
+					family: 'Arial',
+					weight: 500
+				}
+			}
+		}
+	}
+
 	return (
 		<div className={`pie mb ${className}`}>
-			<Pie data={data} />
+			<Pie data={data} options={options} />
 		</div>
 	);
 }

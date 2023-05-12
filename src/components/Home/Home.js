@@ -4,10 +4,12 @@ import "./media.scss"
 import Companies from "../Company/Companies"
 import Articles from "../Articles/Articles"
 import Bonuses from "../Bonus/Bonuses"
+import Hello from "./Hello"
 
 export default function Home() {
 	return (
 		<div className="fc g">
+			<Hello />
 			<Companies />
 			<Articles />
 			<Bonuses />

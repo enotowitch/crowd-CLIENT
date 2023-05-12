@@ -21,6 +21,9 @@ a{
 }
 // ! button
 button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 56px;
 	background: $brand;
 	border-radius: $borderRadiusSmall;
@@ -45,11 +48,7 @@ button{
 	&_dark,&_light{
 		background: $dark;
 		width: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		padding: 15px;
-		border-radius: $borderRadiusSmall;
 	}
 	&_light{
 		background: $light;

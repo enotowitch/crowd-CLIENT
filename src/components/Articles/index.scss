@@ -5,11 +5,11 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: $widthSmall;
 	background: $dark;
 	border-radius: $borderRadiusBig;
-	max-width: 345px;
-	min-width: 345px;
+	min-width: $widthSmall;
+	max-width: 24%;
+	flex: 1 1 24%;
 	background: $dark;
 	&__img{
 		height: 200px;
@@ -17,6 +17,7 @@
 		border-radius: 9px;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
+		object-fit: cover;
 	}
 	// !!
 	> *:not(img, .cardText, .cardTitle){

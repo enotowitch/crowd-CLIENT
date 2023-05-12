@@ -11,7 +11,7 @@ export default function Revenue() {
 	const [currentCompanyName, setCurrentCompanyName] = useState("")
 
 	return (
-		<section>
+		<section className="mb">
 			<div className="title mb2">My revenue</div>
 			<div className="f mb3">
 				<div className="revenue__left">Revenue of the current month</div>

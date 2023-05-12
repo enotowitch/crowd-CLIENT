@@ -5,7 +5,7 @@ import Doughnut from "../Charts/Doughnut"
 
 export default function ValuationOfInvestment() {
 	return (
-		<section>
+		<section className="mb">
 			<div className="title mb3">Valuation of my investment</div>
 
 			<div className="f jcse">

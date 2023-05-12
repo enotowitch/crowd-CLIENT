@@ -4,13 +4,20 @@ import { Context } from "../Context"
 // * no user = display Login
 export default function useNoUser() {
 
-	const { popupElementSet } = useContext(Context)
+	const { popupElementSet, user } = useContext(Context)
 
+	// TODO: call noUserPopup
 	function noUser(serverResponse) {
 		serverResponse.ok === false && popupElementSet("Login")
 	}
 
+	function noUserRedirect() {
+		if (!user) {
+			window.location.href = "/"
+		}
+	}
+
 	return (
-		{ noUser }
+		{ noUser, noUserRedirect }
 	)
 }

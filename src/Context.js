@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import useUser from "./hooks/useUser"
 
 const Context = React.createContext()
 
@@ -11,6 +12,7 @@ function ContextProvider(props) {
 	const [modalText, modalTextSet] = useState("") // for Alert & other modals
 	const [visitedPage, visitedPageSet] = useState("") // for coloring icons depending on page visited
 	const [sharing, sharingSet] = useState("") // for sharing: article/etc...
+	const { user, userSet } = useUser() // when came to page user is already loaded to context: no undefined on 1 load
 
 	// ! RETURN
 	return (
@@ -21,7 +23,8 @@ function ContextProvider(props) {
 			watchingPost, watchingPostSet,
 			modalText, modalTextSet,
 			visitedPage, visitedPageSet,
-			sharing, sharingSet
+			sharing, sharingSet,
+			user, userSet
 		}}>
 
 			{props.children}

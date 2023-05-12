@@ -3,7 +3,7 @@ import * as api from "../api"
 
 export default function useUser() {
 
-	const [user, userSet] = useState()
+	const [user, userSet] = useState(undefined)
 
 	useEffect(() => {
 		async function autoAuth() {

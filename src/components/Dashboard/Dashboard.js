@@ -4,8 +4,13 @@ import "./media.scss"
 import Revenue from "./Revenue"
 import InvestmentsInProgress from "./InvestmentsInProgress"
 import ValuationOfInvestment from "./ValuationOfInvestment"
+import useNoUser from "../../hooks/useNoUser"
 
 export default function Dashboard() {
+
+	const { noUserRedirect } = useNoUser()
+	noUserRedirect()
+
 	return (
 		<div className="fc w100">
 			<ValuationOfInvestment />

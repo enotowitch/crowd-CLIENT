@@ -63,7 +63,7 @@ export default function InvestmentsInProgress({ ignoreClosed, title }) {
 
 
 	return (
-		<section>
+		<section className="mb">
 			<div className="title2 mb2">{title}</div>
 
 			<InvesmentItems arr={["Platform", "Number of projects", "Average income (%)", "Current invested amount"]} />

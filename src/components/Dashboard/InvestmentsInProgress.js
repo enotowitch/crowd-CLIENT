@@ -3,29 +3,39 @@ import "./index.scss"
 import "./media.scss"
 import InvesmentItems from "../Investment/InvesmentItems"
 import useInvested from "../../hooks/useInvested"
+import Pie from "../Charts/Pie"
 
-export default function InvestmentsInProgress() {
+export default function InvestmentsInProgress({ ignoreClosed, title }) {
 
 	const { invested } = useInvested()
 
 	const uniqCompanies = []
 	invested?.map(invested => {
-		if (!invested.closed) {
-			!uniqCompanies.includes(invested.platform) && uniqCompanies.push(invested.platform)
+		if (ignoreClosed) {
+			if (invested.closed) { return }
 		}
+
+		!uniqCompanies.includes(invested.platform) && uniqCompanies.push(invested.platform)
 	})
 
 	let arrOfArrs = Array.from({ length: uniqCompanies.length }, (v, i) => []) // generate [[], [], [], []] dep. on uniqCompanies.length
 
 	for (let i = 0; i < uniqCompanies.length; i++) {
 		invested?.map(invested => {
-			if (!invested.closed) {
-				if (uniqCompanies[i] === invested.platform) {
-					arrOfArrs[i].push(invested)
-				}
+			if (ignoreClosed) {
+				if (invested.closed) { return }
+			}
+
+			if (uniqCompanies[i] === invested.platform) {
+				arrOfArrs[i].push(invested)
 			}
 		})
 	}
+
+	// ! pie objs
+	let numberOfProjectsObj
+	let averageIncomeObj
+	let sumInvestedObj
 
 	const companies = arrOfArrs?.map(company => {
 		let sumIncome = 0
@@ -41,6 +51,11 @@ export default function InvestmentsInProgress() {
 		})
 		const avarageIncome = sumIncome / investmentNum // 50/5=10%; 30/2=15%
 
+		// ! pie objs
+		numberOfProjectsObj = { ...numberOfProjectsObj, [companyName]: company.length }
+		averageIncomeObj = { ...averageIncomeObj, [companyName]: avarageIncome }
+		sumInvestedObj = { ...sumInvestedObj, [companyName]: sumInvested }
+
 		return (
 			<InvesmentItems arr={[companyName, company.length, avarageIncome, sumInvested]} />
 		)
@@ -49,10 +64,15 @@ export default function InvestmentsInProgress() {
 
 	return (
 		<section>
-			<div className="title2 mb2">Investments in progress</div>
+			<div className="title2 mb2">{title}</div>
 
 			<InvesmentItems arr={["Platform", "Number of projects", "Average income (%)", "Current invested amount"]} />
 			{companies}
+			<div className="investmentsInProgress__charts">
+				<Pie obj={numberOfProjectsObj} />
+				<Pie obj={averageIncomeObj} />
+				<Pie obj={sumInvestedObj} />
+			</div>
 		</section>
 	)
 }

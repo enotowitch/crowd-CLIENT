@@ -1,0 +1,26 @@
+@import "../../vars.scss";
+
+// ! < $breakpointMobile
+@media (max-width:$breakpointMobile) {	
+	.investmentsInProgress{
+		&__charts{
+			// !! each chart
+			> * {
+				width: 80%;
+			}
+		}
+	}
+}
+
+
+// ! > $breakpointMobile
+@media (min-width:($breakpointMobile+1)) {
+	.investmentsInProgress{
+		&__charts{
+			// !! each chart
+			> * {
+				width: 20%;
+			}
+		}
+	}
+}

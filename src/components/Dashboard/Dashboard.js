@@ -10,7 +10,8 @@ export default function Dashboard() {
 		<div className="fc w100">
 			<ValuationOfInvestment />
 			<Revenue />
-			<InvestmentsInProgress />
+			<InvestmentsInProgress title="Investments in progress" ignoreClosed={true} />
+			<InvestmentsInProgress title="Total investments" ignoreClosed={false} />
 		</div>
 	)
 }

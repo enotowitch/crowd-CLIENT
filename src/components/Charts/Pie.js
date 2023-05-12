@@ -4,7 +4,9 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function Pie_({ obj }) {
+export default function Pie_(props) {
+
+	const { obj, className } = props
 
 	let objLabels, objData
 	if (obj) {
@@ -37,7 +39,7 @@ export default function Pie_({ obj }) {
 	};
 
 	return (
-		<div className="pie c mb">
+		<div className={`pie mb ${className}`}>
 			<Pie data={data} />
 		</div>
 	);

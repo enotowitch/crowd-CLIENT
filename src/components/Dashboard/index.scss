@@ -17,3 +17,11 @@
 		padding-right: 30px;
 	}
 }
+
+.investmentsInProgress{
+	&__charts{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}

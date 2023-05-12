@@ -17,7 +17,7 @@ export default function useRevenue(currentCompanyName) {
 	curCompanyArr?.map(company => {
 
 		const endMonth = Number(company.end.match(/(?:-)(\d+)(?:-)/)?.[1]) - 1 // !! 01-05-23 => 01-endMonth-23
-		income += company.invested * company.income / 100 // 1000*5%/100%
+		income += company.invested * company.income / 100 // 1000*5%/100%=50usd
 		revenueData[endMonth] = income
 		income = 0
 	})

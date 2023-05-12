@@ -7,7 +7,7 @@ import Bar from "../Charts/Bar"
 
 export default function Revenue() {
 
-	const { platforms } = useInvested()
+	const { platforms, years } = useInvested()
 	const [currentCompanyName, setCurrentCompanyName] = useState("")
 
 	return (
@@ -22,7 +22,7 @@ export default function Revenue() {
 
 			<div className="f jcfe">
 				<Select options={platforms} placeholder="Platform" onChange={(e) => setCurrentCompanyName(e.target.value)} />
-				<Select options={[1, 2]} placeholder="Year" />
+				<Select options={years} placeholder="Year" />
 			</div>
 
 			<Bar currentCompanyName={currentCompanyName} labels="revenue" />

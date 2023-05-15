@@ -2,8 +2,7 @@ import React from "react"
 import ArticleCard from "./ArticleCard";
 import useArticles from "../../hooks/useArticles";
 import parseImg from "../../utils/parseImg";
-import ShowMore from "../FormElements/ShowMore";
-import ShowMoreFake from "../FormElements/ShowMoreFake";
+import ShowMoreButtons from "../FormElements/ShowMoreButtons";
 
 export default function Articles() {
 
@@ -40,8 +39,7 @@ export default function Articles() {
 				})
 			}
 
-			<ShowMore onClick={showMore} className="asc" />
-			<ShowMoreFake path="articles" className="asc" />
+			<ShowMoreButtons showMore={showMore} />
 		</section>
 	)
 }

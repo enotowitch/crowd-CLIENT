@@ -11,10 +11,3 @@
 	min-width: 290px;
 	border-radius: $borderRadiusBig;
 }
-
-// !!
-@media (max-width:$breakpointMobile) {
-	.menu .profileMenu{
-		left: 0px;
-	}
-}

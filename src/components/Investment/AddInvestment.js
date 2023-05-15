@@ -19,15 +19,15 @@ export default function AddInvestment() {
 		<div className="fc g w100">
 			<section className="w100">
 				<TextEditor btnText={btnText} fn={fn} textEditor={false}>
-					<div className="f fwn g">
+					<div className="addInvestmentInputBlock">
 						<Input name="platform" placeholder="platform" label="Platform" className="w100" editValue={investment?.platform} required />
 						<Input name="project" placeholder="project name" label="Project Name" className="w100" editValue={investment?.project} required />
 					</div>
-					<div className="f fwn g">
+					<div className="addInvestmentInputBlock">
 						<Input type="number" name="invested" placeholder="amount invested (€)" label="Amount Invested (€)" className="w100" editValue={investment?.invested} required />
 						<Input type="number" name="income" placeholder="income (%)" label="Income (%)" className="w100" editValue={investment?.income} required />
 					</div>
-					<div className="f fwn g">
+					<div className="addInvestmentInputBlock">
 						<Input type="date" name="start" label="Start Date" className="w100" editValue={investment?.start} required />
 						<Input type="date" name="end" label="End Date" className="w100" editValue={investment?.end} required />
 					</div>

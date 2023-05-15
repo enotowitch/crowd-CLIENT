@@ -8,7 +8,7 @@ export default function useNoUser() {
 
 	// TODO: call noUserPopup
 	function noUser(serverResponse) {
-		serverResponse.ok === false && popupElementSet("Login")
+		!serverResponse.ok && popupElementSet("Login")
 	}
 
 	function noUserRedirect() {

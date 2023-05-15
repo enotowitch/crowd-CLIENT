@@ -11,10 +11,10 @@ export default function useRevenue(currentCompanyName) {
 	const revenueHighlight = new Date().getMonth()
 
 	const { invested } = useInvested()
-	const curCompanyArr = invested?.filter(invested => invested.platform === currentCompanyName && invested)
+	const curCompanyArr = invested && invested?.filter(invested => invested.platform === currentCompanyName && invested)
 
 	let income = 0
-	curCompanyArr?.map(company => {
+	curCompanyArr && curCompanyArr?.map(company => {
 
 		const endMonth = Number(company.end.match(/(?:-)(\d+)(?:-)/)?.[1]) - 1 // !! 01-05-23 => 01-endMonth-23
 		income += company.invested * company.income / 100 // 1000*5%/100%=50usd

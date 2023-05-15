@@ -3,6 +3,7 @@ import ArticleCard from "./ArticleCard";
 import useArticles from "../../hooks/useArticles";
 import parseImg from "../../utils/parseImg";
 import ShowMore from "../FormElements/ShowMore";
+import ShowMoreFake from "../FormElements/ShowMoreFake";
 
 export default function Articles() {
 
@@ -40,7 +41,7 @@ export default function Articles() {
 			}
 
 			<ShowMore onClick={showMore} className="asc" />
-
+			<ShowMoreFake path="articles" className="asc" />
 		</section>
 	)
 }

@@ -4,6 +4,7 @@ import "./media.scss"
 import useBonuses from "../../hooks/useBonuses"
 import BonusCard from "./BonusCard"
 import ShowMore from "../FormElements/ShowMore"
+import ShowMoreFake from "../FormElements/ShowMoreFake"
 
 export default function Bonuses() {
 
@@ -16,6 +17,7 @@ export default function Bonuses() {
 			{bonuses?.map(bonus => <BonusCard key={bonus._id} obj={bonus} />)}
 
 			<ShowMore onClick={showMore} className="asc" />
+			<ShowMoreFake path="bonuses" className="asc" />
 		</section>
 	)
 }

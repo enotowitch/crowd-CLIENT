@@ -61,7 +61,7 @@ export default function InvestmentsInProgress({ ignoreClosed, title }) {
 		)
 	})
 
-
+	// https://drive.google.com/file/d/1h1u6Qs_PpDtKiYikvdBs8YL-anh8XywD/view?usp=share_link
 	return (
 		<section className="mb">
 			<div className="title2 mb2">{title}</div>

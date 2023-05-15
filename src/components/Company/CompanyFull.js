@@ -36,7 +36,7 @@ export default function CompanyFull() {
 							shareObj={company}
 							src="link"
 							textClassName="order1 mr"
-							iconClassName="order2 icon_small2"
+							iconClassName="order2 icon_small4"
 							sharePopup="ShareCompany"
 							text={company?.name}
 						/>

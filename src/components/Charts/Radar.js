@@ -1,3 +1,4 @@
+import "./media.scss"
 import React from "react";
 import {
 	Chart as ChartJS,

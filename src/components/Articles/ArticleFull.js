@@ -39,13 +39,13 @@ export default function ArticleFull() {
 				{<Markdown>{article?.value}</Markdown>}
 
 				<div className="f jcsb">
-					<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small mr05" />
+					<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small2 mr05" />
 					<div className="f g">
-						<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small mr05" />
+						<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small2 mr05" />
 						<IconShare
 							shareObj={article}
 							src="share"
-							iconClassName="icon_small mr05"
+							iconClassName="icon_small2 mr05"
 							sharePopup="ShareArticle"
 							text="share"
 						/>

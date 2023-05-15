@@ -23,7 +23,7 @@ export default function BonusCard({ obj }) {
 
 			<IconText
 				url={`${baseURL}/upload/${img}`}
-				iconClassName="icon_small2"
+				iconClassName="icon_small3"
 				text={name}
 				textClassName="title2 white"
 			/>

@@ -103,7 +103,7 @@ header, footer, nav, section{
 	
 	&__mid{
 		display: flex;
-		gap: 15px;
+		// gap: 15px;
 		width: 100%;
 	}
 }
@@ -385,6 +385,9 @@ header, footer, nav, section{
 }
 .br{
 	outline: 1px solid red;
+}
+.by{
+	outline: 1px solid yellow;
 }
 .pen{
 	pointer-events: none;

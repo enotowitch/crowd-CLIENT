@@ -8,7 +8,7 @@ import Hello from "./Hello"
 
 export default function Home() {
 	return (
-		<div className="fc g">
+		<div className="fc g w100">
 			<Hello />
 			<Companies />
 			<Articles />

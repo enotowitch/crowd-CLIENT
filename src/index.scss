@@ -380,8 +380,11 @@ header, footer, nav, section{
 .gray{
 	color: $lightGray;
 }
-.darkBg{
+.bgDark{
 	background: $dark;
+}
+.bgLight{
+	background: $light !important;
 }
 .white{
 	color: $white;

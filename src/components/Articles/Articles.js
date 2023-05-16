@@ -22,6 +22,8 @@ export default function Articles() {
 				cardText = cardText?.replace(/#|>|\*+/g, "") // * replace #>*
 				cardText = cardText?.trim()
 
+				const tags = article?.tags?.split(",").map(tag => tag.trim())
+
 				return (
 					<ArticleCard
 						key={article._id}
@@ -30,7 +32,7 @@ export default function Articles() {
 						img={img}
 						views={article.views}
 						likes={article.likes.length}
-						tag={article.tag}
+						tags={tags}
 						cardText={cardText}
 					/>
 				)

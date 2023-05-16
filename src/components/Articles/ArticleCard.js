@@ -6,8 +6,9 @@ import useArticleLikes from "../../hooks/useArticleLikes"
 import IconsTop from "../Icons/IconsTop"
 import IconDelete from "../Icons/IconDelete"
 import IconEdit from "../Icons/IconEdit"
+import Tags from "../FormElements/Tags"
 
-export default function ArticleCard({ title, img, id, views, likes, tag, cardText }) {
+export default function ArticleCard({ title, img, id, views, likes, tags, cardText }) {
 
 	const { likeCount, likeArticle } = useArticleLikes(id, likes)
 	const cardRef = useRef(null)
@@ -21,7 +22,7 @@ export default function ArticleCard({ title, img, id, views, likes, tag, cardTex
 			</IconsTop>
 
 			<img src={img} className="card__img" />
-			<IconText src={tag} text={tag} iconClassName="icon_small mr05" />
+			<Tags arr={tags} className="tag bgLight" iconClassName="m0" />
 			<div className="cardTitle">{title}</div>
 			<div className="cardText">{cardText}</div>
 

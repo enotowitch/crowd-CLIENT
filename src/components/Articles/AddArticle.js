@@ -18,9 +18,9 @@ export default function AddArticle() {
 	return (
 		<section className="w100">
 			<TextEditor btnText={btnText} fn={fn} editValue={article?.value}>
-				<Input name="title" placeholder="title" editValue={article?.title} />
-				<Input name="author" placeholder="author" editValue={article?.author} />
-				<Select name="tag" options={["bricks", "realt"]} editValue={article?.tag} />
+				<Input name="title" placeholder="title" editValue={article?.title} label="title" />
+				<Input name="author" placeholder="author" editValue={article?.author} label="author" />
+				<Input name="tags" placeholder="tags separated by comma" editValue={article?.tags} label="tags" />
 			</TextEditor>
 		</section>
 	)

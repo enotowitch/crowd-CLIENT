@@ -4,6 +4,7 @@ import useArticles from "../../hooks/useArticles";
 import parseImg from "../../utils/parseImg";
 import ShowMoreButtons from "../FormElements/ShowMoreButtons";
 import Cards from "../Other/Cards";
+import parseTags from "../../utils/parseTags";
 
 export default function Articles() {
 
@@ -22,7 +23,7 @@ export default function Articles() {
 				cardText = cardText?.replace(/#|>|\*+/g, "") // * replace #>*
 				cardText = cardText?.trim()
 
-				const tags = article?.tags?.split(",").map(tag => tag.trim())
+				const tags = parseTags(article?.tags)
 
 				return (
 					<ArticleCard

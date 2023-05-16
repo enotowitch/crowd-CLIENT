@@ -7,6 +7,7 @@ import Comments from "../Comments/Comments";
 import Tags from "../FormElements/Tags";
 import Button from "../FormElements/Button";
 import useBonusFull from "../../hooks/useBonusFull";
+import parseTags from "../../utils/parseTags";
 
 export default function BonusFull() {
 
@@ -18,7 +19,7 @@ export default function BonusFull() {
 			<section className="postFull mb">
 				<div className="title2">Bonus</div>
 				<div className="title">Get your bonus for {bonus?.name}</div>
-				{bonus?.tags && <Tags arr={bonus?.tags?.split(",").map(tag => tag.trim())} />}
+				{bonus?.tags && <Tags arr={parseTags(bonus?.tags)} />}
 
 				<div>{bonus?.text}</div>
 				{<Markdown>{bonus?.value}</Markdown>}

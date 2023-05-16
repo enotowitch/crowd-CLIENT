@@ -21,6 +21,7 @@ export default function AddBonus() {
 				<InputFileInput obj={bonus} />
 				<Input name="link" placeholder="partner link" editValue={bonus?.link} />
 				<Input name="text" placeholder="promo text" editValue={bonus?.text} />
+				<Input name="tags" placeholder="tags separated by comma" editValue={bonus?.tags} />
 			</TextEditor>
 		</section>
 	)

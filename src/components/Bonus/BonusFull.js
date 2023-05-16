@@ -4,7 +4,7 @@ import "./media.scss"
 import Markdown from "marked-react";
 import { useParams } from "react-router-dom";
 import Comments from "../Comments/Comments";
-import Tag from "../FormElements/Tag";
+import Tags from "../FormElements/Tags";
 import Button from "../FormElements/Button";
 import useBonusFull from "../../hooks/useBonusFull";
 
@@ -18,7 +18,7 @@ export default function BonusFull() {
 			<section className="postFull mb">
 				<div className="title2">Bonus</div>
 				<div className="title">Get your bonus for {bonus?.name}</div>
-				{/* <Tag src={bonus?.name} text={bonus?.name} /> */}
+				<Tags arr={bonus?.tags.split(",").map(tag => tag.trim())} />
 
 				<div>{bonus?.text}</div>
 				{<Markdown>{bonus?.value}</Markdown>}

@@ -21,7 +21,7 @@ export default function Revenue() {
 				<div className="revenue__right">{revenueCurYear} €</div>
 			</div>
 
-			<div className="f jcfe">
+			<div className="f g jcfe">
 				<Select options={platforms} placeholder="Platform" onChange={(e) => currentCompanyNameSet(e.target.value)} />
 				<Select options={years} placeholder="Year" def="all years" onChange={(e) => yearSelectedSet(e.target.value)} />
 			</div>

@@ -21,7 +21,7 @@ export default function useInvested() {
 			platformsSet(tempPlatforms)
 			// ! years
 			res?.map(res => {
-				const year = res.start.match(/\d+/)?.[0] // year-05-01
+				const year = res.end.match(/\d+/)?.[0] // year-05-01
 				if (!tempYears.includes(year)) {
 					tempYears.push(year)
 				}

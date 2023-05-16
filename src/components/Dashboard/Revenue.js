@@ -9,6 +9,7 @@ export default function Revenue() {
 
 	const { platforms, years, revenueCurMonth, revenueCurYear } = useInvested()
 	const [currentCompanyName, currentCompanyNameSet] = useState("")
+	const [yearSelected, yearSelectedSet] = useState("")
 
 	return (
 		<section className="mb">
@@ -22,10 +23,10 @@ export default function Revenue() {
 
 			<div className="f jcfe">
 				<Select options={platforms} placeholder="Platform" onChange={(e) => currentCompanyNameSet(e.target.value)} />
-				<Select options={years} placeholder="Year" />
+				<Select options={years} placeholder="Year" onChange={(e) => yearSelectedSet(e.target.value)} />
 			</div>
 
-			<Bar currentCompanyName={currentCompanyName} labels="revenue" />
+			<Bar currentCompanyName={currentCompanyName} yearSelected={yearSelected} labels="revenue" />
 		</section>
 	)
 }

@@ -1,26 +1,31 @@
-import useInvested from "./useInvested"
+import { useEffect, useState } from "react"
+import * as api from "../api"
 
 // `company`=`platform`
-export default function useRevenue(currentCompanyName) {
+export default function useRevenue(currentCompanyName, yearSelected) {
 
 	// * labels in Bar.js
 	const revenue = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 	//  * data in Bar.js
-	const revenueData = ["", "", "", "", "", "", "", "", "", "", "", ""]
+	const [revenueData, revenueDataSet] = useState(["", "", "", "", "", "", "", "", "", "", "", ""])
+	const tempRevenueData = ["", "", "", "", "", "", "", "", "", "", "", ""]
 	//  * Highlight current month
 	const revenueHighlight = new Date().getMonth()
 
-	const { invested } = useInvested()
-	const curCompanyArr = invested && invested?.filter(invested => invested.platform === currentCompanyName && invested)
+	useEffect(() => {
+		revenueDataSet(["", "", "", "", "", "", "", "", "", "", "", ""]) // null revenueData on new filter select
+		async function filterRevenue() {
+			const res = await api.filterRevenue(currentCompanyName, yearSelected)
+			res?.map(company => {
+				const endMonth = Number(company.end.match(/(?:-)(\d+)(?:-)/)?.[1]) - 1 // 2023-05-25 => 2023-endMonth-25
+				const revenue = company.invested * company.income / 100 // 1000*5%/100%=50usd
+				tempRevenueData[endMonth] = [Number(tempRevenueData[endMonth]) + revenue].toString() // `push` revenue to its month
+				revenueDataSet(tempRevenueData)
+			})
+		}
 
-	let income = 0
-	curCompanyArr && curCompanyArr?.map(company => {
-
-		const endMonth = Number(company.end.match(/(?:-)(\d+)(?:-)/)?.[1]) - 1 // !! 01-05-23 => 01-endMonth-23
-		income += company.invested * company.income / 100 // 1000*5%/100%=50usd
-		revenueData[endMonth] = income
-		income = 0
-	})
+		filterRevenue()
+	}, [currentCompanyName, yearSelected])
 
 	return (
 		{ revenue, revenueData, revenueHighlight }

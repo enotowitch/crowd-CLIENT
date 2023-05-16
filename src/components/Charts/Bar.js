@@ -21,11 +21,11 @@ ChartJS.register(
 	Legend
 );
 
-export default function Bar_({ currentCompanyName, labels }) { // * labels="tvl" data=${labels}+"Data" => "tvlData" (eval)
+export default function Bar_({ currentCompanyName, labels, yearSelected }) { // * labels="tvl" data=${labels}+"Data" => "tvlData" (eval)
 
 	// * gray cause of eval
 	const { tvl, tvlData, tvlHighlight } = useTVL(currentCompanyName)
-	const { revenue, revenueData, revenueHighlight } = useRevenue(currentCompanyName)
+	const { revenue, revenueData, revenueHighlight } = useRevenue(currentCompanyName, yearSelected)
 
 	// ! options
 	const options = {

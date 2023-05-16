@@ -304,6 +304,14 @@ export const getInvested = async () => {
 	}
 }
 
+export const filterRevenue = async (platform, end) => {
+	try {
+		const { data } = await instance.post(`/filterRevenue`, {platform, end})
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? INVESTMENT
 
 // !! WRITEUS

@@ -23,7 +23,7 @@ export default function Revenue() {
 
 			<div className="f jcfe">
 				<Select options={platforms} placeholder="Platform" onChange={(e) => currentCompanyNameSet(e.target.value)} />
-				<Select options={years} placeholder="Year" onChange={(e) => yearSelectedSet(e.target.value)} />
+				<Select options={years} placeholder="Year" def="all years" onChange={(e) => yearSelectedSet(e.target.value)} />
 			</div>
 
 			<Bar currentCompanyName={currentCompanyName} yearSelected={yearSelected} labels="revenue" />

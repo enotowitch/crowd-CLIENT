@@ -18,7 +18,7 @@ export default function BonusFull() {
 			<section className="postFull mb">
 				<div className="title2">Bonus</div>
 				<div className="title">Get your bonus for {bonus?.name}</div>
-				<Tags arr={bonus?.tags.split(",").map(tag => tag.trim())} />
+				{bonus?.tags && <Tags arr={bonus?.tags?.split(",").map(tag => tag.trim())} />}
 
 				<div>{bonus?.text}</div>
 				{<Markdown>{bonus?.value}</Markdown>}

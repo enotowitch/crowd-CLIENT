@@ -27,7 +27,7 @@ export default function ArticleFull() {
 
 				<div className="title">{article?.title}</div>
 
-				<Tags arr={article?.tags.split(",").map(tag => tag.trim())} />
+				{article?.tags && <Tags arr={article?.tags.split(",").map(tag => tag.trim())} />}
 
 				<Icon2Text src="logo author" text={article?.author} iconClassName="icon_big">
 					<div className="f g">

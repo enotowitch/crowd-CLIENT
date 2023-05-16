@@ -10,13 +10,13 @@ export default function Frais({ obj }) { // obj=company
 
 	// ! edit Frais Legends
 	let editFraisInputsLength
-	if (obj) {
+	if (obj?.FraisObj) {
 		// * obj?.FraisObj = {name 1: '1', name 2: '2'}
 		editFraisInputsLength = Object.keys(obj?.FraisObj).length // * ["name1", "name2"].length
 	}
 
 	useEffect(() => {
-		countSet(editFraisInputsLength)
+		editFraisInputsLength && countSet(editFraisInputsLength)
 	}, [obj])
 	// ? edit Frais Legends
 
@@ -25,7 +25,7 @@ export default function Frais({ obj }) { // obj=company
 
 			// ! edit Frais Legends
 			let editFraisInputName, editFraisInputValue
-			if (obj) {
+			if (obj?.FraisObj) {
 				editFraisInputName = Object.keys(obj?.FraisObj)
 				editFraisInputValue = Object.values(obj?.FraisObj)
 			}

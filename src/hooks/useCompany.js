@@ -6,6 +6,7 @@ import useValidation from "./useValidation"
 import { Context } from "../Context"
 import animationDelete from "../utils/animationDelete"
 import replacePath from "../utils/replacePath"
+import parseFraisObj from "../utils/parseFraisObj"
 
 export default function useCompany(value) { // value=textEditor value
 
@@ -16,21 +17,7 @@ export default function useCompany(value) { // value=textEditor value
 		const { form } = parseForm(e)
 		const img = replacePath(form.img)
 
-		// ! FraisObj
-		const formKeysArr = Object.keys(form)
-
-		let FraisObj = {}
-		formKeysArr.map((keyName, ind) => {
-			if (keyName.includes("FraisLegend")) {
-				const keyName = Object.values(form)[ind]
-				const keyValue = Object.values(form)[ind + 1]
-
-				if (!Number(keyName) && keyName) { // * don't add numbers and "" to FraisObj
-					FraisObj = { ...FraisObj, [keyName]: keyValue } // {"name 1": "value 1","name 2": "value 2"}
-				}
-			}
-		})
-		// ? FraisObj
+		const { FraisObj } = parseFraisObj(form)
 
 		const res = await api.addCompany({ ...form, FraisObj, img, value })
 		res.ok && (window.location.href = `/company/${res.id}`)
@@ -51,6 +38,8 @@ export default function useCompany(value) { // value=textEditor value
 		const { form } = parseForm(e)
 		const img = replacePath(form.img)
 
+		const { FraisObj } = parseFraisObj(form)
+
 		// * keep old img if not uploaded new img
 		let formAndValue
 		if (form.updatedImg === "false") {
@@ -60,7 +49,7 @@ export default function useCompany(value) { // value=textEditor value
 			formAndValue = { ...form, img, value }
 		}
 
-		const res = await api.editCompany(watchingPost, formAndValue)
+		const res = await api.editCompany(watchingPost, { ...formAndValue, FraisObj })
 		res.ok && (window.location.href = `/company/${watchingPost}`)
 	}
 

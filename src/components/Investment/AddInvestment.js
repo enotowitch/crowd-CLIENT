@@ -34,7 +34,7 @@ export default function AddInvestment() {
 				</TextEditor>
 			</section>
 
-			<section>
+			<section className="p0">
 				<Investments title="Investments in progress" closed={false} />
 				<Investments title="Investments closed" closed={true} />
 			</section>

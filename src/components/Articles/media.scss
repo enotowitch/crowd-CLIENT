@@ -24,17 +24,20 @@
 
 // !! center div with flex-start inside
 @media (max-width:1799px) {	
-	.cards{
+	.cards:not(.table){
 		width: 1050px;	
 	}
 }
 @media (max-width:1049px) {	
-	.cards{
+	.cards:not(.table){
 		width: 660px;	
 	}
 }
 @media (max-width:714px) {	
-	.cards{
+	.cards:not(.table){
 		width: 320px;	
+	}
+	.table{
+		width: 100%;
 	}
 }

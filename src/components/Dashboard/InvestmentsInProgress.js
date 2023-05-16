@@ -63,8 +63,8 @@ export default function InvestmentsInProgress({ ignoreClosed, title }) {
 
 	// https://drive.google.com/file/d/1h1u6Qs_PpDtKiYikvdBs8YL-anh8XywD/view?usp=share_link
 	return (
-		<section className="mb">
-			<div className="title2 mb2">{title}</div>
+		<section className="mb p0">
+			<div className="title2 m">{title}</div>
 
 			<InvesmentItems arr={["Platform", "Number of projects", "Average income (%)", "Current invested amount"]} />
 			{companies}

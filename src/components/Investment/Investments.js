@@ -10,13 +10,13 @@ export default function Investments({ title, closed }) {
 	const { investments, showMore } = useInvestments()
 
 	return (
-		<section className="cards fc g0">
-			<div className="title2 w100">{title}</div>
+		<div className="cards fc g0 table">
+			<div className="title2 w100 m">{title}</div>
 
 			<InvesmentItems arr={["Platform", "Project Name", "Amount Invested", "Income", "Start Date", "End Date"]} />
 
 			{!closed && investments.map(obj => !obj.closed && <InvestmentCard obj={obj} />)}
 			{closed && investments.map(obj => obj.closed && <InvestmentCard obj={obj} />)}
-		</section>
+		</div>
 	)
 }

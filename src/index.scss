@@ -213,6 +213,9 @@ header, footer, nav, section{
 .pl2{
 	padding-left: 30px;
 }
+.p0{
+	padding: 0;
+}
 // ? margin & padding
 // ! flex & display
 .db{
@@ -335,6 +338,9 @@ header, footer, nav, section{
 // ! width & height
 .w100{
 	width: 100%;
+}
+.w100i{
+	width: 100% !important;
 }
 .miw100{
 	min-width: 100% !important;

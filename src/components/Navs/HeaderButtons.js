@@ -13,7 +13,7 @@ export default function HeaderButtons() {
 	return (
 		!user &&
 		<div className="f g fcc">
-			<Button text="Log In" btnClassName="btn_out" onClick={() => popupElementSet("Login")} ignoreOutside="true" />
+			<Button text="Log In" btnClassName="btn_out login" onClick={() => popupElementSet("Login")} ignoreOutside="true" />
 			<Button text="Sign Up" onClick={() => popupElementSet("Register")} ignoreOutside="true" />
 		</div>
 	)

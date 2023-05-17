@@ -14,8 +14,8 @@ import Aboutus from "../Aboutus/Aboutus"
 import AddInvestment from "../Investment/AddInvestment"
 import Writeus from "../Writeus/Writeus"
 import Dashboard from "../Dashboard/Dashboard"
+import Click from "../Forms/Click"
 
-// TODO
 export default function AppRouter() {
 
 	const { user } = useUser()
@@ -46,6 +46,8 @@ export default function AppRouter() {
 					<Route exact path="dashboard" element={<Dashboard />} />
 				</>
 			}
+
+			<Route path="*" element={<Click />} />
 		</Routes>
 	)
 }

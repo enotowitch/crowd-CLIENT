@@ -84,6 +84,15 @@ export const autoAuth = async () => {
 		console.log(error)
 	}
 }
+
+export const forgot = async (email) => {
+	try {
+		const { data } = await instance.post(`/forgot`, { email })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? USER
 
 // !! COMMENT
@@ -306,7 +315,7 @@ export const getInvested = async () => {
 
 export const filterRevenue = async (platform, end) => {
 	try {
-		const { data } = await instance.post(`/filterRevenue`, {platform, end})
+		const { data } = await instance.post(`/filterRevenue`, { platform, end })
 		return data
 	} catch (error) {
 		console.log(error)

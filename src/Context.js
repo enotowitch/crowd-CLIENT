@@ -13,6 +13,7 @@ function ContextProvider(props) {
 	const [visitedPage, visitedPageSet] = useState("") // for coloring icons depending on page visited
 	const [sharing, sharingSet] = useState("") // for sharing: article/etc...
 	const { user, userSet } = useUser() // when came to page user is already loaded to context: no undefined on 1 load
+	const [errorMsg, errorMsgSet] = useState("")
 
 	// ! RETURN
 	return (
@@ -24,7 +25,8 @@ function ContextProvider(props) {
 			modalText, modalTextSet,
 			visitedPage, visitedPageSet,
 			sharing, sharingSet,
-			user, userSet
+			user, userSet,
+			errorMsg, errorMsgSet
 		}}>
 
 			{props.children}

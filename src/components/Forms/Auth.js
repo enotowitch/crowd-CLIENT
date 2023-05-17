@@ -11,8 +11,8 @@ import { Context } from "../../Context"
 
 export default function Auth({ children, type }) { // type=Log In/Sign Up
 
-	const { onSubmit, errorMsg } = useAuth(type)
-	const { popupElementSet } = useContext(Context)
+	const { onSubmit } = useAuth(type)
+	const { popupElementSet, errorMsg } = useContext(Context)
 
 	return (
 		<form className="auth" onSubmit={onSubmit}>

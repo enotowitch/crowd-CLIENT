@@ -35,15 +35,21 @@ export default function AppRouter() {
 			{/* USER ROUTES */}
 			{user &&
 				<>
+					<Route exact path="investments" element={<AddInvestment />} />
+					<Route exact path="editInvestment/:investmentId" element={<AddInvestment />} />
+					<Route exact path="dashboard" element={<Dashboard />} />
+				</>
+			}
+
+			{/* ADMIN ROUTES */}
+			{user?.isAdmin &&
+				<>
 					<Route exact path="add-article" element={<AddArticle />} />
 					<Route exact path="editArticle/:articleId" element={<AddArticle />} />
 					<Route exact path="add-company" element={<AddCompany />} />
 					<Route exact path="editCompany/:companyId" element={<AddCompany />} />
 					<Route exact path="add-bonus" element={<AddBonus />} />
 					<Route exact path="editBonus/:bonusId" element={<AddBonus />} />
-					<Route exact path="investments" element={<AddInvestment />} />
-					<Route exact path="editInvestment/:investmentId" element={<AddInvestment />} />
-					<Route exact path="dashboard" element={<Dashboard />} />
 				</>
 			}
 

@@ -1,11 +1,10 @@
 import React, { useContext, useRef } from "react"
 import "./index.scss"
 import "./media.scss"
-import NavBottom from "./NavBottom"
-import NavTop from "./NavTop"
 import { Context } from "../../Context"
 import HeaderButtons from "./HeaderButtons"
 import ProfileTop from "../Profile/ProfileTop"
+import Navs from "./Navs"
 
 export default function Menu() {
 
@@ -24,8 +23,7 @@ export default function Menu() {
 			<div className="menu__scroll" ref={ref}>
 				<ProfileTop />
 				<HeaderButtons />
-				<NavTop />
-				<NavBottom />
+				<Navs />
 			</div>
 		</div>
 	)

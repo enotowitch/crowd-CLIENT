@@ -1,6 +1,7 @@
 import { useState } from "react"
 import * as api from "../api"
 import parseForm from "../utils/parseForm"
+import clearForm from "../utils/clearForm"
 
 export default function useWriteus() {
 
@@ -12,6 +13,7 @@ export default function useWriteus() {
 		const { form } = parseForm(e)
 		const res = await api.writeus(form)
 		res.ok && msgSet(res.msg)
+		clearForm("writeus")
 	}
 
 	return (

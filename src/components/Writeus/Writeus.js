@@ -12,7 +12,7 @@ export default function Writeus() {
 
 	return (
 		<section className="w100">
-			<form onSubmit={onSubmit}>
+			<form className="writeus" onSubmit={onSubmit}>
 				<div className="title">Write us</div>
 				<div>
 					Our team is looking forward to responding to your message.

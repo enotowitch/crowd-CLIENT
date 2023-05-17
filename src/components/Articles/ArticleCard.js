@@ -7,6 +7,7 @@ import IconsTop from "../Icons/IconsTop"
 import IconDelete from "../Icons/IconDelete"
 import IconEdit from "../Icons/IconEdit"
 import Tags from "../FormElements/Tags"
+import ForAdmin from "../Other/ForAdmin"
 
 export default function ArticleCard({ title, img, id, views, likes, tags, cardText }) {
 
@@ -16,10 +17,12 @@ export default function ArticleCard({ title, img, id, views, likes, tags, cardTe
 	return (
 		<div className="card" ref={cardRef} onClick={() => window.location.href = `/article/${id}`}>
 
-			<IconsTop cardRef={cardRef} className="iconsTop">
-				<IconEdit id={id} fn="editArticle" />
-				<IconDelete id={id} fn="deleteArticle" />
-			</IconsTop>
+			<ForAdmin>
+				<IconsTop cardRef={cardRef} className="iconsTop">
+					<IconEdit id={id} fn="editArticle" />
+					<IconDelete id={id} fn="deleteArticle" />
+				</IconsTop>
+			</ForAdmin>
 
 			<img src={img} className="card__img" />
 			<Tags arr={tags} className="tag bgLight" iconClassName="m0" />

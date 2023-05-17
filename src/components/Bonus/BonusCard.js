@@ -7,6 +7,7 @@ import IconEdit from "../Icons/IconEdit"
 import Button from "../FormElements/Button"
 import IconText from "../Icons/IconText"
 import { baseURL } from "../../consts"
+import ForAdmin from "../Other/ForAdmin"
 
 export default function BonusCard({ obj }) {
 
@@ -16,10 +17,12 @@ export default function BonusCard({ obj }) {
 	return (
 		<div className="card" ref={cardRef} onClick={() => window.location.href = `/bonus/${id}`}>
 
-			<IconsTop cardRef={cardRef} className="iconsTop">
-				<IconEdit id={id} fn="editBonus" />
-				<IconDelete id={id} fn="deleteBonus" />
-			</IconsTop>
+			<ForAdmin>
+				<IconsTop cardRef={cardRef} className="iconsTop">
+					<IconEdit id={id} fn="editBonus" />
+					<IconDelete id={id} fn="deleteBonus" />
+				</IconsTop>
+			</ForAdmin>
 
 			<IconText
 				url={`${baseURL}/upload/${img}`}

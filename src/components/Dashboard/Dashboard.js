@@ -8,9 +8,9 @@ import useNoUser from "../../hooks/useNoUser"
 
 export default function Dashboard() {
 
-	// // TODO
-	// const { noUserRedirect } = useNoUser()
-	// noUserRedirect()
+	// TODO
+	const { noUserRedirect } = useNoUser()
+	noUserRedirect()
 
 	return (
 		<div className="fc w100">

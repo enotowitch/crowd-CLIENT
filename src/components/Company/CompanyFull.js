@@ -13,6 +13,7 @@ import Companies from "./Companies"
 import IconText from "../Icons/IconText"
 import IconShare from "../Icons/IconShare"
 import { baseURL } from "../../consts"
+import TrustBox from "../Trustpilot/TrustBox"
 
 export default function CompanyFull() {
 
@@ -47,6 +48,8 @@ export default function CompanyFull() {
 					{<Markdown>{company?.value}</Markdown>}
 
 					<Radar obj={company} />
+
+					<TrustBox trustpilotId={company?.trustpilotId} />
 				</section>
 
 				<RadarInfo obj={company} />

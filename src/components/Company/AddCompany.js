@@ -26,6 +26,7 @@ export default function AddCompany() {
 				<InputFileInput obj={company} />
 
 				<Input name="link" placeholder="company link" editValue={company?.link} />
+				<Input name="trustpilotId" placeholder="trustpilot data-businessunit-id" editValue={company?.trustpilotId} />
 
 				<Input name="Fiabilite" type="number" placeholder="Fiabilite" editValue={company?.Fiabilite} label="Fiabilite" />
 

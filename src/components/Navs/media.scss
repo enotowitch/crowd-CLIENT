@@ -15,12 +15,12 @@
 		display: flex !important;
 	}
 	// ? logo_user
-	// ! navBottom
-	.navBottom,.navTop{
+	// !! hide navs: HIDE navBottom, navTop, navAdmin on destop; SHOW on mobile (in Menu)
+	nav{
 		display: none;
 	}
-	// * HIDE navBottom on destop; SHOW navBottom on mobile (in Menu)
-	.menu .navBottom,.menu .navTop{
+	// !! show navs
+	.menu nav{
 		display: block;
 	}
 	// ? navBottom

@@ -26,7 +26,7 @@ export default function useInvestment(value) { // value=textEditor value
 	async function removeInvestment(id, e) {
 		const res = await api.removeInvestment(id)
 		res.ok && window.location.reload()
-		animationDelete(res, e)
+		e && animationDelete(res, e)
 	}
 
 	// ! deleteInvestment

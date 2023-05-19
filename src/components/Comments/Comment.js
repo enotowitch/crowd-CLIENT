@@ -24,7 +24,7 @@ export default function Comment({ obj, type }) { //obj=comment; type=recommend(r
 					<div className="fcc g">
 						{createdAt}
 						<img src={quotes} />
-						{type === undefined || type === "rating" &&
+						{type === "rating" || type === undefined &&
 							<Rating commentId={commentId} initRating={initRating} />
 						}
 						{type === "recommend" &&

@@ -55,7 +55,7 @@ export default function CompanyFull() {
 
 			<div className="fc f1">
 				<div className="rightBar ha">
-					<Comments type="recommend">
+					<Comments type="recommend" className="company">
 						<Select name="recommend" options={["yes", "no"]} placeholder="do you recommend this platform?" />
 					</Comments>
 				</div>

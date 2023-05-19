@@ -8,7 +8,7 @@ export default function ScrollTo({ className }) {
 		<IconText
 			src={className}
 			onClick={() => document.querySelector(`.${className}`).scrollIntoView({ behavior: "smooth" })}
-			iconClassName={`scrollTo ${className}`}
+			iconClassName={`scrollTo to${className}`} // * .toheader for css position
 		/>
 	)
 }

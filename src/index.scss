@@ -147,6 +147,26 @@ header, footer, nav, section{
 	}
 }
 
+// ! scrollbar
+// hide body scrollbar
+body::-webkit-scrollbar {
+	width: 0px;
+}
+// other scrollbars
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: lighten($dark, 10%);
+	border-radius: 20px;
+}
+::-webkit-scrollbar-track {
+	background: $light;
+	border-radius: 20px;
+}
+// ? scrollbar
+
 // ! CURSORS
 .card{
 	cursor: pointer;

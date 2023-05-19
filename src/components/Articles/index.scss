@@ -23,6 +23,10 @@
 	> *:not(img, .cardText, .cardTitle){
 	padding: 7px;
 	}
+	&:hover{
+		transform: scale(1.02);
+		box-shadow: 0px 10px 29px -3px rgba(224, 68, 255, 0.2);
+	}
 }
 
 .cardText, .cardTitle{
@@ -54,7 +58,10 @@
 }
 
 .postFull{
-	width: 100%;
+	width: 80%;
+	&__wrap{
+		width: 100%;
+	}
 	// !!
 	img:not(.radarClip){
 		border-radius: $borderRadiusBig;

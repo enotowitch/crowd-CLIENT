@@ -23,39 +23,41 @@ export default function ArticleFull() {
 
 	return (
 		<div className="fc w100">
-			<section className="postFull mb">
-				<div className="title2">Blog</div>
+			<section className="postFull__wrap">
+				<div className="postFull mb c">
+					<div className="title2">Blog</div>
 
-				<div className="title">{article?.title}</div>
+					<div className="title">{article?.title}</div>
 
-				{article?.tags && <Tags arr={parseTags(article?.tags)} />}
+					{article?.tags && <Tags arr={parseTags(article?.tags)} />}
 
-				<Icon2Text src="logo author" text={article?.author} iconClassName="icon_big">
-					<div className="f g">
-						{timeAgo(article?.createdAt)}
-						<IconText src="dot" text={timeRead(article?.value)} iconClassName="icon_small mr" />
+					<Icon2Text src="logo author" text={article?.author} iconClassName="icon_big">
+						<div className="f g">
+							{timeAgo(article?.createdAt)}
+							<IconText src="dot" text={timeRead(article?.value)} iconClassName="icon_small mr" />
+						</div>
+					</Icon2Text>
+
+					{<Markdown>{article?.value}</Markdown>}
+
+					<div className="f jcsb">
+						<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small2 mr05" />
+						<div className="f g">
+							<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small2 mr05" />
+							<IconShare
+								shareObj={article}
+								src="share"
+								iconClassName="icon_small2 mr05"
+								sharePopup="ShareArticle"
+								text="share"
+							/>
+						</div>
 					</div>
-				</Icon2Text>
 
-				{<Markdown>{article?.value}</Markdown>}
-
-				<div className="f jcsb">
-					<IconText src="views" text={`${article?.views} views`} iconClassName="icon_small2 mr05" />
-					<div className="f g">
-						<IconText src="likes" text={`${article?.likes.length} likes`} iconClassName="icon_small2 mr05" />
-						<IconShare
-							shareObj={article}
-							src="share"
-							iconClassName="icon_small2 mr05"
-							sharePopup="ShareArticle"
-							text="share"
-						/>
-					</div>
 				</div>
 
+				<Comments />
 			</section>
-
-			<Comments />
 		</div>
 	)
 }

@@ -29,9 +29,13 @@ nav{
 	margin-right: 15px;
 	// !!
 	// * distance between IconText(s) in NavBottom/Nav...
+	// * nav icons
 	a{
 		margin-bottom: 15px;
 		width: $widthSmall;
+		&:hover{
+			color: $brand;
+		}
 	}
 }
 

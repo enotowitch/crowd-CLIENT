@@ -34,7 +34,7 @@ export default function Frais({ obj }) { // obj=company
 			return (
 				<>
 					<Input name={`FraisLegend${ind + 1}name`} placeholder={`name of legend ${ind + 1}`} editValue={editFraisInputName?.[ind]} />
-					<Input name={`FraisLegend${ind + 1}value`} placeholder={`value of legend ${ind + 1}`} editValue={editFraisInputValue?.[ind]} />
+					<Input name={`FraisLegend${ind + 1}value`} placeholder={`value of legend ${ind + 1}`} editValue={editFraisInputValue?.[ind]} type="number" />
 				</>
 			)
 		})

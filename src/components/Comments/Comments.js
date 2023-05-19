@@ -6,7 +6,7 @@ import useComments from "../../hooks/useComments"
 import Comment from "./Comment"
 import ScrollTo from "../Navs/ScrollTo"
 
-export default function Comments() {
+export default function Comments({ children, type }) { // type=recommend(recommend)||rating(undefined||rating)
 
 	const { comments, showMore } = useComments()
 
@@ -15,9 +15,11 @@ export default function Comments() {
 			<div className="title">Comments</div>
 			<hr></hr>
 
-			{comments?.map(obj => <Comment key={obj._id} obj={obj} />)}
+			{comments?.map(obj => <Comment key={obj._id} obj={obj} type={type} />)}
 
-			<AddComment />
+			<AddComment>
+				{children}
+			</AddComment>
 
 			<ScrollTo className="comments" />
 		</section>

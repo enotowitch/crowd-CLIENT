@@ -3,6 +3,7 @@ import * as api from "../api"
 import { Context } from "../Context"
 import useNoUser from "./useNoUser"
 import useValidation from "./useValidation"
+import parseForm from "../utils/parseForm"
 
 export default function useComment(value) { // value=textEditor value
 
@@ -14,8 +15,9 @@ export default function useComment(value) { // value=textEditor value
 		e.preventDefault()
 
 		validation(value, "Comment")
+		const { form } = parseForm(e) // recommend
 
-		const res = await api.addComment(value, watchingPost)
+		const res = await api.addComment({ value, ...form }, watchingPost)
 		res.ok && window.location.reload()
 		noUser(res)
 	}

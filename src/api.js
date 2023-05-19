@@ -96,9 +96,9 @@ export const forgot = async (email) => {
 // ?? USER
 
 // !! COMMENT
-export const addComment = async (value, articleId) => {
+export const addComment = async (formAndValue, articleId) => {
 	try {
-		const { data } = await instance.post(`/addComment`, { value, articleId })
+		const { data } = await instance.post(`/addComment`, { ...formAndValue, articleId })
 		return data
 	} catch (error) {
 		console.log(error)

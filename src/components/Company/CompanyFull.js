@@ -13,6 +13,7 @@ import Companies from "./Companies"
 import IconText from "../Icons/IconText"
 import IconShare from "../Icons/IconShare"
 import { baseURL } from "../../consts"
+import Select from "../FormElements/Select"
 
 export default function CompanyFull() {
 
@@ -54,7 +55,9 @@ export default function CompanyFull() {
 
 			<div className="fc f1">
 				<div className="rightBar ha">
-					<Comments />
+					<Comments type="recommend">
+						<Select name="recommend" options={["yes", "no"]} placeholder="do you recommend this platform?" />
+					</Comments>
 				</div>
 
 				<div className="rightBar mt">

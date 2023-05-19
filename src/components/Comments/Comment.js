@@ -4,13 +4,14 @@ import "./media.scss"
 import Rating from "./Rating"
 import Markdown from "marked-react";
 import quotes from "../../img/quotes.svg"
+import Recommend from "./Recommend";
 
-export default function Comment({ obj }) { //obj=comment
+export default function Comment({ obj, type }) { //obj=comment; type=recommend(recommend)||rating(undefined||rating)
 
 	// comment.user
 	const { img, name } = obj.user
 	// comment
-	let { value, createdAt, _id: commentId, likes, dislikes } = obj
+	let { value, createdAt, _id: commentId, likes, dislikes, recommend } = obj
 	createdAt = createdAt.match(/(.+)(?:T.+)/)[1]
 	const initRating = likes.length > dislikes.length ? likes.length : Number(-dislikes.length)
 
@@ -23,7 +24,12 @@ export default function Comment({ obj }) { //obj=comment
 					<div className="fcc g">
 						{createdAt}
 						<img src={quotes} />
-						<Rating commentId={commentId} initRating={initRating} />
+						{type === undefined || type === "rating" &&
+							<Rating commentId={commentId} initRating={initRating} />
+						}
+						{type === "recommend" &&
+							<Recommend recommend={recommend} />
+						}
 					</div>
 				</div>
 			</div>

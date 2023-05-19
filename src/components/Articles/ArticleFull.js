@@ -20,11 +20,11 @@ export default function ArticleFull() {
 	const { timeAgo } = useTimeAgo()
 	const { timeRead } = useTimeRead()
 
-
+// TODO: BonusFull + ArticleFull => Comp: "PostFull"
 	return (
 		<div className="fc w100">
 			<section className="postFull__wrap">
-				<div className="postFull mb c">
+				<div className="postFull postCondensed mb c">
 					<div className="title2">Blog</div>
 
 					<div className="title">{article?.title}</div>

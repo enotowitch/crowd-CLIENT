@@ -58,7 +58,9 @@
 }
 
 .postFull{
-	width: 80%;
+	&.postCondensed{
+		width: 80%;
+	}
 	&__wrap{
 		width: 100%;
 	}

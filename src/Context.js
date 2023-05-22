@@ -24,7 +24,6 @@ function ContextProvider(props) {
 			modalText, modalTextSet,
 			visitedPage, visitedPageSet,
 			sharing, sharingSet,
-			user, userSet,
 			errorMsg, errorMsgSet
 		}}>
 

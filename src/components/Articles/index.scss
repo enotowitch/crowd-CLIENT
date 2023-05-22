@@ -58,12 +58,6 @@
 }
 
 .postFull{
-	&.postCondensed{
-		width: 80%;
-	}
-	&__wrap{
-		width: 100%;
-	}
 	// !!
 	img:not(.radarClip){
 		border-radius: $borderRadiusBig;

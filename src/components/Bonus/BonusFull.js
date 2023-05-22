@@ -16,17 +16,21 @@ export default function BonusFull() {
 
 	return (
 		<div className="fc w100">
-			<section className="postFull mb">
-				<div className="title2">Bonus</div>
-				<div className="title">Get your bonus for {bonus?.name}</div>
-				{bonus?.tags && <Tags arr={parseTags(bonus?.tags)} />}
+			<section className="w100 mb">
+				<div className="postFull w80 mb c">
+					<div className="title2">Bonus</div>
+					<div className="title">Get your bonus for {bonus?.name}</div>
+					{bonus?.tags && <Tags arr={parseTags(bonus?.tags)} />}
 
-				<div>{bonus?.text}</div>
-				{<Markdown>{bonus?.value}</Markdown>}
-				<Button text="Get The Bonus" path={bonus?.link} btnClassName="c mb" />
+					<div>{bonus?.text}</div>
+					{<Markdown>{bonus?.value}</Markdown>}
+					<Button text="Get The Bonus" path={bonus?.link} btnClassName="c mb" />
+				</div>
+
 			</section>
 
-			<Comments />
+			<Comments className="w80 c" />
+
 		</div>
 	)
 }

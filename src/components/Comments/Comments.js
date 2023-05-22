@@ -11,18 +11,20 @@ export default function Comments({ children, type, className }) { // type=recomm
 	const { comments, showMore } = useComments()
 
 	return (
-		<section className={`comments ${className}`}>
-			<div className="title">Comments</div>
-			<hr></hr>
+		<section className="w100">
+			<div className={`comments ${className}`}>
+				<div className="title">Comments</div>
+				<hr></hr>
 
-			<div className="comments__scroll">
-				{comments?.map(obj => <Comment key={obj._id} obj={obj} type={type} />)}
+				<div className="comments__scroll">
+					{comments?.map(obj => <Comment key={obj._id} obj={obj} type={type} />)}
+				</div>
+
+				<AddComment>
+					{children}
+				</AddComment>
+
 			</div>
-
-			<AddComment>
-				{children}
-			</AddComment>
-
 			<ScrollTo className="comments" />
 		</section>
 	)

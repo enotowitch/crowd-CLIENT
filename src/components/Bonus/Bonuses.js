@@ -14,7 +14,7 @@ export default function Bonuses() {
 		<Cards>
 			<div className="title w100">Bonus</div>
 			{bonuses?.map(bonus => <BonusCard key={bonus._id} obj={bonus} />)}
-			<ShowMoreButtons showMore={showMore} />
+			<ShowMoreButtons showMore={showMore} path="bonuses" />
 		</Cards>
 	)
 }

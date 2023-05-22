@@ -39,7 +39,7 @@ export default function Articles() {
 				)
 			})
 			}
-			<ShowMoreButtons showMore={showMore} />
+			<ShowMoreButtons showMore={showMore} path="articles" />
 		</Cards>
 	)
 }

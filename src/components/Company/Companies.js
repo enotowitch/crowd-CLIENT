@@ -14,7 +14,7 @@ export default function Companies() {
 		<Cards>
 			<div className="title w100">Crowdfunding Discovery</div>
 			{companies?.map(company => <CompanyCard key={company._id} obj={company} />)}
-			<ShowMoreButtons showMore={showMore} />
+			<ShowMoreButtons showMore={showMore} path="companies" />
 		</Cards>
 	)
 }

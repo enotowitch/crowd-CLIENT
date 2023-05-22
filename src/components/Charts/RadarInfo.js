@@ -31,7 +31,7 @@ export default function RadarInfo({ obj }) { // obj=company
 				if (title === "Localization") {
 					return (
 						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
-							{LocalizationArray && <Tags arr={LocalizationArray} />}
+							<Tags arr={LocalizationArray} />
 						</RadarInfoItem>
 					)
 				}

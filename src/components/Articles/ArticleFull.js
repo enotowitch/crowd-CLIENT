@@ -28,7 +28,7 @@ export default function ArticleFull() {
 
 					<div className="title">{article?.title}</div>
 
-					{article?.tags && <Tags arr={parseTags(article?.tags)} />}
+					<Tags arr={parseTags(article?.tags)} />
 
 					<Icon2Text src="logo author" text={article?.author} iconClassName="icon_big">
 						<div className="f g">

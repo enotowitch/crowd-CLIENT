@@ -20,7 +20,7 @@ export default function BonusFull() {
 				<div className="postFull w80 mb c">
 					<div className="title2">Bonus</div>
 					<div className="title">Get your bonus for {bonus?.name}</div>
-					{bonus?.tags && <Tags arr={parseTags(bonus?.tags)} />}
+					<Tags arr={parseTags(bonus?.tags)} />
 
 					<div>{bonus?.text}</div>
 					{<Markdown>{bonus?.value}</Markdown>}

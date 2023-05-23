@@ -28,7 +28,7 @@ export default function Auth({ children, type }) { // type=Log In/Sign Up
 
 			{errorMsg && <ErrorMsg text={errorMsg} />}
 
-			<AuthGoogle />
+			<AuthGoogle type={type} />
 
 			<AuthNew type={type} />
 		</form>

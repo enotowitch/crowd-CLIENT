@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import useUser from "./hooks/useUser"
 
 const Context = React.createContext()
 
@@ -13,6 +12,7 @@ function ContextProvider(props) {
 	const [visitedPage, visitedPageSet] = useState("") // for coloring icons depending on page visited
 	const [sharing, sharingSet] = useState("") // for sharing: article/etc...
 	const [errorMsg, errorMsgSet] = useState("")
+	const [user, userSet] = useState("")
 
 	// ! RETURN
 	return (
@@ -24,7 +24,8 @@ function ContextProvider(props) {
 			modalText, modalTextSet,
 			visitedPage, visitedPageSet,
 			sharing, sharingSet,
-			errorMsg, errorMsgSet
+			errorMsg, errorMsgSet,
+			user, userSet
 		}}>
 
 			{props.children}

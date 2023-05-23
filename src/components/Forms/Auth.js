@@ -7,6 +7,7 @@ import useAuth from "../../hooks/useAuth"
 import ErrorMsg from "../FormElements/ErrorMsg"
 import AuthNew from "./AuthNew"
 import { Context } from "../../Context"
+import AuthGoogle from "./AuthGoogle"
 
 
 export default function Auth({ children, type }) { // type=Log In/Sign Up
@@ -26,6 +27,8 @@ export default function Auth({ children, type }) { // type=Log In/Sign Up
 			<button>{type}</button>
 
 			{errorMsg && <ErrorMsg text={errorMsg} />}
+
+			<AuthGoogle />
 
 			<AuthNew type={type} />
 		</form>

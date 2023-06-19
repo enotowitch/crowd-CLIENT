@@ -5,7 +5,10 @@ export default function parseForm(e) { // e=event from onSubmit (html form)
 	// put all `inputs` values to "form"
 	e.target.querySelectorAll("input, select, textarea").forEach(each => {
 		// !! each.name != ""
-		each.name && (form = { ...form, [each.name]: each.value })
+		if (each.name) {
+			// !! checked
+			form = { ...form, [each.name]: each.checked || each.value }
+		}
 	})
 
 	return (

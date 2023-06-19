@@ -8,7 +8,7 @@ export default function RadarInfoItem({ title, text, ind, obj, children }) {
 		<section>
 			<div className="title2 white">{title}</div>
 			{children}
-			<div className="gray">{text}</div>
+			<div className="gray"><pre>{text}</pre></div>
 
 			<Radar key={ind} obj={obj} clipNum={ind} />
 		</section>

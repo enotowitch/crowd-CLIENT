@@ -7,6 +7,17 @@
 	}
 }
 
+@media (max-width:$breakpointTrueMobile) {
+	// ! make invesment__items scrolable left-rigth on phones
+	.invesment__items{
+		width: 200%;
+	}
+	.table{
+		overflow: auto;
+	}
+	// ? make invesment__items scrolable left-rigth on phones
+}
+
 
 // ! > $breakpointMobile
 @media (min-width:($breakpointMobile+1)) {

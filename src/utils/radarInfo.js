@@ -1,66 +1,36 @@
-export default [
-	{
-		title: "Rendement",
-		text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-				been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-				 a galley of type Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-				unknown printer took a galley of type`
-	},
-	{
-		title: "Fiabilite",
-		text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-				been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-				 a galley of type Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-				unknown printer took a galley of type`
-	},
-	{
-		title: "Localization",
-		text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-				been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-				 a galley of type Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-				unknown printer took a galley of type`
-	},
-	{
-		title: "TVL",
-		text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-				been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-				 a galley of type Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-				unknown printer took a galley of type`
-	},
-	{
-		title: "Impayes",
-		text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-				been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-				 a galley of type Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-				unknown printer took a galley of type`
-	},
-	{
-		title: "Liquidity",
-		text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-				been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-				 a galley of type Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-				unknown printer took a galley of type`
-	},
-	{
-		title: "Commnuaute",
-		text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-				been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-				 a galley of type Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-				unknown printer took a galley of type`
-	},
-	{
-		title: "Frais",
-		text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-				been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-				 a galley of type Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-				Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-				unknown printer took a galley of type`
-	},
-]
+export default function radarInfo(obj) {
+	return [
+		{
+			title: "Rendement",
+			text: obj?.RendementText
+		},
+		{
+			title: "Fiabilite",
+			text: obj?.FiabiliteText
+		},
+		{
+			title: "Localization",
+			text: obj?.LocalizationText
+		},
+		{
+			title: "TVL",
+			text: obj?.TVLText
+		},
+		{
+			title: "Impayes",
+			text: obj?.ImpayesText
+		},
+		{
+			title: "Liquidity",
+			text: obj?.LiquidityText
+		},
+		{
+			title: "Commnuaute",
+			text: obj?.CommnuauteText
+		},
+		{
+			title: "Frais",
+			text: obj?.FraisText
+		},
+	]
+}

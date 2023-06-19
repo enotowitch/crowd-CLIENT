@@ -1,14 +1,14 @@
 import React from "react"
 import "./index.scss"
 import "./media.scss"
-import useBonuses from "../../hooks/useBonuses"
+import usePosts from "../../hooks/usePosts"
 import BonusCard from "./BonusCard"
 import ShowMoreButtons from "../FormElements/ShowMoreButtons"
 import Cards from "../Other/Cards"
 
-export default function Bonuses() {
+export default function Bonuses({ skip }) {
 
-	const { bonuses, showMore } = useBonuses()
+	const [bonuses, showMore] = usePosts(skip, "bonus")
 
 	return (
 		<Cards>

@@ -1,0 +1,21 @@
+.iconText{
+	display: flex;
+	align-items: center;
+}
+
+.Icon2Text{
+	position: relative;
+	.text1,.text2{
+		position: relative;
+		top: -15px;
+	}
+	.text1{
+		font-weight: 700;
+	}
+	.text2{
+		position: relative;
+		top: -40px;
+		left: 105px;
+		font-weight: 200; 
+	}
+}

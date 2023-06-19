@@ -3,11 +3,10 @@ import "./index.scss"
 import "./media.scss"
 import TextEditor from "../TextEditor/TextEditor"
 
-export default function AddComment({ children }) {
+export default function AddComment({ children, postType }) {
 	return (
-		<TextEditor btnText="Add Comment" fn="addComment">
-			<hr></hr>
-			<div className="title2 white mb">Add your comment</div>
+		<TextEditor btnText="Post" fn="addComment" postType={postType} placeholder="Write your comment">
+			<div className="title2 white mb">Post your comment</div>
 			{children}
 		</TextEditor>
 	)

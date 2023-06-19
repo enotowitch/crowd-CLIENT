@@ -4,36 +4,33 @@ import "./media.scss"
 import Logo from "./Logo"
 import Button from "../FormElements/Button"
 import Subscribe from "../Subscribe/Subscribe"
+import IconText from "../Icons/IconText"
 
 export default function Footer() {
 	return (
 		<footer className="f jcsb p2 g3">
-
 			<div>
 				<Logo />
 				<div className="mt">
-					La Première Brique is the new 100% digital platform
-					dedicated to real estate investment from €1.
+					Investissez en toute transparence
+					grâce à notre expertise des plateformes de crowdfunding.
 				</div>
 				<Button text="Write Us" btnClassName="bgDark mt" path="/writeus" />
+				<br />
+				@ Copilot Funding 2022 | Tous droits réservés
 			</div>
 
 			<Subscribe />
 
 			<div>
-				<div className="title">Disclaimers</div>
-				<div className="mt">
-					As you will have understood, if we offer such attractive
-					returns, it is also because our investments are not
-					guaranteed. Our real estate crowdfunding offers involve
-					certain risks and in particular the risk of total or partial loss
-					of the sums invested and the risk of delay. In addition, past
-					performance is not indicative of future performance, which
-					means that just because our loss rate is 0% does not
-					mean that we will never have an incident on a file. If you
-					have any questions about the risks associated with our
-					projects, contact us and our teams will take the time to
-					answer your questions.
+				<div className="title">Avertissement</div>
+				<div className="mt posr">
+					Les articles, reviews et autres contenus publiés sur ce site
+					ne constituent en aucun cas des conseils d'investissement.
+					Veuillez prendre toutes les précautions nécessaires
+					avant de réaliser des investissements et
+					faire vos propres recherches approfondies.
+					<IconText text="CGU et Mentions légales >" className="brand mt2 wsnw ca" path="/legal" />
 				</div>
 			</div>
 		</footer>

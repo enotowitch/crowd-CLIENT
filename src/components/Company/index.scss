@@ -2,9 +2,55 @@
 
 .rightBar{
 	border-radius: $borderRadiusBig;
+	// !!
+	width: 360px;
+	// center bonusOne
+	.cards{
+		justify-content: center;
+	}
+	// center all titles
+	.title,.title2{
+		text-align: center;
+	}
+	.cards{
+		// !! don't touch. fix for articles go crazy in rightBar after comment
+		flex-direction: column;
+		width: 360px;
+		padding: 0 20px;
+	}
 }
 
 .bigFlex{
 	display: flex;
 	gap: 15px;
+}
+
+.addPost{
+	// !!
+	textarea{
+		height: 200px;
+	}
+}
+
+.description{
+	padding: 30px;
+	padding-bottom: 15px;
+	background: $dark;
+	// !!
+	> * {
+		margin-bottom: 15px;
+	}
+}
+
+.overview{
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	// !!
+	> * {
+		margin-bottom: 15px;
+	}
+	img{
+		border-radius: $borderRadiusBig;
+		width: 100%;
+	}
 }

@@ -3,13 +3,12 @@ import "./index.scss"
 import "./media.scss"
 import Button from "../FormElements/Button"
 import { Context } from "../../Context"
-import useUser from "../../hooks/useUser"
 import useInvested from "../../hooks/useInvested"
 
 export default function Hello() {
 
 	const { popupElementSet } = useContext(Context)
-	const { user } = useUser()
+	const { user } = useContext(Context)
 	const curMonth = new Date(Date.now()).toLocaleString('en-US', { month: "long" })
 	const { revenueCurMonth } = useInvested()
 

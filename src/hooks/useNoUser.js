@@ -6,12 +6,11 @@ export default function useNoUser() {
 
 	const { popupElementSet } = useContext(Context)
 
-	// TODO: call noUserPopup
-	function noUser(serverResponse) {
+	function noUserPopup(serverResponse) {
 		!serverResponse.ok && popupElementSet("Login")
 	}
 
 	return (
-		{ noUser }
+		{ noUserPopup }
 	)
 }

@@ -5,8 +5,18 @@
 	.app{
 		padding: 0;
 	}
+	// !! make all width 80% content 100% width for mobile
+	.w80{
+		width: 100%;
+	}
 }
 
+// ! > $breakpoint4k
+@media (min-width:$breakpoint4k) {
+	.rightBar{
+		width: 850px !important;
+	}
+}
 
 // ! > $breakpointMobile
 @media (min-width:($breakpointMobile+1)) {

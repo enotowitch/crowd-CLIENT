@@ -28,7 +28,7 @@ export default function Auth({ children, type }) { // type=Log In/Sign Up
 
 			{errorMsg && <ErrorMsg text={errorMsg} />}
 
-			{/* // * works at localhost */}
+			{/* * // works at localhost: mod. cors(server) */}
 			{/* <AuthGoogle type={type} /> */}
 
 			<AuthNew type={type} />

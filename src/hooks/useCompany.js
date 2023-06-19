@@ -11,15 +11,19 @@ import parseFraisObj from "../utils/parseFraisObj"
 export default function useCompany(value) { // value=textEditor value
 
 	// ! addCompany
+	const { validation } = useValidation()
+
 	async function addCompany(e) {
 		e.preventDefault()
 
 		const { form } = parseForm(e)
 		const img = replacePath(form.img)
 
+		validation({ validate: "postImg", value: img, errorText: `Must include image: "add image"` })
+
 		const { FraisObj } = parseFraisObj(form)
 
-		const res = await api.addCompany({ ...form, FraisObj, img, value })
+		const res = await api.addPost({ ...form, FraisObj, img, value }, "company")
 		res.ok && (window.location.href = `/company/${res.id}`)
 	}
 

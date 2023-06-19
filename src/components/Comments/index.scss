@@ -15,6 +15,7 @@
 		padding-left: 70px;
 		font-weight: 200;
 		display: flex;
+		word-break: break-all;
 		// !!
 		img{
 			border-radius: $borderRadiusBig;
@@ -23,22 +24,21 @@
 			object-fit: contain;
 		}
 	}
+	&__userName{
+		// so flex works ok
+		min-width: 250px;
+	}
 }
 
 .comments{
 	&__scroll{
 		max-height: 1000px;
 		overflow-y: auto;
+		overflow-x: hidden;
 	}
 	// !!
 	> * {
 		margin-bottom: 24px;
-	}
-	// hide editor options in CompanyFull
-	&.company{
-		.editor-toolbar{
-			display: none;
-		}
 	}
 }
 

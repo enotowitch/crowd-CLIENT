@@ -29,7 +29,7 @@ export default function AddInvestment() {
 					</div>
 					<div className="addInvestmentInputBlock">
 						<Input type="date" name="start" label="Start Date" className="w100" editValue={investment?.start} required />
-						<Input type="date" name="end" label="End Date" className="w100" editValue={investment?.end} required />
+						<Input type="date" name="end" label="End Date" className="w100" editValue={investment?.end} />
 					</div>
 				</TextEditor>
 			</section>

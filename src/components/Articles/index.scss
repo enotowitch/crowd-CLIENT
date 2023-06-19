@@ -20,7 +20,7 @@
 		object-fit: cover;
 	}
 	// !!
-	> *:not(img, .cardText, .cardTitle){
+	> *:not(img, .cardText, .cardTitle, .invesment__items){
 	padding: 7px;
 	}
 	&:hover{
@@ -73,9 +73,19 @@
 		text-decoration: underline;
 		color: $brand;
 	}
+	// * make postFull imgs 100% visible (textEditor wraps `img` with `p` tag)
+	p img{
+		object-fit: contain !important;
+	}
 	.tags{
 		margin: 15px;
 		margin-left: 0;
+	}
+	&__wrap{
+		// hide textEditor options in postFull
+		.editor-toolbar{
+			display: none !important;
+		}
 	}
 }
 

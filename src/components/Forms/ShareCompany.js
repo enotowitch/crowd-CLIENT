@@ -11,7 +11,7 @@ export default function ShareCompany() {
 	const { name } = sharing
 
 	return (
-		<Share topTitle={name} bottomTitle={name} hashtag={name}>
+		<Share topTitle={name} bottomTitle={"Share: " + name} hashtag={name}>
 			<Radar obj={sharing} />
 		</Share>
 	)

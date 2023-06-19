@@ -10,9 +10,9 @@ export default function Home() {
 	return (
 		<div className="fc g w100">
 			<Hello />
-			<Companies />
-			<Articles />
-			<Bonuses />
+			<Companies skip={8} />
+			<Articles skip={8} />
+			<Bonuses skip={8} />
 		</div>
 	)
 }

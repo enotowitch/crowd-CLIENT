@@ -1,10 +1,10 @@
-import { useContext, useEffect } from "react"
+import { useEffect, useState } from "react"
 import * as api from "../api"
-import { Context } from "../Context"
 
+// !! NOT USED, LEFT JUST INCASE
 export default function useUser() {
 
-	const { user, userSet } = useContext(Context)
+	const [user, userSet] = useState(null)
 
 	useEffect(() => {
 		async function autoAuth() {

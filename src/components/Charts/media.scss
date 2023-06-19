@@ -21,20 +21,15 @@
 	}
 }
 
-// ! radarClip
-// 1920p
+// ! radarClip size
 .radarClip{
-	height: 90% !important;
+	height: calc(100% - 56px) !important;
 }
-// <
-@media (max-width:1919px) {	
+// ! < 389px
+@media (max-width:389px) {	
 	.radarClip{
-		height: 85% !important;
+		height: calc(100% - 70px) !important;
+		margin-left: 5px;
 	}
 }
-// >
-@media (min-width:1921px) {	
-	.radarClip{
-		height: 95% !important;
-	}
-}
+// ? radarClip size

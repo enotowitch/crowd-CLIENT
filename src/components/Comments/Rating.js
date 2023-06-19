@@ -14,7 +14,7 @@ export default function Rating({ commentId, initRating }) {
 	return (
 		<div className="if">
 			<img src={arrow} onClick={() => rate("-")} className="icon_comment tr180" ignoreOutside="true" />
-			<span className={ratingColor}>{rating_}</span>
+			<span className={ratingColor}>{rating || initRating}</span>
 			<img src={arrow} onClick={() => rate("+")} className="icon_comment" ignoreOutside="true" />
 		</div>
 	)

@@ -29,13 +29,15 @@ export default function Radar_({ obj, clipNum }) {
 		({ Fiabilite, Localization, TVL, Impayes, Liquidity, Commnuaute, Frais, Rendement } = obj)
 	}
 
-	const total = (Number(Fiabilite) + Number(Localization) + Number(TVL) + Number(Impayes) + Number(Liquidity) + Number(Commnuaute) + Number(Frais) + Number(Rendement)) / 8
-	let backgroundColor
-	total >= 0 && (backgroundColor = "rgba(244, 0, 0, 0.7)")
-	total >= 3 && (backgroundColor = "rgba(224, 81, 20, 0.7)")
-	total >= 5 && (backgroundColor = "rgba(246, 207, 0, 0.7)")
-	total >= 7 && (backgroundColor = "rgba(88, 169, 7, 0.7)")
-	total >= 9 && (backgroundColor = "rgba(117, 235, 0, 0.7)")
+	function getColor(value) {
+		//value from 0 to 1
+		var hue = (value * 120).toString();
+		return 'hsl('+hue+', 100%, 50%, 0.7)';
+	}
+
+	// total from 0 to 1
+	const total = (0.1) * (Number(Fiabilite) + Number(Localization) + Number(TVL) + Number(Impayes) + Number(Liquidity) + Number(Commnuaute) + Number(Frais) + Number(Rendement)) / 8
+	let backgroundColor = getColor(total)
 
 	const data = {
 		labels: ["Fiabilite", "Localization", "TVL", "Impayes", "Liquidity", "Commnuaute", "Frais", "Rendement"],
@@ -54,7 +56,7 @@ export default function Radar_({ obj, clipNum }) {
 				],
 				backgroundColor: backgroundColor,
 				borderColor: backgroundColor,
-				borderWidth: 1,
+				borderWidth: 2,
 				pointBackgroundColor: backgroundColor,
 				tension: 0.3
 			},
@@ -64,9 +66,19 @@ export default function Radar_({ obj, clipNum }) {
 	const options = {
 		scales: {
 			r: {
+				angleLines: {
+					color: "#5b5b5b"
+				},
+				pointLabels: {
+					color: "#999999",
+                    font: {
+                        size: 11
+                    }
+				},
 				grid: {
 					circular: true,
-					color: "#333333"
+					color: ["#333333", "#474747"]
+
 				},
 				ticks: {
 					display: false
@@ -80,7 +92,8 @@ export default function Radar_({ obj, clipNum }) {
 			legend: {
 				display: false
 			}
-		}
+		},
+		events: []
 	}
 
 	return (

@@ -1,4 +1,6 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import * as api from "./api"
+import useAuthGoogle from "./hooks/useAuthGoogle"
 
 const Context = React.createContext()
 
@@ -12,7 +14,21 @@ function ContextProvider(props) {
 	const [visitedPage, visitedPageSet] = useState("") // for coloring icons depending on page visited
 	const [sharing, sharingSet] = useState("") // for sharing: article/etc...
 	const [errorMsg, errorMsgSet] = useState("")
-	const [user, userSet] = useState("")
+	// ! user
+	const [user, userSet] = useState(null)
+	useEffect(() => {
+		async function autoAuth() {
+			const res = await api.autoAuth()
+			res && userSet(res)
+			!res && userSet(undefined)
+		}
+		autoAuth()
+	}, [])
+
+	// // authGoogle
+	// const { getUser } = useAuthGoogle()
+	// useEffect(() => { getUser() }, [])
+	// ? user
 
 	// ! RETURN
 	return (

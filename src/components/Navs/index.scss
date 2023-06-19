@@ -63,6 +63,7 @@ footer{
 	&__scroll{
 		height: 85vh;
 		overflow: auto;
+		overflow-x: hidden;
 	}
 	// !!
 	nav{

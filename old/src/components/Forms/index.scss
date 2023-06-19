@@ -1,0 +1,40 @@
+@import "../../vars.scss";
+
+.auth{
+	display: flex;
+	flex-direction: column;
+	width: 725px;
+	padding: 40px;
+	// !!
+	a,button {
+		margin-top: 15px;
+	}
+}
+
+.alert{
+	border: 4px solid $danger;
+	border-radius: $borderRadiusBig;
+	padding: 15px;
+}
+
+.share{
+	padding: 30px;
+	// !
+	.title{
+		text-align: center;
+		color: $black;
+		margin-bottom: 15px;
+	}
+	// !!
+	img:not(a img){
+		border-radius: $borderRadiusBig;
+	}
+	button{
+		height: 60px; 
+		width: 32%;
+		// * fb icon, twitter icon...
+		a img{
+			height: 40px;
+		}
+	}
+}

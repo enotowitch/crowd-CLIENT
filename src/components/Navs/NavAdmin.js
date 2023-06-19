@@ -1,12 +1,13 @@
-import useUser from "../../hooks/useUser";
+import { useContext } from "react";
 import IconTextNav from "../Icons/IconTextNav";
+import { Context } from "../../Context";
 
 export default function NavAdmin() {
 
-	const { user } = useUser()
+	const { user } = useContext(Context)
 
 	return (
-		user?.isAdmin &&
+		(user?.isAdmin || user?.isAuthor) &&
 		<nav>
 			<IconTextNav src="add-article" path="add-article" text="Add Article" />
 			<IconTextNav src="add-company" path="add-company" text="Add Company" />

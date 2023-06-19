@@ -7,6 +7,7 @@
 	}
 	.postFull{
 		width: 100%;
+		// radar in ComapanyFull
 		.chart{
 			width: 100%;
 		}
@@ -14,11 +15,29 @@
 }
 
 
-// ! > $breakpointMobile
-@media (min-width:($breakpointMobile+1)) {
+// ! > 550
+@media (min-width:550px) {
 	.postFull{
+		// radar in ComapanyFull
 		.chart{
-			width: 50%;
+			width: 40% !important;
+			min-width: 450px;
+		}
+		.pie{
+			width: 40% !important;
+		}
+	}
+}
+
+// ! > $breakpoint4k
+@media (min-width:$breakpoint4k) {
+	.postFull{
+		// radar in ComapanyFull
+		.chart{
+			width: 30% !important;
+		}
+		.pie{
+			width: 20% !important;
 		}
 	}
 }

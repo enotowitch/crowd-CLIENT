@@ -1,0 +1,10 @@
+@import "../../vars.scss";
+
+.rightBar{
+	border-radius: $borderRadiusBig;
+}
+
+.bigFlex{
+	display: flex;
+	gap: 15px;
+}

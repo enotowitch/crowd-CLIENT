@@ -1,0 +1,443 @@
+@import "vars.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Manrope;
+}
+
+// !! GLOBAL
+body{
+	overflow-x: hidden;
+	background: $dark;
+}
+a{
+	text-decoration: none;
+	color: $white;
+	&:active{
+		color: $white;
+	}
+}
+// ! button
+button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 56px;
+	background: $brand;
+	border-radius: $borderRadiusSmall;
+	color: $white;
+	padding: 17px 46px;
+	border: none;
+	// !!
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn{
+	// outlined
+	&_out{
+		background: transparent;
+		border: 2px solid $brand;
+	}
+	// secondary
+	&_sec{
+		background: $light;
+	}
+	&_dark,&_light{
+		background: $dark;
+		width: 50%;
+		padding: 15px;
+	}
+	&_light{
+		background: $light;
+	}
+}
+// ? button
+// ! input
+input:not([type="checkbox"]), select, textarea{
+	height: 50px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 8px;
+	// min-width: 220px;
+	background: $dark;
+	outline: none;
+	color: $white;
+	resize: none;
+	&:focus{
+		outline: 1px solid $white;
+	}
+}
+textarea{
+	height: 400px;
+	width: 100%;
+}
+label input{
+	width: 100%;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+	filter: invert(100%);
+ }
+// ? input
+section{
+	padding: 30px;
+	padding-bottom: 0px;
+}
+// bg color
+header, footer, nav, section{
+	border-radius: $borderRadiusBig;
+	background: $light;
+	color: $white;
+}
+// ?? GLOBAL
+
+.app{
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	background: $dark;
+	gap: 15px;
+	padding: 30px 40px;
+	
+	&__mid{
+		display: flex;
+		// gap: 15px;
+		width: 100%;
+	}
+}
+
+.icon{
+	&_small{
+		height: 16px !important;
+		width: fit-content !important;
+		border-radius: 0px !important;
+	}
+	&_small2{
+		height: 24px !important;
+		width: fit-content !important;
+		border-radius: 0px !important;
+	}
+	&_small3{
+		height: 38px !important;
+		width: fit-content !important;
+		border-radius: 0px !important;
+	}
+	&_small4{
+		height: 47px !important;
+		width: fit-content !important;
+		border-radius: 0px !important;
+	}
+	&_mid{
+		height: 56px !important;
+		width: 56px !important;
+		width: fit-content !important;
+		border-radius: 0px !important;
+	}
+	&_big{
+		height: 90px !important;
+		width: 90px !important;
+		width: fit-content !important;
+		border-radius: 0px !important;
+	}
+	&_comment{
+		height: 24px !important;
+		width: 24px !important;
+	}
+}
+
+// ! scrollbar
+// hide body scrollbar
+body::-webkit-scrollbar {
+	width: 0px;
+}
+// other scrollbars
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: lighten($dark, 10%);
+	border-radius: 20px;
+}
+::-webkit-scrollbar-track {
+	background: $light;
+	border-radius: 20px;
+}
+// ? scrollbar
+
+// ! CURSORS
+.card{
+	cursor: pointer;
+}
+// ? CURSORS
+
+// !! SHORTCUTS
+// ! margin & padding
+.m{
+	margin: 15px;
+}
+.mt{
+	margin-top: 15px;
+}
+.mt05{
+	margin-top: 5px;
+}
+.mr{
+	margin-right: 15px;
+}
+.mr05{
+	margin-right: 5px;
+}
+.mb{
+	margin-bottom: 15px;
+}
+.mb2{
+	margin-bottom: 30px;
+}
+.mb3{
+	margin-bottom: 45px;
+}
+.ml{
+	margin-left: 15px;
+}
+.mla{
+	margin-left: auto;
+}
+.m0a{
+	margin: 0 auto;
+}
+.ma{
+	margin: auto;
+}
+.m0{
+	margin: 0;
+}
+// ! padding
+.p{
+	padding: 15px;
+}
+.p2{
+	padding: 30px;
+}
+.pr{
+	padding-right: 15px;
+}
+.pr2{
+	padding-right: 30px;
+}
+.pl{
+	padding-left: 15px;
+}
+.pl2{
+	padding-left: 30px;
+}
+.p0{
+	padding: 0;
+}
+// ? margin & padding
+// ! flex & display
+.db{
+	display: block;
+}
+.dib{
+	display: inline-block;
+}
+.f{
+	display: flex;
+	flex-wrap: wrap;
+}
+.fwn{
+	flex-wrap: nowrap;
+}
+.if{
+	display: inline-flex;
+}
+.ifc{
+	display: inline-flex;
+	flex-direction: column;
+}
+.fc{
+	display: flex;
+	flex-direction: column;
+}
+.fcc{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.g{
+	gap: 15px;
+}
+.g2{
+	gap: 30px;
+}
+.g3{
+	gap: 45px;
+}
+.g0{
+	gap: 0px !important;
+}
+.jcsb{
+	justify-content: space-between;
+}
+.jcse{
+	justify-content: space-evenly;
+}
+.aic{
+	align-items: center;
+}
+.aifs{
+	align-items: flex-start;
+}
+.asc{
+	align-self: center;
+}
+.jcfs{
+	justify-content: flex-start;
+}
+.dn{
+	display: none !important;
+}
+.f1{
+	flex: 1 1;
+}
+.f2{
+	flex: 2 1;
+}
+.jcfe{
+	justify-content: flex-end !important;
+}
+// ? flex & display
+// ! position
+.c{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+// ? position
+// ! font & text
+.fw100{
+	font-weight: 100;
+}
+.fw200{
+	font-weight: 200;
+}
+.fw300{
+	font-weight: 300;
+}
+.fw400{
+	font-weight: 400;
+}
+.fw500{
+	font-weight: 500;
+}
+.fw600{
+	font-weight: 600;
+}
+.fw700{
+	font-weight: 700;
+}
+.tac{
+	text-align: center;
+}
+.title{
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 38px;
+	color: $white;
+}
+.title2{
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 30px;
+	color: $brand;
+}
+// ? font & text
+// ! width & height
+.w100{
+	width: 100%;
+}
+.w80{
+	width: 80%;
+}
+.w100i{
+	width: 100% !important;
+}
+.miw100{
+	min-width: 100% !important;
+}
+.w50{
+	width: 50%;
+}
+.w30{
+	width: 30%;
+}
+.wfc{
+	width: fit-content;
+}
+.ha{
+	height: auto !important;
+}
+// ? width & height
+// ! other
+.ov{
+	overflow: visible;
+}
+.op0{
+	opacity: 0;
+}
+.op1{
+	opacity: 1;
+}
+.brand{
+	color: $brand;
+}
+.danger{
+	color: $danger;
+}
+.black{
+	color: $black;
+}
+.gray{
+	color: $lightGray;
+}
+.bgDark{
+	background: $dark;
+}
+.bgLight{
+	background: $light !important;
+}
+.white{
+	color: $white;
+}
+.tr180{
+	transform: rotate(180deg);
+}
+.br{
+	outline: 1px solid red;
+}
+.by{
+	outline: 1px solid yellow;
+}
+.pen{
+	pointer-events: none;
+}
+.wsnw{
+	white-space: nowrap;
+}
+.order1{
+	order: 1;
+}
+.order2{
+	order: 2;
+}
+.br0{
+	border-radius: 0px !important;
+}
+.brsm{
+	border-radius: $borderRadiusSmall;
+}
+// ? other
+// ?? SHORTCUTS

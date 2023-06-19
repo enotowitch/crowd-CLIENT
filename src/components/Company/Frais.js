@@ -3,6 +3,7 @@ import "./index.scss"
 import "./media.scss"
 import Input from "../FormElements/Input"
 import add from "../../img/add.svg"
+import Textarea from "../FormElements/Textarea"
 
 export default function Frais({ obj }) { // obj=company
 
@@ -51,6 +52,7 @@ export default function Frais({ obj }) { // obj=company
 				{inputs()}
 				<img src={add} className="icon_small" onClick={addInput} />
 			</div>
+			<Textarea name="FraisText" placeholder="Frais text" editValue={obj?.FraisText} label="Frais text" />
 		</>
 	)
 }

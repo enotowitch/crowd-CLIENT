@@ -3,7 +3,12 @@ import { Context } from "../../Context"
 
 export default function Burger() {
 
-	const { showMenu, showMenuSet } = useContext(Context)
+	const { showMenu, showMenuSet, showProfileMenuSet } = useContext(Context)
+
+	function hideMenus() {
+		showProfileMenuSet(false)
+		showMenuSet(prev => !prev)
+	}
 
 	return (
 		<div className="burger">
@@ -11,7 +16,7 @@ export default function Burger() {
 			<input
 				id="burger__toggle"
 				type="checkbox"
-				onClick={() => showMenuSet(prev => !prev)}
+				onClick={hideMenus}
 				checked={showMenu}
 			/>
 

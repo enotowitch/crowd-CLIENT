@@ -19,9 +19,9 @@ export default function AddBonus() {
 		<section className="w100">
 			<TextEditor btnText={btnText} fn={fn} editValue={bonus?.value}>
 				<InputFileInput obj={bonus} />
-				<Input name="link" placeholder="partner link" editValue={bonus?.link} />
-				<Input name="text" placeholder="promo text" editValue={bonus?.text} />
-				<Input name="tags" placeholder="tags separated by comma" editValue={bonus?.tags} />
+				<Input name="link" placeholder="partner link" editValue={bonus?.link} required />
+				<Input name="text" placeholder="promo text" editValue={bonus?.text} required />
+				<Input name="tags" placeholder="tags separated by comma" editValue={bonus?.tags} required />
 			</TextEditor>
 		</section>
 	)

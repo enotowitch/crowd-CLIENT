@@ -13,7 +13,7 @@ export default function InvestmentCard({ obj }) {
 	const cardRef = useRef(null)
 
 	return (
-		<div className="card miw100 br0 ml mr" ref={cardRef}>
+		<div className="card miw100 br0" ref={cardRef}>
 
 			<IconsTop cardRef={cardRef} className="iconsTop g jcfe">
 				<IconRemove id={id} fn="removeInvestment" />

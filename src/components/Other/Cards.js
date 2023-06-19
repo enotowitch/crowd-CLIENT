@@ -1,8 +1,8 @@
 import React from "react"
 
-export default function Cards({ children }) {
+export default function Cards({ children, className }) {
 	return (
-		<section className="cards__wrap">
+		<section className={`cards__wrap ${className}`}>
 			<div className="cards">
 				{children}
 			</div>

@@ -1,0 +1,32 @@
+@import "../../vars.scss";
+
+.popup{
+	position: fixed;
+	z-index: 99;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: $white;
+	border-radius: $borderRadiusBig;
+	// !!
+	> *, button {
+		width: 100%;
+		// margin: 5px 0;
+	}
+	input{
+		background: $white;
+		border: 1px solid $lightGray;
+		color: $black;
+		&:focus{
+			border: 2px solid $black;
+		}
+	}
+	// not IconText img
+	img:not(a img){
+		width: 100%;
+		max-width: 700px;
+	}
+}

@@ -11,4 +11,21 @@
 	min-width: 290px;
 	border-radius: $borderRadiusBig;
 	z-index: 2;
+	// profileMenu hover
+	a {
+		&:hover{
+			color: $brand;
+		}
+	}
+}
+
+.userChangeName{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	// !!
+	input, button{
+		height: 37px;
+		width: 260px;
+	}
 }

@@ -1,0 +1,40 @@
+@import "../../vars.scss";
+
+// ! < $breakpointMobile
+@media (max-width:$breakpointMobile) {
+	// !!
+	header button{
+		display: none;
+	}
+	// ! logo_user
+	// * HIDE logo_user on destop (in Header); SHOW logo_user on mobile (in Menu)
+	.logo_user{
+		display: none !important;
+	}
+	.menu .logo_user{
+		display: flex !important;
+	}
+	// ? logo_user
+	// !! hide navs: HIDE navBottom, navTop, navAdmin on destop; SHOW on mobile (in Menu)
+	nav{
+		display: none;
+	}
+	// !! show navs
+	.menu nav{
+		display: block;
+	}
+	// ? navBottom
+	// ! footer
+	footer{
+		flex-direction: column;
+	}
+	// ? footer
+}
+
+
+// ! > $breakpointMobile
+@media (min-width:($breakpointMobile+1)) {
+	.burger{
+		display: none;
+	}
+}

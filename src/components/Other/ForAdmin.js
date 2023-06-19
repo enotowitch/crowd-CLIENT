@@ -1,10 +1,15 @@
-import useUser from "../../hooks/useUser"
+import { useContext } from "react"
+import { Context } from "../../Context"
 
-export default function ForAdmin({ children }) {
+// * icons ForAdmin or any children
+export default function ForAdmin({ children, postOwner }) {
 
-	const { user } = useUser()
+	const { user } = useContext(Context)
 
 	return (
-		user?.isAdmin && children
+		<>
+			{user?._id === postOwner?._id && children}
+			{user?.isAdmin && children}
+		</>
 	)
 }

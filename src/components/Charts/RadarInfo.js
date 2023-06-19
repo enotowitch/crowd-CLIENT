@@ -7,6 +7,7 @@ import Tags from "../FormElements/Tags"
 import Bar from "./Bar"
 import Pie from "./Pie"
 import IconText from "../Icons/IconText"
+import Certification from "../Other/Certification"
 
 export default function RadarInfo({ obj }) { // obj=company
 
@@ -20,12 +21,20 @@ export default function RadarInfo({ obj }) { // obj=company
 	return (
 		<div className="postFull mb">
 
-			{radarInfo.map((info, ind) => {
+			{radarInfo(obj).map((info, ind) => {
 				const { title, text } = info
 				const LocalizationArray = obj?.LocalizationArray && obj?.LocalizationArray.split(",")
 
 				if (notShow.includes(title)) {
 					return // * don't show empty titles 
+				}
+
+				if (title === "Fiabilite") {
+					return (
+						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
+							<Certification obj={obj} />
+						</RadarInfoItem>
+					)
 				}
 
 				if (title === "Localization") {
@@ -55,7 +64,7 @@ export default function RadarInfo({ obj }) { // obj=company
 				if (title === "Liquidity") {
 					return (
 						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
-							{obj?.["Secondary Step"] === "true" && <IconText src="check" iconClassName="icon_small" text="Secondary step" className="btn_dark m c" />}
+							{obj?.["Secondary Step"] === true && <IconText src="check" iconClassName="icon_small" text="Secondary step" className="m c tag" />}
 						</RadarInfoItem>
 					)
 				}

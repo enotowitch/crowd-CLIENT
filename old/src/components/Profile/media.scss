@@ -1,0 +1,15 @@
+@import "../../vars.scss";
+
+// ! < $breakpointMobile
+@media (max-width:$breakpointMobile) {
+	.menu .profileMenu{
+		left: 0px;
+		top: 130px;
+	}
+}
+
+
+// ! > $breakpointMobile
+@media (min-width:($breakpointMobile+1)) {
+
+}

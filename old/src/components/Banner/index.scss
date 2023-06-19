@@ -1,0 +1,21 @@
+@import "../../vars.scss";
+
+.banner{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	&__logo{
+		position: absolute;
+		width: 50%;
+		height: 30%;
+		align-self: center;
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+	}
+	.banner__img{
+		border-radius: $borderRadiusBig;
+		width: 100%;
+	}
+}

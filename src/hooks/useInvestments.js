@@ -20,7 +20,7 @@ export default function useInvestments() {
 				const endUnix = Math.floor(new Date(investment.end).getTime() / 1000)
 				const todayUnix = Math.floor(Date.now() / 1000)
 				if (endUnix < todayUnix) {
-					!investment.closed && removeInvestment(investment.id) // if not closed => close
+					!investment.closed && removeInvestment(investment._id) // if not closed => close
 				}
 			})
 

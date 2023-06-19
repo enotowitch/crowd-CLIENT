@@ -9,8 +9,9 @@ export default function Input(props) {
 
 	const [value, valueSet] = useState("")
 
-	function onChange(e) {
+	function onChangeFew(e) {
 		valueSet(e.target.value)
+		props.onChange && props.onChange(e.target.value) // exec. props.onChange (if passed)
 	}
 
 	useEffect(() => {
@@ -21,8 +22,8 @@ export default function Input(props) {
 		<InputLabel label={label}>
 			<input
 				value={value}
-				onChange={onChange}
 				{...props}
+				onChange={onChangeFew} // must be after "props"
 			/>
 		</InputLabel>
 	)

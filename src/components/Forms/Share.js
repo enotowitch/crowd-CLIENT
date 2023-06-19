@@ -14,7 +14,7 @@ export default function Share({ topTitle, bottomTitle, children, hashtag }) { //
 
 			<div className="title">{topTitle}</div>
 			{children}
-			<div className="title">Share: {bottomTitle}</div>
+			<div className="title">{bottomTitle}</div>
 
 			<div className="f jcsb">
 				<TwitterShareButton
@@ -45,7 +45,7 @@ export default function Share({ topTitle, bottomTitle, children, hashtag }) { //
 				</LinkedinShareButton>
 			</div>
 
-			<InputButton text="Copy" value={url} onClick={() => navigator.clipboard.writeText(url)} />
+			<InputButton text="Copy" newText="Copied" value={url} onClick={() => navigator.clipboard.writeText(url)} />
 		</div>
 	)
 }

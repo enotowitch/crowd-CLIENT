@@ -1,0 +1,23 @@
+@import "../../vars.scss";
+
+.textEditor{
+	width: 100%;
+	// !!
+	> * {
+		margin-bottom: 15px;
+	}
+}
+// SimpleMDE
+.CodeMirror{
+	background: $black;
+	color: $white;
+	border-radius: $borderRadiusSmall !important;
+}
+
+.editor-toolbar{
+	button{
+		&:hover{
+			background: $black;
+		}
+	}
+}

@@ -11,13 +11,15 @@ export default function InputFile(props) { // don't touch {...props}
 	const [updatedImg, updatedImgSet] = useState(false)
 
 	// ! edit preview
-	const { editValue } = props
+	const { editValue, className } = props
 	useEffect(() => {
 		editValue && previewSet(`${baseURL}/upload/${editValue}`)
 	}, [editValue])
 	// ? edit preview
 
-	async function onChange(e) {
+	async function onChangeFew(e) {
+		props.onChange && props.onChange(e.target.files[0]) // first props.onChange (if passed) then other fns
+
 		updatedImgSet(true)
 
 		// ! preview
@@ -45,9 +47,9 @@ export default function InputFile(props) { // don't touch {...props}
 			<input
 				name="img"
 				type="file"
-				onChange={onChange}
 				ref={ref}
 				{...props}
+				onChange={onChangeFew} // must be after "props"
 			/>
 
 			<input
@@ -59,7 +61,7 @@ export default function InputFile(props) { // don't touch {...props}
 			<img
 				src={preview || addImage}
 				onClick={() => ref.current.click()}
-				className="addImage"
+				className={`addImage ${className}`}
 			/>
 		</>
 	)

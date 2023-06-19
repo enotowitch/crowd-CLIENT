@@ -1,0 +1,15 @@
+@import "../../vars.scss";
+
+.trustpilot{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background: $dark;
+	border-radius: $borderRadiusBig;
+	// !!
+	> * {
+		margin-bottom: 15px;
+	}
+}

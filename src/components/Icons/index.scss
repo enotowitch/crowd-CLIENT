@@ -17,5 +17,9 @@
 		top: -40px;
 		left: 105px;
 		font-weight: 200; 
+		// !! n min read fix for small phones
+		@media (max-width:359px) {	
+			width: 110px;
+		}
 	}
 }

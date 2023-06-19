@@ -1,14 +1,14 @@
 import React from "react"
 import ArticleCard from "./ArticleCard";
-import useArticles from "../../hooks/useArticles";
+import usePosts from "../../hooks/usePosts";
 import parseImg from "../../utils/parseImg";
 import ShowMoreButtons from "../FormElements/ShowMoreButtons";
 import Cards from "../Other/Cards";
 import parseTags from "../../utils/parseTags";
 
-export default function Articles() {
+export default function Articles({ skip }) {
 
-	const { articles, showMore } = useArticles()
+	const [articles, showMore] = usePosts(skip, "article")
 
 	return (
 		<Cards>
@@ -29,12 +29,13 @@ export default function Articles() {
 					<ArticleCard
 						key={article._id}
 						id={article._id}
-						title={article.title}
+						title={article.name}
 						img={img}
 						views={article.views}
 						likes={article.likes.length}
 						tags={tags}
 						cardText={cardText}
+						postOwner={article?.user}
 					/>
 				)
 			})

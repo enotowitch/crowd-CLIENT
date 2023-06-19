@@ -9,7 +9,7 @@ import useCompany from "../../hooks/useCompany";
 import useBonus from "../../hooks/useBonus";
 import useInvestment from "../../hooks/useInvestment";
 
-export default function TextEditor({ children, btnText, fn, editValue, textEditor }) { // children=Input/Select/etc...
+export default function TextEditor({ children, btnText, fn, editValue, textEditor, postType, placeholder }) { // children=Input/Select/etc...
 
 	const [value, valueSet] = useState("")
 
@@ -19,7 +19,7 @@ export default function TextEditor({ children, btnText, fn, editValue, textEdito
 
 	// * functions are gray because of eval(fn)
 	const { addArticle, editArticle } = useArticle(value || editValue)
-	const { addComment } = useComment(value)
+	const { addComment } = useComment(value, postType)
 	const { addCompany, editCompany } = useCompany(value || editValue)
 	const { addBonus, editBonus } = useBonus(value || editValue)
 	const { addInvestment, editInvestment } = useInvestment(value || editValue)
@@ -29,7 +29,14 @@ export default function TextEditor({ children, btnText, fn, editValue, textEdito
 
 			{children}
 
-			{textEditor || textEditor === undefined && <SimpleMDE value={editValue || value} onChange={onChange} />}
+			{textEditor || textEditor === undefined &&
+				<SimpleMDE
+					value={editValue || value}
+					onChange={onChange}
+				// options={{ placeholder }} // not working, but should
+				/>
+			}
+
 			<button className="c wfc" ignoreOutside="true">{btnText}</button>
 		</form>
 	)

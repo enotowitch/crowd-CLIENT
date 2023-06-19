@@ -1,0 +1,27 @@
+@import "../../vars.scss";
+
+.invesment{
+	&__items{
+		display: flex; 
+		justify-content: center;
+		// width: 100%;
+		background: $dark;
+		margin-left: 15px;
+		margin-right: 15px;
+		&:nth-child(2){
+			border-bottom: 1px solid $darkGray;
+		}
+	}
+	&__item{
+		min-width: 16.66% !important; // 100/6 items/
+		padding: 5px;
+		flex: 1 0 16.66%;
+		word-break: break-all;
+	}
+}
+
+.addInvestmentInputBlock{
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 15px;
+}

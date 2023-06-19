@@ -1,0 +1,14 @@
+@import "../../vars.scss";
+
+// ! < $breakpointMobile
+@media (max-width:$breakpointMobile) {	
+	.hello{
+		padding-bottom: 200px;
+	}
+}
+
+
+// ! > $breakpointMobile
+@media (min-width:($breakpointMobile+1)) {
+
+}

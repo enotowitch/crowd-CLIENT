@@ -1,0 +1,40 @@
+@import "../../vars.scss";
+
+// ! < $breakpointMobile
+@media (max-width:$breakpointMobile) {	
+	.pie{
+		width: 80%;
+	}	
+	.doughnut{
+
+	}
+}
+
+
+// ! > $breakpointMobile
+@media (min-width:($breakpointMobile+1)) {
+	.pie{
+		width: 30%;
+	}
+	.doughnut{
+		width: 15%;
+	}
+}
+
+// ! radarClip
+// 1920p
+.radarClip{
+	height: 90% !important;
+}
+// <
+@media (max-width:1919px) {	
+	.radarClip{
+		height: 85% !important;
+	}
+}
+// >
+@media (min-width:1921px) {	
+	.radarClip{
+		height: 95% !important;
+	}
+}

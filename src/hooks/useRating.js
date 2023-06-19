@@ -5,12 +5,12 @@ import useNoUser from "./useNoUser"
 export default function useRating(commentId) {
 
 	const [rating, ratingSet] = useState()
-	const { noUser } = useNoUser()
+	const { noUserPopup } = useNoUser()
 
 	async function rate(act) {
 		const res = await api.rateComment(act, commentId)
 		res.ok && ratingSet(res.rating)
-		noUser(res)
+		noUserPopup(res)
 	}
 
 	return (

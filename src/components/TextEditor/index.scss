@@ -7,11 +7,25 @@
 		margin-bottom: 15px;
 	}
 }
-// SimpleMDE
+// ! SimpleMDE
 .CodeMirror{
 	background: $black;
 	color: $white;
 	border-radius: $borderRadiusSmall !important;
+	height: 200px !important;
+	margin: 0 auto;
+}
+.editor-statusbar{
+	display: none;
+}
+.editor-toolbar{
+	.separator, .preview, .side-by-side, .fullscreen {
+		display: none !important;
+	}
+}
+// add comment CompanyFull
+.rightBar .CodeMirror{
+	max-width: 437px;
 }
 
 .editor-toolbar{
@@ -19,5 +33,7 @@
 		&:hover{
 			background: $black;
 		}
+		background: transparent !important;
 	}
 }
+// ? SimpleMDE

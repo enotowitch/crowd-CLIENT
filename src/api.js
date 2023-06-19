@@ -10,37 +10,39 @@ instance.interceptors.request.use(config => {
 	return config
 })
 
+// !! POST (general for article,company,bonus...)
+export const likePost = async (id, postType) => {
+	try {
+		const { data } = await instance.post(`/likePost`, { id, postType })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const getPosts = async (skip, limit, postType) => {
+	try {
+		const { data } = await instance.post("/getPosts", { skip, limit, postType })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const addPost = async (formAndValue, postType) => {
+	try {
+		const { data } = await instance.post("/addPost", { ...formAndValue, postType })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? POST
+
 // !! ARTICLE
-export const addArticle = async (formAndValue) => {
-	try {
-		const { data } = await instance.post("/addArticle", { ...formAndValue })
-		return data
-	} catch (error) {
-		console.log(error)
-	}
-}
-
-export const getArticles = async (skip) => {
-	try {
-		const { data } = await instance.post("/getArticles", { skip })
-		return data
-	} catch (error) {
-		console.log(error)
-	}
-}
-
 export const getArticle = async (id) => {
 	try {
 		const { data } = await instance.get(`/article/${id}`)
-		return data
-	} catch (error) {
-		console.log(error)
-	}
-}
-
-export const likeArticle = async (id) => {
-	try {
-		const { data } = await instance.post(`/likeArticle`, { id })
 		return data
 	} catch (error) {
 		console.log(error)
@@ -93,21 +95,59 @@ export const forgot = async (email) => {
 		console.log(error)
 	}
 }
-// ?? USER
 
-// !! COMMENT
-export const addComment = async (formAndValue, articleId) => {
+export const userChangeImg = async (imgName) => {
 	try {
-		const { data } = await instance.post(`/addComment`, { ...formAndValue, articleId })
+		const { data } = await instance.post("/userChangeImg", { imgName })
 		return data
 	} catch (error) {
 		console.log(error)
 	}
 }
 
-export const getComments = async (articleId, skip) => {
+export const userChangeName = async (newName) => {
 	try {
-		const { data } = await instance.post(`/getComments`, { articleId, skip })
+		const { data } = await instance.post("/userChangeName", { newName })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? USER
+
+// !! PERMISSION (ADMIN)
+export const addPermission = async (arr) => {
+	try {
+		const { data } = await instance.post("/addPermission", { arr })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const getPermissions = async () => {
+	try {
+		const { data } = await instance.post("/getPermissions")
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+// ?? PERMISSION (ADMIN)
+
+// !! COMMENT
+export const addComment = async (formAndValue, postId, postType) => {
+	try {
+		const { data } = await instance.post(`/addComment`, { ...formAndValue, postId, postType })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const getComments = async (postId, skip, postType) => {
+	try {
+		const { data } = await instance.post(`/getComments`, { postId, skip, postType })
 		return data
 	} catch (error) {
 		console.log(error)
@@ -136,27 +176,9 @@ export const subscribe = async (form) => {
 // ?? SUBSCRIBER
 
 // !! COMPANY
-export const addCompany = async (formAndValue) => {
-	try {
-		const { data } = await instance.post("/addCompany", { ...formAndValue })
-		return data
-	} catch (error) {
-		console.log(error)
-	}
-}
-
 export const getCompany = async (id) => {
 	try {
 		const { data } = await instance.get(`/company/${id}`)
-		return data
-	} catch (error) {
-		console.log(error)
-	}
-}
-
-export const getCompanies = async (skip) => {
-	try {
-		const { data } = await instance.post("/getCompanies", { skip })
 		return data
 	} catch (error) {
 		console.log(error)
@@ -203,24 +225,6 @@ export const addImg = async (formData) => {
 // ?? ADD IMAGE
 
 // !! BONUS
-export const addBonus = async (formAndValue) => {
-	try {
-		const { data } = await instance.post("/addBonus", { ...formAndValue })
-		return data
-	} catch (error) {
-		console.log(error)
-	}
-}
-
-export const getBonuses = async (skip) => {
-	try {
-		const { data } = await instance.post("/getBonuses", { skip })
-		return data
-	} catch (error) {
-		console.log(error)
-	}
-}
-
 export const getBonus = async (id) => {
 	try {
 		const { data } = await instance.get(`/bonus/${id}`)
@@ -313,9 +317,9 @@ export const getInvested = async () => {
 	}
 }
 
-export const filterRevenue = async (platform, end) => {
+export const filterRevenue = async (platform) => {
 	try {
-		const { data } = await instance.post(`/filterRevenue`, { platform, end })
+		const { data } = await instance.post(`/filterRevenue`, { platform })
 		return data
 	} catch (error) {
 		console.log(error)

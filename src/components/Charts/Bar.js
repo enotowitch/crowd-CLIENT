@@ -26,6 +26,7 @@ export default function Bar_({ currentCompanyName, labels, yearSelected }) { // 
 	// * gray cause of eval
 	const { tvl, tvlData, tvlHighlight } = useTVL(currentCompanyName)
 	const { revenue, revenueData, revenueHighlight } = useRevenue(currentCompanyName, yearSelected)
+	const thisYear = new Date().getFullYear()
 
 	// ! options
 	const options = {
@@ -43,11 +44,14 @@ export default function Bar_({ currentCompanyName, labels, yearSelected }) { // 
 	};
 	// ! data
 	const data = {
-		labels: eval(`${labels}`),
+		labels: eval(`${labels}`), // e.g "revenue"
 		datasets: [{
 			label: "",
-			data: eval(`${labels + "Data"}`),
-			backgroundColor: eval(`${labels}`).map((item, ind) => ind === eval(`${labels + "Highlight"}`) ? "#FF900D" : "#9327FF"),
+			data: eval(`${labels + "Data"}`), // e.g "revenueData"
+			backgroundColor: eval(`${labels}`).map((item, ind) => {
+				// color only thisYear-thisMonth
+				return ind === eval(`${labels + "Highlight"}`) && yearSelected == thisYear ? "#FF900D" : "#9327FF"
+			}), // e.g "revenueHighlight"
 		}]
 	};
 

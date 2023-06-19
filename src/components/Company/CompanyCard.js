@@ -8,26 +8,31 @@ import { baseURL } from "../../consts"
 import IconDelete from "../Icons/IconDelete"
 import IconEdit from "../Icons/IconEdit"
 import ForAdmin from "../Other/ForAdmin"
+import Card from "../Other/Card"
 
 export default function CompanyCard({ obj }) {
 
-	const { name, img, _id: id } = obj
+	let name, img, id, user
+	if (obj) {
+		({ name, img, _id: id, user } = obj)
+	}
 	const cardRef = useRef(null)
 
 	return (
-		<div className="card" ref={cardRef} onClick={() => window.location.href = `/company/${id}`}>
+		<Card cardRef={cardRef} type="company" id={id}>
 
-			<IconsTop cardRef={cardRef} className="iconsMid">
+			<IconsTop cardRef={cardRef} className="iconsMid w100">
 				<IconText
 					url={`${baseURL}/upload/${img}`}
-					iconClassName="icon_mid"
+					iconClassName="m0 icon_card"
 					text="See review >"
 					textClassName="brand"
+					className="fc"
 					onClick={() => window.location.href = `/company/${id}`}
 				/>
 			</IconsTop>
 
-			<ForAdmin>
+			<ForAdmin postOwner={user}>
 				<IconsTop cardRef={cardRef} className="iconsTop">
 					<IconEdit id={id} fn="editCompany" />
 					<IconDelete id={id} fn="deleteCompany" />
@@ -36,6 +41,6 @@ export default function CompanyCard({ obj }) {
 
 			<div className="tac white">{name}</div>
 			<Radar obj={obj} />
-		</div>
+		</Card>
 	)
 }

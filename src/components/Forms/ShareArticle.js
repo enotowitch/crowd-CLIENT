@@ -8,11 +8,11 @@ import Share from "./Share"
 export default function ShareArticle() {
 
 	const { sharing } = useContext(Context)
-	const { title, tag, value } = sharing
+	const { name, tag, value } = sharing
 	const img = parseImg(value)
 
 	return (
-		<Share topTitle={tag} bottomTitle={title} hashtag={tag}>
+		<Share topTitle={tag} bottomTitle={"Share: " + name} hashtag={tag}>
 			<img src={img} />
 		</Share>
 	)

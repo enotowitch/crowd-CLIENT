@@ -1,0 +1,119 @@
+@import "../../vars.scss";
+
+.card{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background: $dark;
+	border-radius: $borderRadiusBig;
+	min-width: $widthSmall;
+	max-width: 24%;
+	flex: 1 1 24%;
+	background: $dark;
+	&__img{
+		height: 200px;
+		width: 100%;
+		border-radius: 9px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		object-fit: cover;
+	}
+	// !!
+	> *:not(img, .cardText, .cardTitle){
+	padding: 7px;
+	}
+	&:hover{
+		transform: scale(1.02);
+		box-shadow: 0px 10px 29px -3px rgba(224, 68, 255, 0.2);
+	}
+}
+
+.cardText, .cardTitle{
+	padding: 0 7px;
+	max-height: 43px;
+	overflow: hidden;
+	font-weight: 200;
+	color: $lightGray;
+}
+.cardTitle{
+	font-weight: 700;
+	color: $white;
+}
+
+.cards{
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 15px;
+	border-radius: $borderRadiusBig;
+	padding-bottom: 30px;
+	&__wrap{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		// align-self: center;
+	}
+}
+
+.postFull{
+	// !!
+	img:not(.radarClip){
+		border-radius: $borderRadiusBig;
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+	}
+	> * {
+		margin-bottom: 24px;
+	}
+	// * underline links in postFull (textEditor wraps `a` with `p` tag)
+	p a{
+		text-decoration: underline;
+		color: $brand;
+	}
+	.tags{
+		margin: 15px;
+		margin-left: 0;
+	}
+}
+
+.tag{
+	width: fit-content;
+	background: $dark;
+	padding: 10px 15px;
+	border-radius: $borderRadiusMax;
+}
+
+.iconsTop{
+		position: absolute;
+		display: flex;
+		z-index: 2;
+		justify-content: space-between;
+		width: 100%;
+}
+
+.iconsMid{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: .8;
+	border-radius: $borderRadiusBig;
+	white-space: nowrap;
+}
+
+.animationDelete{
+	animation: animationDelete .5s forwards;
+}
+
+@keyframes animationDelete {
+	to{
+		filter: blur(5px);
+	}
+}

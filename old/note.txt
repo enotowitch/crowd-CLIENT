@@ -1,0 +1,53 @@
+// bars revenue 100/12
+
+import { useEffect, useState } from "react"
+import * as api from "../api"
+
+// `company`=`platform`
+export default function useRevenue(currentCompanyName, yearSelected) {
+
+	// * labels in Bar.js
+	const revenue = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+	//  * data in Bar.js
+	const [revenueData, revenueDataSet] = useState(["", "", "", "", "", "", "", "", "", "", "", ""])
+	const tempRevenueData = ["", "", "", "", "", "", "", "", "", "", "", ""]
+	//  * Highlight current month
+	const revenueHighlight = new Date().getMonth()
+
+	useEffect(() => {
+		revenueDataSet(["", "", "", "", "", "", "", "", "", "", "", ""]) // null revenueData on new filter select
+		async function filterRevenue() {
+			const res = await api.filterRevenue(currentCompanyName, yearSelected)
+			res?.map(company => {
+				const start = (company.start.replace(/\d+$/, "15")) // make day=15 for better unix calc
+				const end = (company.end.replace(/\d+$/, "15")) // make day=15 for better unix calc
+				const startUnix = Math.floor(new Date(start).getTime() / 1000) // calc how many time passed between start and end
+				const endUnix = Math.floor(new Date(end).getTime() / 1000) // calc how many time passed between start and end
+				const unixMonth = 60 * 60 * 24 * 30
+				const unixYear = 60 * 60 * 24 * 30 * 12
+				const monthPassed = Math.floor((endUnix - startUnix) / unixMonth + 1) // 1,2,13...
+				// console.log(new Date(startUnix * 1000).getMonth()) // convert unix to month
+				const selectedUnixYear = new Date(yearSelected + "-01-01").getTime() / 1000 // 2024-01-01 to unix
+				let addedUnixMonth = startUnix // start loop with start month + 1 month dep. on monthPassed
+				const revenue = company.invested / company.income / 12 // 1000euro/10%=100euro for 1 year; 100euro/12month= 8.333euro each month.
+				console.log(revenue)
+				for (let i = 0; i < monthPassed; i++) {
+					// loop unix month is gt (e.g: 2024-01-01(unix)) and lt (e.g: 2025-01-01(unix))
+					if (addedUnixMonth > selectedUnixYear && addedUnixMonth < (selectedUnixYear + unixYear)) {
+						const monthToPush = new Date(addedUnixMonth * 1000).getMonth()
+						tempRevenueData[monthToPush] = [Number(tempRevenueData[monthToPush]) + revenue].toString() // `push` revenue to its month (all projects)
+					}
+					addedUnixMonth += unixMonth
+				}
+				// todo 14
+				revenueDataSet(tempRevenueData)
+			})
+		}
+
+		filterRevenue()
+	}, [currentCompanyName, yearSelected])
+
+	return (
+		{ revenue, revenueData, revenueHighlight }
+	)
+}

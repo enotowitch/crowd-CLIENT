@@ -23,6 +23,7 @@ export default function AddCompany() {
 
 	return (
 		<section className="w100 addPost">
+			<div className="title mb2">Add Company</div>
 			<TextEditor btnText={btnText} fn={fn} editValue={company?.value}>
 
 				<InputFileInput obj={company} />

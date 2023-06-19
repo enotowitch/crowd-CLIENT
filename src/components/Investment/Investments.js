@@ -13,7 +13,7 @@ export default function Investments({ title, closed }) {
 		<div className="cards fc g0 table">
 			<div className="title2 w100 m">{title}</div>
 
-			<InvesmentItems arr={["Platform", "Project Name", "Amount Invested (€)", "Income (%)", "Start Date", "End Date"]} />
+			<InvesmentItems arr={["Platform", "Project Name", "Invested (€)", "Income (%)", "Start Date", "End Date"]} />
 
 			{!closed && investments.map(obj => !obj.closed && <InvestmentCard obj={obj} />)}
 			{closed && investments.map(obj => obj.closed && <InvestmentCard obj={obj} />)}

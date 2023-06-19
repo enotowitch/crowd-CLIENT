@@ -25,7 +25,7 @@ export default function AddInvestment() {
 						<Input name="project" placeholder="project name" label="Project Name" className="w100" editValue={investment?.project} required />
 					</div>
 					<div className="addInvestmentInputBlock">
-						<Input type="number" name="invested" placeholder="amount invested (€)" label="Amount Invested (€)" className="w100" editValue={investment?.invested} required />
+						<Input type="number" name="invested" placeholder="invested (€)" label="Invested (€)" className="w100" editValue={investment?.invested} required />
 						<Input type="number" name="income" placeholder="income (%)" label="Income (%)" className="w100" editValue={investment?.income} required />
 					</div>
 					<div className="addInvestmentInputBlock">

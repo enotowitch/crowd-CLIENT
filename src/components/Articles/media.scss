@@ -4,6 +4,9 @@
 @media (max-width:$breakpointMobile) {	
 	.cards{
 		// padding: 30px 0;
+		.title{
+			margin-top: -15px;
+		}
 	}
 	.postFull{
 		width: 100%;

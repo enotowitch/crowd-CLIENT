@@ -9,9 +9,9 @@ export default function Overview({ obj }) { // obj=company
 			{obj?.value &&
 				<section className="overview">
 					<div className="title">Overview</div>
-					<pre>
-						<Markdown value={obj?.value} />
-					</pre>
+					{/* <pre> */}
+					<Markdown value={obj?.value} />
+					{/* </pre> */}
 				</section>
 			}
 		</>

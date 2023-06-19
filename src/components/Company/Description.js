@@ -7,9 +7,9 @@ export default function Description({ obj }) { // obj=company
 		obj?.description &&
 		<section className="description">
 			<div className="title">Description</div>
-			<pre>
-				{obj?.description && <div>{obj?.description}</div>}
-			</pre>
+			{/* <pre> */}
+			{obj?.description && <div>{obj?.description}</div>}
+			{/* </pre> */}
 			{obj?.ticketMinimum && <div className="brand">Ticket Minimum: €{obj?.ticketMinimum}</div>}
 			{obj?.yearOfCreation && <div className="brand">Year Of Creation: {obj?.yearOfCreation}</div>}
 		</section>

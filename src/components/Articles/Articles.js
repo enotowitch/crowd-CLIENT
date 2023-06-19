@@ -15,6 +15,8 @@ export default function Articles({ skip }) {
 			<div className="title w100">Articles</div>
 
 			{articles?.map(article => {
+				if (!article) return
+
 				const img = parseImg(article?.value)
 
 				let cardText = article.value?.replace(/!\[.*\]/g, "") // * ![abc]

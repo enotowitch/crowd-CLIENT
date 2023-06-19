@@ -75,7 +75,7 @@
 	}
 	// * make postFull imgs 100% visible (textEditor wraps `img` with `p` tag)
 	p img{
-		object-fit: contain !important;
+		object-fit: cover !important;
 	}
 	.tags{
 		margin: 15px;

@@ -12,7 +12,7 @@ export default function Companies({ skip }) {
 
 	return (
 		<Cards>
-			<div className="title w100">Crowdfunding Discovery</div>
+			<div className="title w100">Crowdfundings</div>
 			{companies?.map(company => <CompanyCard key={company?._id} obj={company} />)}
 			<ShowMoreButtons showMore={showMore} path="companies" />
 		</Cards>

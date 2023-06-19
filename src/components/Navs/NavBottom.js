@@ -8,7 +8,7 @@ export default function NavBottom() {
 		<nav className="navBottom">
 			<IconTextNav src="home" path="/" text="Home" />
 			<IconTextNav src="articles" path="articles" text="Articles" />
-			<IconTextNav src="companies" path="companies" text="Crowdfunding Discovery" />
+			<IconTextNav src="companies" path="companies" text="Crowdfundings" />
 			<IconTextNav src="bonuses" path="bonuses" text="Bonus" />
 			<IconTextNav src="aboutus" path="aboutus" text="About Us" />
 		</nav>

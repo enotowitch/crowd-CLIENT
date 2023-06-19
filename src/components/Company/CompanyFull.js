@@ -23,6 +23,15 @@ export default function CompanyFull() {
 	const { companyId } = useParams()
 	const { company } = useCompanyFull(companyId)
 
+	// ! NOT FOR PRODUCTION; for portfolio: show images from FRONT; BACK is free => images disappear
+	let url = `${baseURL}/upload/${company?.img}`
+	const frontImgs = ["october", "raizers", "heavyFinance", "lumo", "monego", "fundimmo", "clubfunding", "baltis"]
+	const imgName = company?.img.replace(/.\png/, "")
+	if (frontImgs.includes(imgName)) {
+		url = require(`../../img/${imgName}.png`)
+	}
+	// ? NOT FOR PRODUCTION
+
 	return (
 		<div className="bigFlex postFull__wrap w100 f3">
 			<div className="fc w100 f3">
@@ -30,7 +39,7 @@ export default function CompanyFull() {
 
 					<div className="f jcsb">
 						<IconText
-							url={`${baseURL}/upload/${company?.img}`}
+							url={url}
 							// text={company?.name}
 							textClassName="title order1"
 							iconClassName="icon_mid order2"

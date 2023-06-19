@@ -8,6 +8,7 @@ import ErrorMsg from "../FormElements/ErrorMsg"
 import AuthNew from "./AuthNew"
 import { Context } from "../../Context"
 import AuthGoogle from "./AuthGoogle"
+import LoginTest from "./LoginTest"
 
 
 export default function Auth({ children, type }) { // type=Log In/Sign Up
@@ -32,6 +33,8 @@ export default function Auth({ children, type }) { // type=Log In/Sign Up
 			{/* <AuthGoogle type={type} /> */}
 
 			<AuthNew type={type} />
+
+			<LoginTest />
 		</form>
 	)
 }

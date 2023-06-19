@@ -7,6 +7,7 @@ import Footer from "./components/Navs/Footer"
 import ScrollTo from "./components/Navs/ScrollTo"
 import AppRouter from "./components/AppRouter/AppRouter"
 import Navs from "./components/Navs/Navs"
+import AlertTest from "./components/Forms/AlertTest"
 
 export default function App() {
 	return (
@@ -27,6 +28,7 @@ export default function App() {
 			</div>
 
 			<Footer />
+			<AlertTest />
 
 		</div>
 	)

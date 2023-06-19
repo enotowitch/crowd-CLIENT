@@ -27,7 +27,7 @@ export default function LoginTest() {
 	return (
 		<div className="fcc">
 			<button style={{ background: "gray", height: 30, width: "40%" }} onClick={author}>test author</button>
-			<button style={{ background: "gray", height: 30, width: "40%" }} onClick={user}>test user</button>
+			<button style={{ background: "gray", height: 30, width: "40%" }} onClick={user} className="ml">test user</button>
 		</div>
 	)
 }

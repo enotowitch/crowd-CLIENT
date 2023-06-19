@@ -18,6 +18,7 @@ export default function AddInvestment() {
 	return (
 		<div className="fc g w100">
 			<section className="w100">
+			<div className="title mb">Add Investment</div>
 				<TextEditor btnText={btnText} fn={fn} textEditor={false}>
 					<div className="addInvestmentInputBlock">
 						<Input name="platform" placeholder="platform" label="Platform" className="w100" editValue={investment?.platform} required />

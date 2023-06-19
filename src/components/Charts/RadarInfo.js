@@ -64,7 +64,7 @@ export default function RadarInfo({ obj }) { // obj=company
 				if (title === "Liquidity") {
 					return (
 						<RadarInfoItem title={title} text={text} ind={ind} obj={obj}>
-							{obj?.["Secondary Step"] === true && <IconText src="check" iconClassName="icon_small" text="Secondary step" className="m c tag" />}
+							{obj?.["Secondary Step"] === true && <IconText src="check" iconClassName="icon_small" text="Secondary step" className="my c tag" />}
 						</RadarInfoItem>
 					)
 				}

@@ -7,7 +7,7 @@ import Orias from "../../img/Orias.png"
 
 export default function Certification({ obj }) { //obj=company
 	return (
-		<div className="fcc g2">
+		<div className="fcc fww g2">
 			{obj?.AMF === true &&
 				<div className="fc bgDark p07 brsm">
 					<img src={check} className="icon_small" />

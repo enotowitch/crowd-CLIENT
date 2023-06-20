@@ -1,5 +1,6 @@
 import React from "react"
 import * as api from "../../api"
+import IconText from "../Icons/IconText"
 
 export default function LoginTest() {
 
@@ -24,10 +25,15 @@ export default function LoginTest() {
 		window.location.reload()
 	}
 
+	function onClick(e) {
+		e.target.closest(".loginTest").style.display = "none"
+	}
+
 	return (
-		<div className="fcc">
+		<div className="fcc loginTest">
 			<button style={{ background: "gray", height: 30, width: "40%" }} onClick={author}>test author</button>
 			<button style={{ background: "gray", height: 30, width: "40%" }} onClick={user} className="ml">test user</button>
+			<IconText src="delGray" iconClassName="ml05" onClick={onClick} />
 		</div>
 	)
 }

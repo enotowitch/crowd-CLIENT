@@ -9,9 +9,11 @@ export default function IconsTop({ cardRef, children, className }) {
 	useEffect(() => {
 		cardRef?.current?.addEventListener("mouseenter", (e) => {
 			showTopIconsSet(true)
+			cardRef?.current?.querySelector(".invesment__items")?.classList.add("blur")
 		})
 		cardRef?.current?.addEventListener("mouseleave", (e) => {
 			showTopIconsSet(false)
+			cardRef?.current?.querySelector(".invesment__items")?.classList.remove("blur")
 		})
 	}, [])
 

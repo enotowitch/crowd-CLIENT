@@ -16,7 +16,7 @@ export default function AddArticle() {
 
 	return (
 		<section className="w100">
-		<div className="title mb">Add Article</div>
+			<div className="title mb">{btnText}</div>
 			<TextEditor btnText={btnText} fn={fn} editValue={article?.value}>
 				<Input name="name" placeholder="title" editValue={article?.name} label="title" required />
 				<Input name="author" placeholder="author" editValue={article?.author} label="author" required />

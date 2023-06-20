@@ -17,7 +17,7 @@ export default function AddBonus() {
 
 	return (
 		<section className="w100">
-			<div className="title mb2">Add Bonus</div>
+			<div className="title mb2">{btnText}</div>
 			<TextEditor btnText={btnText} fn={fn} editValue={bonus?.value}>
 				<InputFileInput obj={bonus} />
 				<Input name="link" placeholder="partner link" editValue={bonus?.link} required />

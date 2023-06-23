@@ -8,7 +8,13 @@ import useOutside from "../../hooks/useOutside"
 export default function Popup() {
 
 	const { popupElement } = useContext(Context)
-	const VariableComponent = React.lazy(() => import(`../Forms/${popupElement}`))
+
+	const VariableComponent = React.lazy(() => {
+		return new Promise(resolve => {
+			setTimeout(() => resolve(import(`../Forms/${popupElement}`)), 300);
+		});
+	});
+
 	const { ref, isComponentVisible } = useOutside(true)
 
 	return (
@@ -19,7 +25,7 @@ export default function Popup() {
 
 				<div className="popup">
 
-					<Suspense fallback={<div>Loading...</div>}>
+					<Suspense>
 						<VariableComponent />
 					</Suspense>
 

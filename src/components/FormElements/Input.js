@@ -18,12 +18,26 @@ export default function Input(props) {
 		editValue && valueSet(editValue)
 	}, [editValue])
 
+	function numberInputOnWheelPreventChange(e) {
+		// Prevent the input value change
+		e.target.blur()
+
+		// Prevent the page/container scrolling
+		e.stopPropagation()
+
+		// Refocus immediately, on the next tick (after the current function is done)
+		setTimeout(() => {
+			e.target.focus()
+		}, 0)
+	}
+
 	return (
 		<InputLabel label={label}>
 			<input
 				value={value}
 				{...props}
 				onChange={onChangeFew} // must be after "props"
+				onWheel={numberInputOnWheelPreventChange}
 			/>
 		</InputLabel>
 	)

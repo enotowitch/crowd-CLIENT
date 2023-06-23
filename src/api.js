@@ -222,6 +222,15 @@ export const addImg = async (formData) => {
 		console.log(error)
 	}
 }
+
+export const saveRadarImg = async (base64Img, name) => {
+	try {
+		const { data } = await instance.post("/saveRadarImg", { base64Img, name })
+		return data
+	} catch (error) {
+		console.log(error)
+	}
+}
 // ?? ADD IMAGE
 
 // !! BONUS

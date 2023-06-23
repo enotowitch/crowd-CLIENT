@@ -32,9 +32,9 @@ export default function Remember() {
 		})
 	}
 
-	const rememberChecked = eval(localStorage.getItem("Remember Me")) // true/false => render checked/notChecked
+	const editValue = eval(localStorage.getItem("Remember Me")) // true/false => render checked/notChecked
 
 	return (
-		<Checkbox name="Remember Me" onChange={onChange} rememberChecked={rememberChecked} />
+		<Checkbox name="Remember Me" onChange={onChange} editValue={editValue} />
 	)
 }

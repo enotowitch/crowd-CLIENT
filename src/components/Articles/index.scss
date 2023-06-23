@@ -75,7 +75,8 @@
 	}
 	// * make postFull imgs 100% visible (textEditor wraps `img` with `p` tag)
 	p img{
-		object-fit: cover !important;
+		width: 100% !important;
+		height: auto !important;
 	}
 	.tags{
 		margin: 15px;
@@ -125,15 +126,5 @@
 @keyframes animationDelete {
 	to{
 		filter: blur(5px);
-	}
-}
-
-.blur{
-	animation: blur .5s forwards;
-}
-
-@keyframes blur {
-	to{
-		filter: blur(1px);
 	}
 }

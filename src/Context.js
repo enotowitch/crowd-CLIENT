@@ -14,6 +14,7 @@ function ContextProvider(props) {
 	const [visitedPage, visitedPageSet] = useState("") // for coloring icons depending on page visited
 	const [sharing, sharingSet] = useState("") // for sharing: article/etc...
 	const [errorMsg, errorMsgSet] = useState("")
+	const [errorMsgCount, errorMsgCountSet] = useState(0)
 	// ! user
 	const [user, userSet] = useState(null)
 	useEffect(() => {
@@ -40,7 +41,7 @@ function ContextProvider(props) {
 			modalText, modalTextSet,
 			visitedPage, visitedPageSet,
 			sharing, sharingSet,
-			errorMsg, errorMsgSet,
+			errorMsg, errorMsgSet, errorMsgCount, errorMsgCountSet,
 			user, userSet
 		}}>
 

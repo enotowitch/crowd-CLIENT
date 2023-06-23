@@ -18,21 +18,12 @@ export default function BonusFull() {
 	const { bonusId } = useParams()
 	const { bonus } = useBonusFull(bonusId)
 
-	// ! NOT FOR PRODUCTION; for portfolio: show images from FRONT; BACK is free => images disappear
-	let url = `${baseURL}/upload/${bonus?.img}`
-	const frontImgs = ["october", "raizers", "heavyFinance", "lumo", "monego", "fundimmo", "clubfunding", "baltis"]
-	const imgName = bonus?.img.replace(/.\png/, "")
-	if (frontImgs.includes(imgName)) {
-		url = require(`../../img/${imgName}.png`)
-	}
-	// ? NOT FOR PRODUCTION
-
 	return (
 		<div className="fc w100 postFull__wrap">
 			<section className="w100 mb">
 				<div className="postFull w80 mb c">
 					<div className="title2">Bonus</div>
-					<IconText url={url} iconClassName="icon_mid ml05 m0" />
+					<IconText url={`${baseURL}/upload/${bonus?.img}`} iconClassName="icon_mid ml05 m0" />
 					<div className="title f aic">
 						<span>Get your bonus for {bonus?.name}</span>
 					</div>

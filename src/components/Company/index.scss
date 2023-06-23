@@ -54,3 +54,37 @@
 		width: 100%;
 	}
 }
+
+// !! fix all <pre> tags text
+pre{
+	white-space: pre-line;
+	hyphens: auto;
+	// !! force margin inside <pre> tags
+	p,h1,h2,h3,h4,h5,h6 {
+		margin-bottom: 15px;
+	}
+	}
+
+// ! RadarSaveImg
+.addPost .card{
+	display: none; // hidden for < 1920px screens
+	position: fixed;
+	z-index: 2;
+	right: 40px;
+	top: 135px;
+	pointer-events: none;
+	.chart{
+		height: 338px;
+		width: 338px;
+	}
+	.iconsTop,.iconsMid{
+		display: none; // hide RadarSaveImg card icons
+	}
+}
+
+@media (min-width:(1919px)) {
+	.addPost .card{
+		display: block; // shown for >= 1920px screens
+	}
+}
+// ? RadarSaveImg

@@ -23,3 +23,13 @@
 		}
 	}
 }
+
+.blur{
+	animation: blur .5s forwards;
+}
+
+@keyframes blur {
+	to{
+		filter: blur(1px);
+	}
+}

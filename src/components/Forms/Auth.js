@@ -8,13 +8,12 @@ import ErrorMsg from "../FormElements/ErrorMsg"
 import AuthNew from "./AuthNew"
 import { Context } from "../../Context"
 import AuthGoogle from "./AuthGoogle"
-import LoginTest from "./LoginTest"
 
 
 export default function Auth({ children, type }) { // type=Log In/Sign Up
 
 	const { onSubmit } = useAuth(type)
-	const { popupElementSet, errorMsg } = useContext(Context)
+	const { popupElementSet } = useContext(Context)
 
 	return (
 		<form className="auth" onSubmit={onSubmit}>
@@ -27,14 +26,12 @@ export default function Auth({ children, type }) { // type=Log In/Sign Up
 
 			<button>{type}</button>
 
-			{errorMsg && <ErrorMsg text={errorMsg} />}
+			<ErrorMsg />
 
 			{/* * // works at localhost: mod. cors(server) */}
 			{/* <AuthGoogle type={type} /> */}
 
 			<AuthNew type={type} />
-
-			<LoginTest />
 		</form>
 	)
 }

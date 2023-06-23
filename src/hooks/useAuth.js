@@ -5,7 +5,7 @@ import { Context } from "../Context"
 
 export default function useAuth(type) { // type=Log In/Sign Up
 
-	const { errorMsgSet } = useContext(Context)
+	const { errorMsgSet, errorMsgCountSet } = useContext(Context)
 
 	// ! onSubmit
 	async function onSubmit(e) {
@@ -15,7 +15,10 @@ export default function useAuth(type) { // type=Log In/Sign Up
 
 		const res = await api.auth(type, form)
 
-		res.ok === false && errorMsgSet(res.msg) // error message
+		if (res.ok === false) {
+			errorMsgSet(res.msg)
+			errorMsgCountSet(prev => prev + 1)
+		} // error message
 		res.token && localStorage.setItem("token", res.token) // token
 		res.ok && window.location.reload() // success Log In/Sign Up
 	}

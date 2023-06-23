@@ -4,7 +4,7 @@ import "./media.scss"
 
 export default function Checkbox(props) {
 
-	const { name, rememberChecked } = props
+	const { name, editValue } = props
 
 	const [checked, checkedSet] = useState(false)
 
@@ -12,10 +12,11 @@ export default function Checkbox(props) {
 		checkedSet(prev => !prev)
 		props.onChange && props.onChange(e)
 	}
-	// * render checked/notChecked if `rememberChecked` prop passed
+	// * render checked/notChecked if `editValue` prop passed
 	useEffect(() => {
-		checkedSet(rememberChecked)
-	}, [rememberChecked])
+		// !! true
+		editValue === true && checkedSet(editValue)
+	}, [editValue])
 
 	return (
 		<label className="if wsnw mr wfc">

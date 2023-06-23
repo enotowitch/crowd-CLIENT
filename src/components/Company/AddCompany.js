@@ -13,6 +13,8 @@ import countries from "../../utils/countries"
 import Frais from "./Frais"
 import Textarea from "../FormElements/Textarea"
 import Checkboxes from "../FormElements/Checkboxes"
+import RadarSaveImg from "../Other/RadarSaveImg"
+import useRadarSaveImg from "../../hooks/useRadarSaveImg"
 
 export default function AddCompany() {
 
@@ -21,10 +23,14 @@ export default function AddCompany() {
 
 	const { btnText, fn } = prepareEdit("Company")
 
+	const { form, radarDraw, radarSave } = useRadarSaveImg()
+
 	return (
 		<section className="w100 addPost">
 			<div className="title mb2">{btnText}</div>
-			<TextEditor btnText={btnText} fn={fn} editValue={company?.value}>
+			<TextEditor btnText={btnText} fn={fn} editValue={company?.value} onChange={radarDraw} onSubmit={radarSave}>
+
+				<RadarSaveImg obj={form} />
 
 				<InputFileInput obj={company} />
 
@@ -38,7 +44,7 @@ export default function AddCompany() {
 				<Input name="trustpilotVoted" type="number" placeholder="Trustpilot Voted: e.g 1202" editValue={company?.trustpilotVoted} />
 
 				<Input name="Fiabilite" type="number" placeholder="Fiabilite" editValue={company?.Fiabilite} label="Fiabilite" />
-				<Checkboxes names={["AMF", "FPF", "FPCV", "Orias"]} />
+				<Checkboxes names={["AMF", "FPF", "FPCV", "Orias"]} editValue={[company?.AMF, company?.FPF, company?.FPCV, company?.Orias]} />
 				<Textarea name="FiabiliteText" placeholder="Fiabilite text" editValue={company?.FiabiliteText} label="Fiabilite text" />
 
 				<Input name="Localization" type="number" placeholder="Localization" editValue={company?.Localization} label="Localization" />
@@ -52,7 +58,7 @@ export default function AddCompany() {
 				<Textarea name="ImpayesText" placeholder="Impayes text" editValue={company?.ImpayesText} label="Impayes text" />
 
 				<Input name="Liquidity" type="number" placeholder="Liquidity" editValue={company?.Liquidity} label="Liquidity" />
-				<Checkbox name="Secondary Step" />
+				<Checkbox name="Secondary Step" editValue={company?.["Secondary Step"]} />
 				<Textarea name="LiquidityText" placeholder="Liquidity text" editValue={company?.LiquidityText} label="Liquidity text" />
 
 				<Input name="Commnuaute" type="number" placeholder="Commnuaute" editValue={company?.Commnuaute} label="Commnuaute" />

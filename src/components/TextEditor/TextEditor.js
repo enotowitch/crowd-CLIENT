@@ -9,7 +9,9 @@ import useCompany from "../../hooks/useCompany";
 import useBonus from "../../hooks/useBonus";
 import useInvestment from "../../hooks/useInvestment";
 
-export default function TextEditor({ children, btnText, fn, editValue, textEditor, postType, placeholder }) { // children=Input/Select/etc...
+export default function TextEditor(props) { // children=Input/Select/etc...
+
+	const { children, btnText, fn, editValue, textEditor, postType, placeholder } = props
 
 	const [value, valueSet] = useState("")
 
@@ -25,7 +27,7 @@ export default function TextEditor({ children, btnText, fn, editValue, textEdito
 	const { addInvestment, editInvestment } = useInvestment(value || editValue)
 
 	return (
-		<form className="textEditor fc" onSubmit={eval(fn)}>
+		<form className="textEditor fc" onSubmit={(e) => (eval(`${fn}(e)`), props?.onSubmit())} onChange={props?.onChange}>
 
 			{children}
 

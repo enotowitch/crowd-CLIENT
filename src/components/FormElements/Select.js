@@ -23,7 +23,7 @@ export default function Select(props) {
 			{placeholder && <option hidden>{placeholder}</option>}
 			{/* !! `years` Select needs value="" to filter "all years" */}
 			{def && <option value="" selected>{def}</option>}
-			{options.map(option => <option>{option}</option>)}
+			{options.map(option => <option key={option}>{option}</option>)}
 		</select>
 	)
 }

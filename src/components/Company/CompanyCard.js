@@ -18,21 +18,12 @@ export default function CompanyCard({ obj }) {
 	}
 	const cardRef = useRef(null)
 
-	// ! NOT FOR PRODUCTION; for portfolio: show images from FRONT; BACK is free => images disappear
-	let url = `${baseURL}/upload/${img}`
-	const frontImgs = ["october", "raizers", "heavyFinance", "lumo", "monego", "fundimmo", "clubfunding", "baltis"]
-	const imgName = img.replace(/.\png/, "")
-	if (frontImgs.includes(imgName)) {
-		url = require(`../../img/${imgName}.png`)
-	}
-	// ? NOT FOR PRODUCTION
-
 	return (
 		<Card cardRef={cardRef} type="company" id={id}>
 
 			<IconsTop cardRef={cardRef} className="iconsMid w100">
 				<IconText
-					url={url}
+					url={`${baseURL}/upload/${img}`}
 					iconClassName="m0 icon_card"
 					text="See review >"
 					textClassName="brand"
